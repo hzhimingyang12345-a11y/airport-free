@@ -1,9 +1,9 @@
 # Airport-Free
 ## Free nodes, automatically renews subscription every 3h
 
-- Update time（UTC+8）：`2026-05-27 21:31:11`
+- Update time（UTC+8）：`2026-05-28 05:50:33`
 - [v2ray nodes all in one](https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray.txt).（Not recommended）
-- [v2ray nodes all in one](https://slink.ltd/https://github.com/xiaoji235/airport-free/blob/main/v2ray.txt) （ you can use this if can not access）
+- [v2ray nodes all in one](https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/v2ray.txt) （ you can use this if can not access）
 - Since CDN acceleration will cache and cause nodes updates to lag, you can go to [Github](https://github.com/xiaoji235/airport-free) fetch [clash files](https://github.com/xiaoji235/airport-free/tree/main/clash) or [v2ray files](https://github.com/xiaoji235/airport-free/tree/main/v2ray)
 
 ### Used jsdelivr CDN speedup：
@@ -11,8 +11,9 @@
 <table style="width:90%">
 <tr><td><strong>v2ray</strong></td>
 <td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/clashnodecc.txt">v2ray nodes 1</a></td>
-<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/naidounode.txt">v2ray nodes 2</a></td>
-<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/v2rayshare.txt">v2ray nodes 3</a></td>
+<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/github_public.txt">v2ray nodes 2</a></td>
+<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/naidounode.txt">v2ray nodes 3</a></td>
+<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/v2rayshare.txt">v2ray nodes 4</a></td>
 
 
 </tr>
@@ -29,16 +30,17 @@
 
 <table style="width:90%">
 <tr><td><strong>v2ray</strong></td>
-<td align="center"><a href="https://slink.ltd/https://github.com/xiaoji235/airport-free/blob/main/v2ray/clashnodecc.txt">v2ray nodes 1</a></td>
-<td align="center"><a href="https://slink.ltd/https://github.com/xiaoji235/airport-free/blob/main/v2ray/naidounode.txt">v2ray nodes 2</a></td>
-<td align="center"><a href="https://slink.ltd/https://github.com/xiaoji235/airport-free/blob/main/v2ray/v2rayshare.txt">v2ray nodes 3</a></td>
+<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/v2ray/clashnodecc.txt">v2ray nodes 1</a></td>
+<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/v2ray/github_public.txt">v2ray nodes 2</a></td>
+<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/v2ray/naidounode.txt">v2ray nodes 3</a></td>
+<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/v2ray/v2rayshare.txt">v2ray nodes 4</a></td>
 
 
 </tr>
 <tr><td><strong>clash</strong></td>
-<td align="center"><a href="https://slink.ltd/https://github.com/xiaoji235/airport-free/blob/main/clash/clashnodecc.txt">clash nodes 1</a></td>
-<td align="center"><a href="https://slink.ltd/https://github.com/xiaoji235/airport-free/blob/main/clash/naidounode.txt">clash nodes 2</a></td>
-<td align="center"><a href="https://slink.ltd/https://github.com/xiaoji235/airport-free/blob/main/clash/v2rayshare.txt">clash nodes 3</a></td>
+<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/clash/clashnodecc.txt">clash nodes 1</a></td>
+<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/clash/naidounode.txt">clash nodes 2</a></td>
+<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/clash/v2rayshare.txt">clash nodes 3</a></td>
 
 
 </tr>
