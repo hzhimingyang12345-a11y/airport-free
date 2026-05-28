@@ -14,9 +14,10 @@ import requests
 
 DEFAULT_REPO = "hzhimingyang12345-a11y/airport-free"
 DEFAULT_BRANCH = "main"
+DEFAULT_CANDIDATE_PATH = "v2ray_candidates.txt"
 DEFAULT_CANDIDATE_URL = (
     "https://raw.githubusercontent.com/"
-    f"{DEFAULT_REPO}/{DEFAULT_BRANCH}/v2ray_candidates.txt"
+    f"{DEFAULT_REPO}/{DEFAULT_BRANCH}/{DEFAULT_CANDIDATE_PATH}"
 )
 SUPPORTED_SCHEMES = ("vmess", "vless", "ss", "ssr", "trojan", "hysteria", "hy2")
 URL_SCHEMES = ("vless", "trojan", "hysteria", "hy2")
@@ -300,6 +301,32 @@ def get_existing_sha(repo: str, path: str, branch: str, token: str) -> str | Non
     return data.get("sha")
 
 
+def get_github_file(repo: str, path: str, branch: str, token: str) -> str:
+    url = f"https://api.github.com/repos/{repo}/contents/{path}"
+    response = requests.get(url, headers=github_headers(token), params={"ref": branch}, timeout=30)
+    response.raise_for_status()
+    data = response.json()
+    content = data.get("content", "")
+    encoding = data.get("encoding", "")
+    if encoding != "base64" or not content:
+        raise RuntimeError(f"unexpected GitHub content response for {path}")
+    return base64.b64decode(content).decode("utf-8", errors="ignore")
+
+
+def fetch_candidates(repo: str, path: str, branch: str, token: str, raw_url: str = "") -> str:
+    try:
+        eprint(f"fetch candidates via GitHub API: {repo}/{path}@{branch}")
+        return get_github_file(repo, path, branch, token)
+    except requests.RequestException as exc:
+        if not raw_url:
+            raise
+        eprint(f"GitHub API fetch failed, fallback to raw URL: {exc}")
+
+    response = requests.get(raw_url, timeout=30)
+    response.raise_for_status()
+    return response.text
+
+
 def update_github_file(repo: str, branch: str, path: str, content: str, token: str, message: str) -> None:
     sha = get_existing_sha(repo, path, branch, token)
     payload = {
@@ -322,7 +349,8 @@ def update_github_file(repo: str, branch: str, path: str, content: str, token: s
 async def main() -> int:
     repo = os.getenv("GITHUB_REPOSITORY", DEFAULT_REPO)
     branch = os.getenv("GITHUB_BRANCH", DEFAULT_BRANCH)
-    candidate_url = os.getenv("CANDIDATE_URL", DEFAULT_CANDIDATE_URL)
+    candidate_path = os.getenv("CANDIDATE_PATH", DEFAULT_CANDIDATE_PATH)
+    candidate_url = os.getenv("CANDIDATE_URL", "")
     output_path = os.getenv("OUTPUT_PATH", "v2ray_local.txt")
     commit_message = os.getenv("COMMIT_MESSAGE", "Local Nodes Update")
     token = os.getenv("GITHUB_TOKEN", "").strip()
@@ -336,11 +364,9 @@ async def main() -> int:
         eprint("missing GITHUB_TOKEN environment variable")
         return 2
 
-    eprint(f"fetch candidates: {candidate_url}")
-    response = requests.get(candidate_url, timeout=30)
-    response.raise_for_status()
+    candidates_text = fetch_candidates(repo, candidate_path, branch, token, candidate_url)
 
-    nodes = parse_nodes(response.text, limit=limit)
+    nodes = parse_nodes(candidates_text, limit=limit)
     eprint(f"candidate nodes: {len(nodes)}")
 
     alive = await test_nodes(nodes, timeout=timeout, concurrency=concurrency, tls_probe=tls_probe)

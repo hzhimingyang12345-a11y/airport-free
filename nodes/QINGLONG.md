@@ -23,7 +23,8 @@ Optional environment variables:
 ```text
 GITHUB_REPOSITORY=hzhimingyang12345-a11y/airport-free
 GITHUB_BRANCH=main
-CANDIDATE_URL=https://raw.githubusercontent.com/hzhimingyang12345-a11y/airport-free/main/v2ray_candidates.txt
+CANDIDATE_PATH=v2ray_candidates.txt
+CANDIDATE_URL=
 OUTPUT_PATH=v2ray_local.txt
 COMMIT_MESSAGE=Local Nodes Update
 TEST_TIMEOUT=3
@@ -31,6 +32,9 @@ TEST_CONCURRENCY=300
 MAX_OUTPUT=300
 TLS_PROBE=0
 ```
+
+By default, the script reads candidates through the GitHub Contents API, not `raw.githubusercontent.com`.
+Set `CANDIDATE_URL` only when you want to use a raw URL fallback.
 
 QingLong command:
 
