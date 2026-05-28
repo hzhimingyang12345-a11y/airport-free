@@ -36,6 +36,7 @@ jobs:
           rm -f v2ray.txt
           rm -f v2ray_raw.txt
           rm -f v2ray_candidates.txt
+          rm -f v2ray_local.txt
           rm -f nodes/proxy.txt || true
 
       - name: Generate raw v2ray nodes
@@ -48,7 +49,8 @@ jobs:
 
       - name: Build v2ray candidate pool
         run: |
-          python "nodes/clean_v2ray.py" --input v2ray_raw.txt --output v2ray_candidates.txt --mirror-output v2ray.txt --min-score 55 --max-candidates 2500 --concurrency 300
+          python "nodes/clean_v2ray.py" --input v2ray_raw.txt --output v2ray_candidates.txt --mirror-output v2ray.txt --min-score 20 --max-candidates 8000 --concurrency 300
+          cp v2ray_candidates.txt v2ray_local.txt
 
       - name: Generate clash nodes
         run: |

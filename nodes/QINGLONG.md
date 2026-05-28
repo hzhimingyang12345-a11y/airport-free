@@ -1,5 +1,7 @@
 # QingLong Local Tester
 
+Note: this local tester is optional. The current simple workflow writes the GitHub-generated candidate pool directly to `v2ray_local.txt`, so you can subscribe in v2rayN, test latency there, and delete unavailable nodes with v2rayN.
+
 Run `nodes/qinglong_update.py` in QingLong to test GitHub-generated candidates from your real local network and publish `v2ray_local.txt` through the GitHub REST API.
 
 Recommended schedule: daily at 06:00 Asia/Shanghai, after GitHub Actions has generated `v2ray_candidates.txt`.
