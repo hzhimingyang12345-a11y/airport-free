@@ -19,7 +19,12 @@ PROTOCOLS = (
 )
 
 urls = [
+    "https://proxy.v2gh.com/https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
+    "https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/master/all",
     "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/v2ray-base64.txt",
+    "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt",
+    "https://fa.zmxoo.xyz/linkapi",
+    "https://raw.githubusercontent.com/xyfqzy/free-nodes/main/nodes/v2ray.txt",
     "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/simple.txt",
 ]
 

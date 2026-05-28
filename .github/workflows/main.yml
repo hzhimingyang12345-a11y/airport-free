@@ -49,7 +49,7 @@ jobs:
 
       - name: Build v2ray candidate pool
         run: |
-          python "nodes/clean_v2ray.py" --input v2ray_raw.txt --output v2ray_candidates.txt --mirror-output v2ray.txt --min-score -999 --max-candidates 3000 --keep-plain-tcp --preserve-order --concurrency 300
+          python "nodes/clean_v2ray.py" --input v2ray_raw.txt --output v2ray_candidates.txt --mirror-output v2ray.txt --min-score -999 --max-candidates 5000 --keep-plain-tcp --preserve-order --dedupe-mode config --concurrency 300
           cp v2ray_candidates.txt v2ray_local.txt
 
       - name: Generate clash nodes
