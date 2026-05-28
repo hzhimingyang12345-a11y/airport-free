@@ -329,7 +329,7 @@ def score_node(node: Node) -> Node:
     return node
 
 
-def feature_filter(nodes: Iterable[Node], min_score: int, keep_plain_tcp: bool) -> list[Node]:
+def feature_filter(nodes: Iterable[Node], min_score: int, keep_plain_tcp: bool, preserve_order: bool) -> list[Node]:
     filtered = []
     for node in nodes:
         score_node(node)
@@ -338,6 +338,8 @@ def feature_filter(nodes: Iterable[Node], min_score: int, keep_plain_tcp: bool) 
         if node.score < min_score:
             continue
         filtered.append(node)
+    if preserve_order:
+        return filtered
     return sorted(filtered, key=lambda item: item.score, reverse=True)
 
 
@@ -536,6 +538,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--min-score", type=int, default=55, help="Minimum feature score to keep a node.")
     parser.add_argument("--max-candidates", type=positive_int, default=2500, help="Maximum candidate nodes to output.")
     parser.add_argument("--keep-plain-tcp", action="store_true", help="Keep low-potential plain TCP nodes.")
+    parser.add_argument("--preserve-order", action="store_true", help="Preserve source order instead of sorting by feature score.")
     parser.add_argument("--limit", type=positive_int, help="Optional input limit for local testing.")
     return parser
 
@@ -550,7 +553,7 @@ async def async_main(args: argparse.Namespace) -> int:
     unique_nodes = dedupe_by_endpoint(resolved_nodes)
     eprint(f"unique endpoints: {len(unique_nodes)}")
 
-    feature_nodes = feature_filter(unique_nodes, args.min_score, args.keep_plain_tcp)
+    feature_nodes = feature_filter(unique_nodes, args.min_score, args.keep_plain_tcp, args.preserve_order)
     eprint(f"feature candidates: {len(feature_nodes)}")
 
     domestic_nodes = await domestic_filter(
