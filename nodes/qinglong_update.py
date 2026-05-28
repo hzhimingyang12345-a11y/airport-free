@@ -3,8 +3,11 @@ import base64
 import binascii
 import json
 import os
+import shutil
 import ssl
+import subprocess
 import sys
+import tempfile
 import time
 from dataclasses import dataclass
 from urllib.parse import parse_qsl, quote, urlencode, urlsplit
@@ -241,6 +244,275 @@ async def test_nodes(nodes: list[Node], timeout: float, concurrency: int, tls_pr
     return sorted(alive, key=lambda item: item.latency_ms)
 
 
+def bool_param(value: str) -> bool:
+    return str(value).lower() in ("1", "true", "yes")
+
+
+def parsed_query(raw: str) -> dict:
+    try:
+        return dict(parse_qsl(urlsplit(raw).query, keep_blank_values=True))
+    except ValueError:
+        return {}
+
+
+def xray_stream_settings(node: Node, params: dict) -> dict:
+    network = node.network or "tcp"
+    security = node.security if node.security in ("tls", "reality") else "none"
+    stream = {
+        "network": network,
+        "security": security,
+    }
+
+    host = params.get("host") or params.get("authority") or node.sni
+    path = params.get("path") or "/"
+    if network == "ws":
+        stream["wsSettings"] = {
+            "path": path,
+            "headers": {"Host": host} if host else {},
+        }
+    elif network == "grpc":
+        service_name = params.get("serviceName") or params.get("service") or path.strip("/")
+        stream["grpcSettings"] = {"serviceName": service_name}
+    elif network in ("h2", "http"):
+        stream["httpSettings"] = {
+            "path": path,
+            "host": [host] if host else [],
+        }
+
+    server_name = params.get("sni") or params.get("peer") or host or node.host
+    if security == "tls":
+        stream["tlsSettings"] = {
+            "serverName": server_name,
+            "allowInsecure": bool_param(params.get("allowInsecure") or params.get("insecure") or "0"),
+            "fingerprint": params.get("fp") or "chrome",
+        }
+    elif security == "reality":
+        stream["realitySettings"] = {
+            "serverName": server_name,
+            "fingerprint": params.get("fp") or "chrome",
+            "publicKey": params.get("pbk") or params.get("publicKey") or "",
+            "shortId": params.get("sid") or params.get("shortId") or "",
+            "spiderX": params.get("spx") or params.get("spiderX") or "",
+        }
+
+    return stream
+
+
+def vmess_outbound(raw: str) -> dict | None:
+    decoded = b64decode_text(raw[len("vmess://") :])
+    if not decoded:
+        return None
+    try:
+        data = json.loads(decoded)
+        host = str(data.get("add") or "").strip()
+        port = int(data.get("port"))
+        user_id = str(data.get("id") or "").strip()
+    except (TypeError, ValueError, json.JSONDecodeError):
+        return None
+    if not host or not user_id:
+        return None
+
+    node = parse_vmess(raw)
+    if not node:
+        return None
+    params = {
+        "host": data.get("host") or "",
+        "path": data.get("path") or "",
+        "sni": data.get("sni") or "",
+    }
+    return {
+        "protocol": "vmess",
+        "settings": {
+            "vnext": [
+                {
+                    "address": host,
+                    "port": port,
+                    "users": [
+                        {
+                            "id": user_id,
+                            "alterId": int(data.get("aid") or 0),
+                            "security": data.get("scy") or "auto",
+                        }
+                    ],
+                }
+            ]
+        },
+        "streamSettings": xray_stream_settings(node, params),
+    }
+
+
+def url_outbound(node: Node) -> dict | None:
+    try:
+        parsed = urlsplit(node.raw)
+    except ValueError:
+        return None
+    params = dict(parse_qsl(parsed.query, keep_blank_values=True))
+    user = parsed.username or ""
+    if not user:
+        return None
+
+    if node.scheme == "vless":
+        user_config = {
+            "id": user,
+            "encryption": params.get("encryption") or "none",
+        }
+        if params.get("flow"):
+            user_config["flow"] = params["flow"]
+        return {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": node.host,
+                        "port": node.port,
+                        "users": [user_config],
+                    }
+                ]
+            },
+            "streamSettings": xray_stream_settings(node, params),
+        }
+
+    if node.scheme == "trojan":
+        return {
+            "protocol": "trojan",
+            "settings": {
+                "servers": [
+                    {
+                        "address": node.host,
+                        "port": node.port,
+                        "password": user,
+                    }
+                ]
+            },
+            "streamSettings": xray_stream_settings(node, params),
+        }
+
+    return None
+
+
+def build_xray_outbound(node: Node) -> dict | None:
+    if node.scheme == "vmess":
+        return vmess_outbound(node.raw)
+    if node.scheme in ("vless", "trojan"):
+        return url_outbound(node)
+    return None
+
+
+def socks5_http_probe(port: int, test_url: str, timeout: float) -> bool:
+    parsed = urlsplit(test_url)
+    host = parsed.hostname
+    if not host:
+        return False
+    target_port = parsed.port or (443 if parsed.scheme == "https" else 80)
+    path = parsed.path or "/"
+    if parsed.query:
+        path += f"?{parsed.query}"
+
+    with socket.create_connection(("127.0.0.1", port), timeout=timeout) as sock:
+        sock.settimeout(timeout)
+        sock.sendall(b"\x05\x01\x00")
+        if sock.recv(2) != b"\x05\x00":
+            return False
+
+        host_bytes = host.encode("idna")
+        request = b"\x05\x01\x00\x03" + bytes([len(host_bytes)]) + host_bytes + target_port.to_bytes(2, "big")
+        sock.sendall(request)
+        reply = sock.recv(10)
+        if len(reply) < 2 or reply[1] != 0:
+            return False
+
+        http = (
+            f"GET {path} HTTP/1.1\r\n"
+            f"Host: {host}\r\n"
+            "User-Agent: qinglong-v2ray-local-updater\r\n"
+            "Connection: close\r\n\r\n"
+        ).encode("ascii", errors="ignore")
+        sock.sendall(http)
+        response = sock.recv(128)
+    return b"HTTP/1." in response and any(code in response[:32] for code in (b" 204 ", b" 200 ", b" 301 ", b" 302 "))
+
+
+async def xray_probe(node: Node, xray_bin: str, test_url: str, timeout: float) -> Node | None:
+    outbound = build_xray_outbound(node)
+    if not outbound:
+        return None
+
+    server = await asyncio.start_server(lambda r, w: None, "127.0.0.1", 0)
+    port = server.sockets[0].getsockname()[1]
+    server.close()
+    await server.wait_closed()
+
+    config = {
+        "log": {"loglevel": "warning"},
+        "inbounds": [
+            {
+                "listen": "127.0.0.1",
+                "port": port,
+                "protocol": "socks",
+                "settings": {"auth": "noauth", "udp": False},
+            }
+        ],
+        "outbounds": [outbound],
+    }
+
+    with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, encoding="utf-8") as file:
+        json.dump(config, file, ensure_ascii=False)
+        config_path = file.name
+
+    process = None
+    start = time.perf_counter()
+    try:
+        process = subprocess.Popen(
+            [xray_bin, "run", "-config", config_path],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        await asyncio.sleep(0.35)
+        if process.poll() is not None:
+            return None
+        ok = await asyncio.to_thread(socks5_http_probe, port, test_url, timeout)
+        if not ok:
+            return None
+        node.latency_ms = (time.perf_counter() - start) * 1000
+        return node
+    except (OSError, asyncio.TimeoutError, ValueError):
+        return None
+    finally:
+        if process and process.poll() is None:
+            process.terminate()
+            try:
+                process.wait(timeout=1)
+            except subprocess.TimeoutExpired:
+                process.kill()
+        try:
+            os.unlink(config_path)
+        except OSError:
+            pass
+
+
+async def xray_test_nodes(nodes: list[Node], xray_bin: str, test_url: str, timeout: float, concurrency: int, max_output: int) -> list[Node]:
+    semaphore = asyncio.Semaphore(concurrency)
+    alive = []
+
+    async def run(node: Node) -> Node | None:
+        async with semaphore:
+            return await xray_probe(node, xray_bin, test_url, timeout)
+
+    tasks = [asyncio.create_task(run(node)) for node in nodes if build_xray_outbound(node)]
+    for task in asyncio.as_completed(tasks):
+        result = await task
+        if result:
+            alive.append(result)
+            eprint(f"xray alive: {len(alive)} {result.host}:{result.port} {int(result.latency_ms)}ms")
+            if len(alive) >= max_output:
+                for pending in tasks:
+                    if not pending.done():
+                        pending.cancel()
+                break
+
+    return sorted(alive, key=lambda item: item.latency_ms)
+
+
 def rename_vmess(raw: str, name: str) -> str:
     decoded = b64decode_text(raw[len("vmess://") :])
     if not decoded:
@@ -359,6 +631,10 @@ async def main() -> int:
     max_output = env_int("MAX_OUTPUT", 300)
     limit = env_int("INPUT_LIMIT", 0)
     tls_probe = os.getenv("TLS_PROBE", "0").lower() in ("1", "true", "yes")
+    xray_bin = os.getenv("XRAY_BIN", "").strip() or shutil.which("xray") or shutil.which("xray.exe") or ""
+    xray_timeout = env_float("XRAY_TIMEOUT", timeout)
+    xray_concurrency = env_int("XRAY_CONCURRENCY", 8)
+    xray_test_url = os.getenv("XRAY_TEST_URL", "http://www.gstatic.com/generate_204")
 
     if not token:
         eprint("missing GITHUB_TOKEN environment variable")
@@ -369,7 +645,19 @@ async def main() -> int:
     nodes = parse_nodes(candidates_text, limit=limit)
     eprint(f"candidate nodes: {len(nodes)}")
 
-    alive = await test_nodes(nodes, timeout=timeout, concurrency=concurrency, tls_probe=tls_probe)
+    if xray_bin:
+        eprint(f"use xray real proxy test: {xray_bin}")
+        alive = await xray_test_nodes(
+            nodes,
+            xray_bin=xray_bin,
+            test_url=xray_test_url,
+            timeout=xray_timeout,
+            concurrency=xray_concurrency,
+            max_output=max_output,
+        )
+    else:
+        eprint("xray not found; fallback to TCP probe, results may include false positives")
+        alive = await test_nodes(nodes, timeout=timeout, concurrency=concurrency, tls_probe=tls_probe)
     alive = alive[:max_output]
     eprint(f"local alive nodes: {len(alive)}")
 

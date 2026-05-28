@@ -31,10 +31,18 @@ TEST_TIMEOUT=3
 TEST_CONCURRENCY=300
 MAX_OUTPUT=300
 TLS_PROBE=0
+XRAY_BIN=/usr/local/bin/xray
+XRAY_TIMEOUT=5
+XRAY_CONCURRENCY=8
+XRAY_TEST_URL=http://www.gstatic.com/generate_204
 ```
 
 By default, the script reads candidates through the GitHub Contents API, not `raw.githubusercontent.com`.
 Set `CANDIDATE_URL` only when you want to use a raw URL fallback.
+
+For accurate results, install Xray Core in the QingLong container and set `XRAY_BIN`.
+When Xray is available, the script starts a temporary local SOCKS inbound for each node and checks whether the node can really proxy `XRAY_TEST_URL`.
+If Xray is not available, the script falls back to simple TCP probing, which can produce many false positives.
 
 QingLong command:
 
