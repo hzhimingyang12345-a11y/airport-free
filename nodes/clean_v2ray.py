@@ -41,6 +41,9 @@ class Node:
     security: str = ""
     sni: str = ""
     path: str = ""
+    user_id: str = ""
+    host_header: str = ""
+    plugin: str = ""
     resolved_ip: str | None = None
     geo_code: str = "UN"
     score: int = 0
@@ -50,6 +53,24 @@ class Node:
     def endpoint_key(self) -> str:
         host = self.resolved_ip or self.host.lower()
         return f"{host}:{self.port}"
+
+    @property
+    def config_key(self) -> str:
+        host = self.resolved_ip or self.host.lower()
+        return "|".join(
+            (
+                self.scheme.lower(),
+                host,
+                str(self.port),
+                self.network.lower(),
+                self.security.lower(),
+                self.sni.lower(),
+                self.host_header.lower(),
+                self.path,
+                self.user_id.lower(),
+                self.plugin.lower(),
+            )
+        )
 
     @property
     def feature_text(self) -> str:
@@ -133,9 +154,22 @@ def parse_vmess(raw: str) -> Node | None:
     security = first_value(data, ("tls", "security"), "").lower()
     if security in ("1", "true"):
         security = "tls"
+    user_id = first_value(data, ("id",), "")
+    host_header = first_value(data, ("host",), "")
     sni = first_value(data, ("sni", "host", "add"), "")
     path = first_value(data, ("path",), "")
-    return Node(raw=raw, scheme="vmess", host=host, port=port, network=network, security=security, sni=sni, path=path)
+    return Node(
+        raw=raw,
+        scheme="vmess",
+        host=host,
+        port=port,
+        network=network,
+        security=security,
+        sni=sni,
+        path=path,
+        user_id=user_id,
+        host_header=host_header,
+    )
 
 
 def parse_url_node(raw: str, scheme: str) -> Node | None:
@@ -154,9 +188,22 @@ def parse_url_node(raw: str, scheme: str) -> Node | None:
     security = first_value(params, ("security", "tls"), "").lower()
     if scheme in ("trojan", "hysteria", "hy2") and not security:
         security = "tls"
+    user_id = parsed.username or ""
+    host_header = first_value(params, ("host", "authority"), "")
     sni = first_value(params, ("sni", "peer", "host"), "")
     path = first_value(params, ("path",), "")
-    return Node(raw=raw, scheme=scheme, host=host, port=port, network=network, security=security, sni=sni, path=path)
+    return Node(
+        raw=raw,
+        scheme=scheme,
+        host=host,
+        port=port,
+        network=network,
+        security=security,
+        sni=sni,
+        path=path,
+        user_id=user_id,
+        host_header=host_header,
+    )
 
 
 def parse_ss(raw: str) -> Node | None:
@@ -176,6 +223,7 @@ def parse_ss(raw: str) -> Node | None:
                 security=security,
                 sni=params.get("host", ""),
                 path=params.get("path", ""),
+                plugin=plugin,
             )
     except ValueError:
         pass
@@ -197,7 +245,7 @@ def parse_ss(raw: str) -> Node | None:
 
     if not host or not (0 < port < 65536):
         return None
-    return Node(raw=raw, scheme="ss", host=host.strip("[]"), port=port)
+    return Node(raw=raw, scheme="ss", host=host.strip("[]"), port=port, user_id=decoded.rsplit("@", 1)[0])
 
 
 def parse_ssr(raw: str) -> Node | None:
@@ -218,7 +266,7 @@ def parse_ssr(raw: str) -> Node | None:
 
     if not host or not (0 < port < 65536):
         return None
-    return Node(raw=raw, scheme="ssr", host=host.strip("[]"), port=port)
+    return Node(raw=raw, scheme="ssr", host=host.strip("[]"), port=port, user_id=":".join(parts[2:]))
 
 
 def parse_node(raw: str) -> Node | None:
@@ -343,11 +391,11 @@ def feature_filter(nodes: Iterable[Node], min_score: int, keep_plain_tcp: bool, 
     return sorted(filtered, key=lambda item: item.score, reverse=True)
 
 
-def dedupe_by_endpoint(nodes: Iterable[Node]) -> list[Node]:
+def dedupe_nodes(nodes: Iterable[Node], mode: str) -> list[Node]:
     seen = set()
     unique = []
     for node in nodes:
-        key = node.endpoint_key
+        key = node.endpoint_key if mode == "endpoint" else node.config_key
         if key in seen:
             continue
         seen.add(key)
@@ -539,6 +587,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-candidates", type=positive_int, default=2500, help="Maximum candidate nodes to output.")
     parser.add_argument("--keep-plain-tcp", action="store_true", help="Keep low-potential plain TCP nodes.")
     parser.add_argument("--preserve-order", action="store_true", help="Preserve source order instead of sorting by feature score.")
+    parser.add_argument("--dedupe-mode", choices=("config", "endpoint"), default="config", help="Use config to keep same endpoint with different SNI/path/user.")
     parser.add_argument("--limit", type=positive_int, help="Optional input limit for local testing.")
     return parser
 
@@ -550,8 +599,8 @@ async def async_main(args: argparse.Namespace) -> int:
     eprint(f"parsed nodes: {len(parsed_nodes)}")
 
     resolved_nodes = await resolve_all(parsed_nodes, args.resolve_timeout, args.concurrency)
-    unique_nodes = dedupe_by_endpoint(resolved_nodes)
-    eprint(f"unique endpoints: {len(unique_nodes)}")
+    unique_nodes = dedupe_nodes(resolved_nodes, args.dedupe_mode)
+    eprint(f"unique nodes ({args.dedupe_mode}): {len(unique_nodes)}")
 
     feature_nodes = feature_filter(unique_nodes, args.min_score, args.keep_plain_tcp, args.preserve_order)
     eprint(f"feature candidates: {len(feature_nodes)}")
