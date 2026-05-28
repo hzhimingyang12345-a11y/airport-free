@@ -19,27 +19,8 @@ PROTOCOLS = (
 )
 
 urls = [
-    "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2",
-    "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge.txt",
-    "https://raw.githubusercontent.com/mahdibland/V2RayAggregator/master/sub/sub_merge_base64.txt",
-    "https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt",
-    "https://raw.githubusercontent.com/free18/v2ray/main/v.txt",
-    "https://raw.githubusercontent.com/firefoxmmx2/v2rayshare_subcription/main/subscription/vray_sub.txt",
-    "https://raw.githubusercontent.com/a2470982985/getNode/main/v2ray.txt",
     "https://raw.githubusercontent.com/Au1rxx/free-vpn-subscriptions/main/output/v2ray-base64.txt",
-    "https://raw.githubusercontent.com/MatinGhanbari/v2ray-configs/main/subscriptions/v2ray/all_sub.txt",
-    "https://raw.githubusercontent.com/v2ray-links/v2ray-free/master/v2ray",
-    "https://raw.githubusercontent.com/awesome-vpn/awesome-vpn/master/all",
-    "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
-    "https://raw.githubusercontent.com/HakurouKen/free-node/main/public",
-    "https://raw.githubusercontent.com/snakem982/proxypool/main/source/v2ray-2.txt",
-    "https://raw.githubusercontent.com/xyfqzy/free-nodes/main/nodes/v2ray.txt",
     "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/simple.txt",
-    "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/nodefree.txt",
-    "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/nodev2ray.txt",
-    "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/v2rayshare.txt",
-    "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/wenode.txt",
-    "https://raw.githubusercontent.com/Barabama/FreeNodes/main/nodes/yudou66.txt",
 ]
 
 
