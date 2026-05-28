@@ -1,7 +1,7 @@
 # Airport-Free
 ## Free nodes, automatically renews subscription every 3h
 
-- Update time（UTC+8）：`2026-05-28 14:27:26`
+- Update time（UTC+8）：`2026-05-29 05:50:30`
 - [v2ray nodes all in one](https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray.txt).（Not recommended）
 - [v2ray nodes all in one](https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/v2ray.txt) （ you can use this if can not access）
 - Since CDN acceleration will cache and cause nodes updates to lag, you can go to [Github](https://github.com/xiaoji235/airport-free) fetch [clash files](https://github.com/xiaoji235/airport-free/tree/main/clash) or [v2ray files](https://github.com/xiaoji235/airport-free/tree/main/v2ray)
@@ -18,12 +18,9 @@
 
 </tr>
 <tr><td><strong>clash</strong></td>
-<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/au1rxx.txt">clash nodes 1</a></td>
-<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/clashnodecc.txt">clash nodes 2</a></td>
-<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/naidounode.txt">clash nodes 3</a></td>
-<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/snakem982.txt">clash nodes 4</a></td>
-<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/v2rayshare.txt">clash nodes 5</a></td>
-<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/wisebobo.txt">clash nodes 6</a></td>
+<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/clashnodecc.txt">clash nodes 1</a></td>
+<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/naidounode.txt">clash nodes 2</a></td>
+<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/v2rayshare.txt">clash nodes 3</a></td>
 
 
 </tr>
@@ -41,12 +38,9 @@
 
 </tr>
 <tr><td><strong>clash</strong></td>
-<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/clash/au1rxx.txt">clash nodes 1</a></td>
-<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/clash/clashnodecc.txt">clash nodes 2</a></td>
-<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/clash/naidounode.txt">clash nodes 3</a></td>
-<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/clash/snakem982.txt">clash nodes 4</a></td>
-<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/clash/v2rayshare.txt">clash nodes 5</a></td>
-<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/clash/wisebobo.txt">clash nodes 6</a></td>
+<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/clash/clashnodecc.txt">clash nodes 1</a></td>
+<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/clash/naidounode.txt">clash nodes 2</a></td>
+<td align="center"><a href="https://github.starrlzy.cn/https://github.com/xiaoji235/airport-free/blob/main/clash/v2rayshare.txt">clash nodes 3</a></td>
 
 
 </tr>
