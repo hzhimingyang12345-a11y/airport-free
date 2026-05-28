@@ -1,4 +1,4 @@
-name: 节点更新
+name: Nodes Update
 
 on:
   schedule:
@@ -16,143 +16,130 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v6
+      - name: Checkout repository
+        uses: actions/checkout@v6
 
-    - name: 安装 Python
-      uses: actions/setup-python@v6
-      with:
-        python-version: '3.x'
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.x"
 
-    - name: 依赖
-      run: |
-        # 各种模块
-        pip install --upgrade pip
-        pip install requests
-        pip install datetime
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install requests
 
+      - name: Remove old generated files
+        run: |
+          rm -f clash/* || true
+          rm -f v2ray/* || true
+          rm -f v2ray.txt
+          rm -f nodes/proxy.txt || true
 
-    - name: 删除旧生成的文件
-      run: |
-        rm -f clash/* || true
-        rm -f v2ray/* || true
-        rm -f v2ray.txt
-        rm -f nodes/proxy.txt || true
+      - name: Generate raw v2ray nodes
+        run: |
+          for file in nodes/v2/*.py; do
+            py_name=$(basename "$file" .py)
+            python "$file" > "v2ray/${py_name}.txt"
+            cat "v2ray/${py_name}.txt" >> v2ray.txt
+          done
 
+      - name: Clean v2ray subscription
+        run: |
+          python "nodes/clean_v2ray.py" --input v2ray.txt --output v2ray.txt --timeout 3 --concurrency 300
 
-    - name: 遍历运行py脚本并输出文本 v2ray
-      run: |
-        for file in nodes/v2/*.py;do
-        py_name=$(basename $file .py)
-        python "$file" > "v2ray/${py_name}.txt"
-        cat "v2ray/${py_name}.txt" >> v2ray.txt
-        done
-        
+      - name: Generate clash nodes
+        run: |
+          for file in nodes/clash/*.py; do
+            py_name=$(basename "$file" .py)
+            python "$file" > "clash/${py_name}.txt"
+          done
 
-    - name: 遍历运行py脚本并输出文本 clash
-      run: |
-        for file in nodes/clash/*.py;do
-        py_name=$(basename $file .py)
-        python "$file" > "clash/${py_name}.txt"
-        done
+      - name: Generate proxy URL
+        run: |
+          python "nodes/proxy.py" > "nodes/proxy.txt"
 
-    - name: 运行proxy.py脚本并输出 proxy_url
-      run: |
-        python "nodes/proxy.py" > "nodes/proxy.txt"
+      - name: Copy README template
+        run: |
+          cp nodes/README.md README.md
 
-    - name: copy README.md
-      run: |
-        cp nodes/README.md README.md
+      - name: Render clash CDN links
+        run: |
+          cd clash/
+          list=""
+          i=1
+          for file in *.txt; do
+            if [ -f "$file" ]; then
+              list+="<td align=\"center\"><a href=\"https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/$file\">clash nodes $i</a></td>\n"
+              ((i++))
+            fi
+          done
+          list=$(echo "$list" | sed 's/$/\\n/g' | tr -d '\n')
+          cd ..
+          sed -i "/<clash_list>/c\\$list" README.md
 
-##########################################################################################
+      - name: Render v2ray CDN links
+        run: |
+          cd v2ray/
+          list=""
+          i=1
+          for file in *.txt; do
+            if [ -f "$file" ]; then
+              list+="<td align=\"center\"><a href=\"https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/$file\">v2ray nodes $i</a></td>\n"
+              ((i++))
+            fi
+          done
+          list=$(echo "$list" | sed 's/$/\\n/g' | tr -d '\n')
+          cd ..
+          sed -i "/<v2ray_list>/c\\$list" README.md
 
-    - name: README.md内容输出 clash
-      run: |
-        cd clash/
-        list=""
-        i=1
-        for file in *.txt; do
-          if [ -f "$file" ]; then
-            list+="<td align=\"center\"><a href=\"https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/$file\">clash nodes $i</a></td>\n"
-            ((i++))
-          fi
-        done
-        list=$(echo "$list" | sed 's/$/\\n/g' | tr -d '\n') # Prepare list for insertion into README.md
-        cd ..
-        sed -i "/<clash_list>/c\\$list" README.md # Replace <v2ray_list> in README.md
+      - name: Render clash proxy links
+        run: |
+          cd clash/
+          list=""
+          i=1
+          for file in *.txt; do
+            if [ -f "$file" ]; then
+              list+="<td align=\"center\"><a href=\"<PROXY>/https://github.com/xiaoji235/airport-free/blob/main/clash/$file\">clash nodes $i</a></td>\n"
+              ((i++))
+            fi
+          done
+          list=$(echo "$list" | sed 's/$/\\n/g' | tr -d '\n')
+          cd ..
+          sed -i "/<clashCDN_list>/c\\$list" README.md
 
+      - name: Render v2ray proxy links
+        run: |
+          cd v2ray/
+          list=""
+          i=1
+          for file in *.txt; do
+            if [ -f "$file" ]; then
+              list+="<td align=\"center\"><a href=\"<PROXY>/https://github.com/xiaoji235/airport-free/blob/main/v2ray/$file\">v2ray nodes $i</a></td>\n"
+              ((i++))
+            fi
+          done
+          list=$(echo "$list" | sed 's/$/\\n/g' | tr -d '\n')
+          cd ..
+          sed -i "/<v2rayCDN_list>/c\\$list" README.md
 
-    - name: README.md内容输出 v2ray
-      run: |
-        cd v2ray/
-        list=""
-        i=1
-        for file in *.txt; do
-          if [ -f "$file" ]; then
-            list+="<td align=\"center\"><a href=\"https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/$file\">v2ray nodes $i</a></td>\n"
-            ((i++))
-          fi
-        done
-        list=$(echo "$list" | sed 's/$/\\n/g' | tr -d '\n')
-        cd ..
-        sed -i "/<v2ray_list>/c\\$list" README.md
+      - name: Replace proxy placeholder
+        run: |
+          PROXY=$(cat nodes/proxy.txt)
+          sed -i "s|<PROXY>|$PROXY|g" README.md
 
-##########################################################################################
-
-    - name: README.md内容输出 clash CDN
-      run: |
-        cd clash/
-        list=""
-        i=1
-        for file in *.txt; do
-          if [ -f "$file" ]; then
-            list+="<td align=\"center\"><a href=\"<PROXY>/https://github.com/xiaoji235/airport-free/blob/main/clash/$file\">clash nodes $i</a></td>\n"
-            ((i++))
-          fi
-        done
-        list=$(echo "$list" | sed 's/$/\\n/g' | tr -d '\n')
-        cd ..
-        sed -i "/<clashCDN_list>/c\\$list" README.md
-
-
-    - name: README.md内容输出 v2ray CDN
-      run: |
-        cd v2ray/
-        list=""
-        i=1
-        for file in *.txt; do
-          if [ -f "$file" ]; then
-            list+="<td align=\"center\"><a href=\"<PROXY>/https://github.com/xiaoji235/airport-free/blob/main/v2ray/$file\">v2ray nodes $i</a></td>\n"
-            ((i++))
-          fi
-        done
-        list=$(echo "$list" | sed 's/$/\\n/g' | tr -d '\n')
-        cd ..
-        sed -i "/<v2rayCDN_list>/c\\$list" README.md
-
-##########################################################################################
-
-
-    - name: Replace <PROXY> in README.md
-      run: |
-        PROXY=$(cat nodes/proxy.txt)
-        sed -i "s|<PROXY>|$PROXY|g" README.md
-
-
-    - name: README.md时间更新
-      run: |
-        TIME=$(date -u -d "+8 hours" '+%Y-%m-%d %H:%M:%S')
+      - name: Update README time
+        run: |
+          TIME=$(date -u -d "+8 hours" '+%Y-%m-%d %H:%M:%S')
           sed -i "s/<update_time>/$TIME/" README.md
 
-
-
-    - name: Commit and push if there are changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add -A
-        if [[ `git status --porcelain` ]]; then
-          git commit -m "Nodes Update" && git push
-        else
-          echo "Not commit."
-        fi
+      - name: Commit and push if there are changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          if [[ `git status --porcelain` ]]; then
+            git commit -m "Nodes Update" && git push
+          else
+            echo "Not commit."
+          fi
