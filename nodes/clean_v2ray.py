@@ -4,9 +4,10 @@ import base64
 import binascii
 import ipaddress
 import json
+import os
 import socket
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Iterable
 from urllib.parse import parse_qsl, quote, urlencode, urlsplit
 
@@ -15,6 +16,18 @@ import requests
 
 SUPPORTED_SCHEMES = ("vmess", "vless", "ss", "ssr", "trojan", "hysteria", "hy2")
 URL_SCHEMES = ("vless", "trojan", "hysteria", "hy2")
+CDN_PORTS = {443, 8443, 2053, 2083, 2087, 2096}
+CDN_HINTS = (
+    "cloudflare",
+    "workers.dev",
+    "pages.dev",
+    "cf-ipfs.com",
+    "cdn",
+    "fastly",
+    "akamai",
+    "cloudfront",
+    "azureedge",
+)
 GEO_BATCH_SIZE = 100
 
 
@@ -24,13 +37,27 @@ class Node:
     scheme: str
     host: str
     port: int
+    network: str = "tcp"
+    security: str = ""
+    sni: str = ""
+    path: str = ""
     resolved_ip: str | None = None
     geo_code: str = "UN"
+    score: int = 0
+    reasons: list[str] = field(default_factory=list)
 
     @property
     def endpoint_key(self) -> str:
         host = self.resolved_ip or self.host.lower()
         return f"{host}:{self.port}"
+
+    @property
+    def feature_text(self) -> str:
+        return " ".join(
+            item.lower()
+            for item in (self.raw, self.host, self.sni, self.path)
+            if item
+        )
 
 
 def eprint(*args):
@@ -79,9 +106,16 @@ def iter_subscription_lines(text: str) -> Iterable[str]:
                 yield line
 
 
+def first_value(data: dict, keys: Iterable[str], default: str = "") -> str:
+    for key in keys:
+        value = data.get(key)
+        if value not in (None, ""):
+            return str(value)
+    return default
+
+
 def parse_vmess(raw: str) -> Node | None:
-    payload = raw[len("vmess://") :]
-    decoded = b64decode_text(payload)
+    decoded = b64decode_text(raw[len("vmess://") :])
     if not decoded:
         return None
 
@@ -94,7 +128,14 @@ def parse_vmess(raw: str) -> Node | None:
 
     if not host or not (0 < port < 65536):
         return None
-    return Node(raw=raw, scheme="vmess", host=host, port=port)
+
+    network = first_value(data, ("net", "network", "type"), "tcp").lower()
+    security = first_value(data, ("tls", "security"), "").lower()
+    if security in ("1", "true"):
+        security = "tls"
+    sni = first_value(data, ("sni", "host", "add"), "")
+    path = first_value(data, ("path",), "")
+    return Node(raw=raw, scheme="vmess", host=host, port=port, network=network, security=security, sni=sni, path=path)
 
 
 def parse_url_node(raw: str, scheme: str) -> Node | None:
@@ -107,14 +148,35 @@ def parse_url_node(raw: str, scheme: str) -> Node | None:
 
     if not host or not port or not (0 < port < 65536):
         return None
-    return Node(raw=raw, scheme=scheme, host=host, port=port)
+
+    params = dict(parse_qsl(parsed.query, keep_blank_values=True))
+    network = first_value(params, ("type", "network", "net"), "tcp").lower()
+    security = first_value(params, ("security", "tls"), "").lower()
+    if scheme in ("trojan", "hysteria", "hy2") and not security:
+        security = "tls"
+    sni = first_value(params, ("sni", "peer", "host"), "")
+    path = first_value(params, ("path",), "")
+    return Node(raw=raw, scheme=scheme, host=host, port=port, network=network, security=security, sni=sni, path=path)
 
 
 def parse_ss(raw: str) -> Node | None:
     try:
         parsed = urlsplit(raw)
         if parsed.hostname and parsed.port:
-            return Node(raw=raw, scheme="ss", host=parsed.hostname, port=parsed.port)
+            params = dict(parse_qsl(parsed.query, keep_blank_values=True))
+            plugin = params.get("plugin", "").lower()
+            network = "ws" if "websocket" in plugin or "ws" in plugin else "tcp"
+            security = "tls" if "tls" in plugin else ""
+            return Node(
+                raw=raw,
+                scheme="ss",
+                host=parsed.hostname,
+                port=parsed.port,
+                network=network,
+                security=security,
+                sni=params.get("host", ""),
+                path=params.get("path", ""),
+            )
     except ValueError:
         pass
 
@@ -172,6 +234,18 @@ def parse_node(raw: str) -> Node | None:
     return None
 
 
+def strip_ipv6_brackets(host: str) -> str:
+    return host.strip().strip("[]")
+
+
+def is_ip_address(host: str) -> bool:
+    try:
+        ipaddress.ip_address(strip_ipv6_brackets(host))
+        return True
+    except ValueError:
+        return False
+
+
 async def resolve_node(node: Node, timeout: float) -> Node:
     if is_ip_address(node.host):
         node.resolved_ip = strip_ipv6_brackets(node.host)
@@ -193,18 +267,6 @@ async def resolve_node(node: Node, timeout: float) -> Node:
     return node
 
 
-def strip_ipv6_brackets(host: str) -> str:
-    return host.strip().strip("[]")
-
-
-def is_ip_address(host: str) -> bool:
-    try:
-        ipaddress.ip_address(strip_ipv6_brackets(host))
-        return True
-    except ValueError:
-        return False
-
-
 async def resolve_all(nodes: list[Node], timeout: float, concurrency: int) -> list[Node]:
     semaphore = asyncio.Semaphore(concurrency)
 
@@ -215,30 +277,68 @@ async def resolve_all(nodes: list[Node], timeout: float, concurrency: int) -> li
     return await asyncio.gather(*(run(node) for node in nodes))
 
 
-async def tcp_ping(node: Node, timeout: float) -> Node | None:
-    target = node.resolved_ip or node.host
-    try:
-        reader, writer = await asyncio.wait_for(
-            asyncio.open_connection(target, node.port),
-            timeout=timeout,
-        )
-        writer.close()
-        await writer.wait_closed()
-        reader.feed_eof()
-        return node
-    except (OSError, asyncio.TimeoutError, ValueError):
-        return None
+def has_cdn_hint(node: Node) -> bool:
+    return any(hint in node.feature_text for hint in CDN_HINTS)
 
 
-async def tcp_filter(nodes: list[Node], timeout: float, concurrency: int) -> list[Node]:
-    semaphore = asyncio.Semaphore(concurrency)
+def score_node(node: Node) -> Node:
+    score = 0
+    reasons = []
 
-    async def run(node: Node) -> Node | None:
-        async with semaphore:
-            return await tcp_ping(node, timeout)
+    if node.network == "ws":
+        score += 40
+        reasons.append("ws")
+    elif node.network in ("grpc", "h2", "httpupgrade"):
+        score += 18
+        reasons.append(node.network)
+    elif node.network == "tcp":
+        score -= 35
+        reasons.append("tcp_penalty")
 
-    results = await asyncio.gather(*(run(node) for node in nodes))
-    return [node for node in results if node is not None]
+    if node.security in ("tls", "reality"):
+        score += 35
+        reasons.append(node.security)
+    elif node.security:
+        score += 8
+        reasons.append(node.security)
+    else:
+        score -= 25
+        reasons.append("no_tls")
+
+    if node.network == "ws" and node.security in ("tls", "reality"):
+        score += 45
+        reasons.append("ws_tls")
+
+    if node.port in CDN_PORTS:
+        score += 18
+        reasons.append(f"cdn_port_{node.port}")
+
+    if has_cdn_hint(node):
+        score += 35
+        reasons.append("cdn_hint")
+
+    if node.scheme in ("vless", "vmess", "trojan"):
+        score += 8
+        reasons.append(node.scheme)
+    elif node.scheme in ("ss", "ssr") and node.network == "tcp" and not node.security:
+        score -= 20
+        reasons.append("plain_ss")
+
+    node.score = score
+    node.reasons = reasons
+    return node
+
+
+def feature_filter(nodes: Iterable[Node], min_score: int, keep_plain_tcp: bool) -> list[Node]:
+    filtered = []
+    for node in nodes:
+        score_node(node)
+        if not keep_plain_tcp and node.network == "tcp" and node.security not in ("tls", "reality"):
+            continue
+        if node.score < min_score:
+            continue
+        filtered.append(node)
+    return sorted(filtered, key=lambda item: item.score, reverse=True)
 
 
 def dedupe_by_endpoint(nodes: Iterable[Node]) -> list[Node]:
@@ -253,10 +353,56 @@ def dedupe_by_endpoint(nodes: Iterable[Node]) -> list[Node]:
     return unique
 
 
+async def domestic_ping_check(node: Node, api_url: str, timeout: float) -> bool:
+    if not api_url:
+        return True
+
+    payload = {
+        "host": node.resolved_ip or node.host,
+        "port": node.port,
+        "timeout": timeout,
+    }
+
+    def request_api() -> bool:
+        try:
+            response = requests.post(api_url, json=payload, timeout=timeout + 2)
+            response.raise_for_status()
+            data = response.json()
+        except (requests.RequestException, ValueError):
+            return True
+
+        if isinstance(data, dict):
+            if data.get("alive") is False:
+                return False
+            loss = data.get("loss") or data.get("packet_loss")
+            if isinstance(loss, (int, float)) and loss >= 80:
+                return False
+            latency = data.get("latency") or data.get("rtt")
+            if isinstance(latency, (int, float)) and latency <= timeout * 1000:
+                return True
+        return bool(data.get("alive", True)) if isinstance(data, dict) else True
+
+    return await asyncio.to_thread(request_api)
+
+
+async def domestic_filter(nodes: list[Node], api_url: str, timeout: float, concurrency: int) -> list[Node]:
+    if not api_url:
+        return nodes
+
+    semaphore = asyncio.Semaphore(concurrency)
+
+    async def run(node: Node) -> Node | None:
+        async with semaphore:
+            return node if await domestic_ping_check(node, api_url, timeout) else None
+
+    results = await asyncio.gather(*(run(node) for node in nodes))
+    return [node for node in results if node is not None]
+
+
 def country_flag(code: str) -> str:
     code = (code or "UN").upper()
     if len(code) != 2 or not code.isalpha():
-        return "🌐"
+        return "[UN]"
     return "".join(chr(ord(char) + 127397) for char in code)
 
 
@@ -330,9 +476,7 @@ def rename_node(node: Node, name: str) -> str:
         return rename_vmess(node.raw, name)
     if node.scheme == "ssr":
         return rename_ssr(node.raw, name)
-    if node.scheme in ("vless", "trojan", "ss", "hysteria", "hy2"):
-        return rename_url_node(node.raw, name)
-    return node.raw
+    return rename_url_node(node.raw, name)
 
 
 def normalize_and_rename(nodes: list[Node], geo_timeout: float) -> list[str]:
@@ -379,14 +523,20 @@ def positive_int(value: str) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        description="Clean V2Ray subscription nodes with endpoint dedupe, TCP ping, geo rename, and Base64 output."
+        description="Build a China-friendly V2Ray candidate pool with endpoint dedupe and CDN/WS/TLS feature scoring."
     )
     parser.add_argument("--input", default="v2ray.txt", help="Raw node file to read.")
-    parser.add_argument("--output", default="v2ray.txt", help="Base64 subscription file to write.")
-    parser.add_argument("--timeout", type=float, default=3.0, help="TCP/connect timeout in seconds.")
+    parser.add_argument("--output", default="v2ray_candidates.txt", help="Base64 candidate subscription to write.")
+    parser.add_argument("--mirror-output", help="Optional second output path, useful for keeping v2ray.txt as candidate feed.")
+    parser.add_argument("--resolve-timeout", type=float, default=3.0, help="DNS resolve timeout in seconds.")
     parser.add_argument("--geo-timeout", type=float, default=8.0, help="IP geo API timeout in seconds.")
-    parser.add_argument("--concurrency", type=positive_int, default=300, help="Concurrent DNS/TCP checks.")
-    parser.add_argument("--limit", type=positive_int, help="Optional limit for local testing.")
+    parser.add_argument("--domestic-api", default=os.getenv("DOMESTIC_PING_API", ""), help="Optional China-side ping API URL.")
+    parser.add_argument("--domestic-timeout", type=float, default=3.0, help="Domestic ping API timeout hint.")
+    parser.add_argument("--concurrency", type=positive_int, default=300, help="Concurrent DNS/API checks.")
+    parser.add_argument("--min-score", type=int, default=55, help="Minimum feature score to keep a node.")
+    parser.add_argument("--max-candidates", type=positive_int, default=2500, help="Maximum candidate nodes to output.")
+    parser.add_argument("--keep-plain-tcp", action="store_true", help="Keep low-potential plain TCP nodes.")
+    parser.add_argument("--limit", type=positive_int, help="Optional input limit for local testing.")
     return parser
 
 
@@ -396,16 +546,28 @@ async def async_main(args: argparse.Namespace) -> int:
         parsed_nodes = parsed_nodes[: args.limit]
     eprint(f"parsed nodes: {len(parsed_nodes)}")
 
-    resolved_nodes = await resolve_all(parsed_nodes, args.timeout, args.concurrency)
+    resolved_nodes = await resolve_all(parsed_nodes, args.resolve_timeout, args.concurrency)
     unique_nodes = dedupe_by_endpoint(resolved_nodes)
     eprint(f"unique endpoints: {len(unique_nodes)}")
 
-    alive_nodes = await tcp_filter(unique_nodes, args.timeout, args.concurrency)
-    eprint(f"tcp alive nodes: {len(alive_nodes)}")
+    feature_nodes = feature_filter(unique_nodes, args.min_score, args.keep_plain_tcp)
+    eprint(f"feature candidates: {len(feature_nodes)}")
 
-    renamed_nodes = normalize_and_rename(alive_nodes, args.geo_timeout)
+    domestic_nodes = await domestic_filter(
+        feature_nodes,
+        args.domestic_api,
+        args.domestic_timeout,
+        min(args.concurrency, 80),
+    )
+    if args.domestic_api:
+        eprint(f"domestic api candidates: {len(domestic_nodes)}")
+
+    candidates = domestic_nodes[: args.max_candidates]
+    renamed_nodes = normalize_and_rename(candidates, args.geo_timeout)
     write_subscription(args.output, renamed_nodes)
-    eprint(f"written nodes: {len(renamed_nodes)} -> {args.output}")
+    if args.mirror_output:
+        write_subscription(args.mirror_output, renamed_nodes)
+    eprint(f"written candidates: {len(renamed_nodes)} -> {args.output}")
     return 0
 
 

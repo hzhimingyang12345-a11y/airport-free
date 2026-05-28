@@ -34,6 +34,8 @@ jobs:
           rm -f clash/* || true
           rm -f v2ray/* || true
           rm -f v2ray.txt
+          rm -f v2ray_raw.txt
+          rm -f v2ray_candidates.txt
           rm -f nodes/proxy.txt || true
 
       - name: Generate raw v2ray nodes
@@ -41,12 +43,12 @@ jobs:
           for file in nodes/v2/*.py; do
             py_name=$(basename "$file" .py)
             python "$file" > "v2ray/${py_name}.txt"
-            cat "v2ray/${py_name}.txt" >> v2ray.txt
+            cat "v2ray/${py_name}.txt" >> v2ray_raw.txt
           done
 
-      - name: Clean v2ray subscription
+      - name: Build v2ray candidate pool
         run: |
-          python "nodes/clean_v2ray.py" --input v2ray.txt --output v2ray.txt --timeout 3 --concurrency 300
+          python "nodes/clean_v2ray.py" --input v2ray_raw.txt --output v2ray_candidates.txt --mirror-output v2ray.txt --min-score 55 --max-candidates 2500 --concurrency 300
 
       - name: Generate clash nodes
         run: |
