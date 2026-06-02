@@ -25,16 +25,85 @@ dns:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
 proxies:
-  - name: 俄羅斯節點丨yoyapai.com
+  - name: 美國節點
+    type: vmess
+    server: 2a02:6ea0:d32f::f8fe:349b
+    port: 24202
+    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /github.com/Alvin9999-newpac/fanqiang
+    udp: true
+  - name: 美國節點_1
+    type: vmess
+    server: 2a02:6ea0:d32f::f8fe:349b
+    port: 24202
+    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /github.com/Alvin9999-newpac/fanqiang
+    udp: true
+  - name: 美國節點_2
+    type: vmess
+    server: 2a02:6ea0:d32f::f8fe:349b
+    port: 24202
+    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /github.com/Alvin9999-newpac/fanqiang
+      headers:
+        Host: 2a02:6ea0:d32f::f8fe:349b
+    udp: true
+  - name: 日本節點
+    type: vmess
+    server: 2a02:6ea0:d32f::f8fe:349b
+    port: 24202
+    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /github.com/Alvin9999-newpac/fanqiang
+      headers:
+        Host: 2a02:6ea0:d32f::f8fe:349b
+    udp: true
+  - name: 美國節點_3
+    type: vmess
+    server: 2a02:6ea0:d32f::f8fe:349b
+    port: 24202
+    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /github.com/Alvin9999-newpac/fanqiang
+    udp: true
+  - name: 俄羅斯丨yoyapai.com
     type: vless
     server: 85.234.114.53
-    port: 22231
+    port: 443
     uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
     servername: r1.mizulina.top
     tls: true
     client-fingerprint: edge
     udp: true
-  - name: 俄羅斯丨yoyapai.com
+  - name: 俄羅斯丨yoyapai.com_1
     type: vless
     server: r1.mizulina.top
     port: 22231
@@ -44,32 +113,90 @@ proxies:
     flow: xtls-rprx-vision
     client-fingerprint: edge
     udp: true
-  - name: 俄羅斯丨yoyapai.com_1
-    type: vless
-    server: 85.234.114.53
-    port: 443
-    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-    servername: r1.mizulina.top
-    tls: true
-    client-fingerprint: edge
-    udp: true
-  - name: 俄羅斯節點丨yoyapai.com_1
+  - name: 俄羅斯丨yoyapai.com_2
     type: vless
     server: r1.mizulina.top
     port: 22231
     uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
     servername: r1.mizulina.top
     tls: true
+    client-fingerprint: chrome
+    udp: true
+  - name: 俄羅斯節點丨yoyapai.com
+    type: vless
+    server: 85.234.114.53
+    port: 22231
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
+    tls: true
     client-fingerprint: edge
     udp: true
-  - name: 德國節點丨yoyapai.com
+  - name: 香港丨yoyapai.com
+    type: trojan
+    server: au-4.tr202605.com
+    port: 443
+    password: 65fQmPHHbPcBCfvSHt
+    skip-cert-verify: false
+    tls: true
+    udp: true
+  - name: 德國丨yoyapai.com
     type: ss
     server: hackney-latest-strike.freesocks.work
     port: 443
     cipher: chacha20-ietf-poly1305
     password: XUMTygEM1jVYIvysXKqA5T
     udp: true
-  - name: 英國節點
+  - name: 香港節點
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_4
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_5
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_6
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_7
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國
     type: vmess
     server: 82.198.246.37
     port: 180
@@ -89,37 +216,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英國節點_1
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_1
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_2
+  - name: 英國_1
     type: vmess
     server: 82.198.246.37
     port: 180
@@ -134,44 +231,7 @@ proxies:
     server: 103.181.164.145
     port: 54022
     uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國_1
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國_2
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 🇺🇸 US美國丨yoyapai.com
-    type: ss
-    server: hackney-latest-strike.freesocks.work
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: XUMTygEM1jVYIvysXKqA5T
-    udp: true
-  - name: 英國_3
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
+    alterId: 64
     cipher: auto
     tls: false
     skip-cert-verify: false
@@ -182,13 +242,107 @@ proxies:
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
-    cipher: aes-128-gcm
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國節點
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國節點_1
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_8
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英國節點
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_9
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國節點丨yoyapai.com
+    type: ss
+    server: hackney-latest-strike.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: XUMTygEM1jVYIvysXKqA5T
+    udp: true
+  - name: 🇺🇸 US美國丨yoyapai.com
+    type: ss
+    server: hackney-latest-strike.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: XUMTygEM1jVYIvysXKqA5T
+    udp: true
+  - name: 英國節點_1
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_10
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英國節點_2
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
   - name: 英國節點_3
     type: vmess
-    server: 82.198.246.37
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -199,26 +353,6 @@ proxies:
   - name: 英國節點_4
     type: vmess
     server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_2
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_3
-    type: vmess
-    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -238,7 +372,7 @@ proxies:
     udp: true
   - name: 英國節點_6
     type: vmess
-    server: 82.198.246.214
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -246,7 +380,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美國節點_4
+  - name: 德國節點_2
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -258,7 +392,7 @@ proxies:
     udp: true
   - name: 英國節點_7
     type: vmess
-    server: 82.198.246.214
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -266,7 +400,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 德國節點
+  - name: 美國節點_11
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -286,19 +420,49 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美國節點_5
+  - name: 美國節點_12
     type: vmess
-    server: 82.198.246.214
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
-    cipher: aes-128-gcm
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國節點_3
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國節點_4
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國節點_5
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
   - name: 英國節點_9
     type: vmess
-    server: 82.198.246.214
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -308,17 +472,7 @@ proxies:
     udp: true
   - name: 英國節點_10
     type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_6
-    type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -336,7 +490,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美國節點_7
+  - name: 美國節點_13
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -366,16 +520,6 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美國_2
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
   - name: 英國節點_14
     type: vmess
     server: 82.198.246.214
@@ -386,23 +530,13 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美國節點_8
+  - name: 美國節點_14
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_9
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
+    cipher: aes-128-gcm
     tls: false
     skip-cert-verify: false
     udp: true
@@ -418,6 +552,46 @@ proxies:
     udp: true
   - name: 英國節點_16
     type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英國_2
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_15
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_16
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_17
+    type: vmess
     server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
@@ -428,7 +602,7 @@ proxies:
     udp: true
   - name: 英國節點_17
     type: vmess
-    server: 82.198.246.214
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -436,9 +610,29 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 德國節點_1
+  - name: 美國節點_18
     type: vmess
-    server: 82.198.246.37
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國節點_6
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_19
+    type: vmess
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -448,17 +642,7 @@ proxies:
     udp: true
   - name: 英國節點_18
     type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國_4
-    type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -468,7 +652,7 @@ proxies:
     udp: true
   - name: 英國節點_19
     type: vmess
-    server: 82.198.246.214
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -486,9 +670,9 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 德國節點_2
+  - name: 英國節點_21
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -496,7 +680,17 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英國節點_21
+  - name: 美國節點_20
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國節點_7
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -508,7 +702,7 @@ proxies:
     udp: true
   - name: 英國節點_22
     type: vmess
-    server: 82.198.246.214
+    server: 82.198.246.37
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -517,46 +711,6 @@ proxies:
     skip-cert-verify: false
     udp: true
   - name: 英國節點_23
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 德國節點_3
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 德國節點_4
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_10
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_11
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -568,7 +722,57 @@ proxies:
     udp: true
   - name: 英國節點_24
     type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_21
+    type: vmess
     server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英國_3
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國_2
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國_3
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: aes-128-gcm
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_22
+    type: vmess
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -578,47 +782,17 @@ proxies:
     udp: true
   - name: 英國節點_25
     type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國_5
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_12
-    type: vmess
     server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
-    cipher: aes-128-gcm
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_13
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 德國節點_5
+  - name: 英國_4
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -636,9 +810,81 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英國節點_27
+  - name: 英國_5
     type: vmess
     server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英國丨yoyapai.com
+    type: vless
+    server: 77.75.199.30
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /
+      headers:
+        Host: vms.lifetime59.workers.dev
+    udp: true
+  - name: 美國節點_23
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國節點_8
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_24
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_25
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國節點_9
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英國節點_27
+    type: vmess
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -676,9 +922,22 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美國_3
+  - name: 美國節點丨yoyapai.com
+    type: vless
+    server: www.udemy.com
+    port: 2095
+    uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+    network: ws
+    servername: cnmfangbinxing.cnmfangbinxing-r.workers.dev
+    tls: false
+    ws-opts:
+      path: /
+      headers:
+        Host: cnmfangbinxing.cnmfangbinxing-r.workers.dev
+    udp: true
+  - name: 德國節點_10
     type: vmess
-    server: 82.198.246.37
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -686,7 +945,46 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 德國節點_6
+  - name: 德國節點_11
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 俄羅斯節點丨yoyapai.com_1
+    type: vless
+    server: r1.mizulina.top
+    port: 22231
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
+    tls: true
+    client-fingerprint: chrome
+    udp: true
+  - name: 德國節點_12
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國節點_13
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德國節點_14
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -706,62 +1004,38 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美國節點_14
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 德國節點_7
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點丨yoyapai.com
-    type: vless
-    server: ns.cloudflare.com
-    port: 2095
-    uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
-    network: ws
-    servername: cnmfangbinxing.cnmfangbinxing-r.workers.dev
-    tls: false
-    ws-opts:
-      path: /
-      headers:
-        Host: cnmfangbinxing.cnmfangbinxing-r.workers.dev
-    udp: true
-  - name: 美國節點_15
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
   - name: 英國節點_32
     type: vmess
-    server: 82.198.246.37
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
+    udp: true
+  - name: 德國節點_15
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 俄羅斯丨yoyapai.com_3
+    type: vless
+    server: r1.mizulina.top
+    port: 22231
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
+    tls: true
+    client-fingerprint: edge
     udp: true
   - name: 英國節點_33
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -771,9 +1045,41 @@ proxies:
     udp: true
   - name: 英國節點_34
     type: vmess
-    server: 82.198.246.37
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英國節點_35
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英國丨yoyapai.com_1
+    type: vless
+    server: 80.93.202.40
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /
+      headers:
+        Host: vms.lifetime02.workers.dev
+    udp: true
+  - name: 香港節點_1
+    type: vmess
+    server: 103.181.164.145
+    port: 51556
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
     alterId: 0
     cipher: auto
     tls: false
@@ -786,224 +1092,9 @@ proxies:
     uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
     servername: r1.mizulina.top
     tls: true
-    client-fingerprint: chrome
-    udp: true
-  - name: 美國節點_16
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_17
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_35
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_36
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_37
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_38
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_39
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_40
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_18
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_19
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_41
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國_6
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 德國節點_8
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_42
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 俄羅斯丨yoyapai.com_2
-    type: vless
-    server: r1.mizulina.top
-    port: 22231
-    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-    servername: r1.mizulina.top
-    tls: true
     client-fingerprint: edge
     udp: true
-  - name: 美國節點丨yoyapai.com_1
-    type: vless
-    server: www.udemy.com
-    port: 2095
-    uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
-    network: ws
-    servername: cnmfangbinxing.cnmfangbinxing-r.workers.dev
-    tls: false
-    ws-opts:
-      path: /
-      headers:
-        Host: cnmfangbinxing.cnmfangbinxing-r.workers.dev
-    udp: true
-  - name: 美國節點_20
-    type: vmess
-    server: 2a02:6ea0:d32f::f8fe:349b
-    port: 24202
-    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /github.com/Alvin9999-newpac/fanqiang
-    udp: true
-  - name: 日本節點
-    type: vmess
-    server: 2a02:6ea0:d32f::f8fe:349b
-    port: 24202
-    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /github.com/Alvin9999-newpac/fanqiang
-      headers:
-        Host: 2a02:6ea0:d32f::f8fe:349b
-    udp: true
-  - name: 英國丨yoyapai.com
-    type: vless
-    server: 80.93.202.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /
-      headers:
-        Host: vms.lifetime02.workers.dev
-    udp: true
-  - name: 美國節點_21
-    type: vmess
-    server: 2a02:6ea0:d32f::f8fe:349b
-    port: 24202
-    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /github.com/Alvin9999-newpac/fanqiang
-    udp: true
-  - name: 亞太地區
+  - name: 美國節點_26
     type: vmess
     server: 103.181.164.145
     port: 51556
@@ -1013,7 +1104,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 香港節點
+  - name: 美國節點_27
     type: vmess
     server: 103.181.164.145
     port: 51556
@@ -1044,67 +1135,28 @@ proxies:
     skip-cert-verify: false
     tls: true
     udp: true
-  - name: 保加利亞丨yoyapai.com
-    type: vless
-    server: ger-nnn.prostosetup.org
-    port: 443
-    uuid: 1b43419a-b711-40d4-a0ee-eb5c73e60c92
-    servername: github.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: y3ZMu-ium5mBqE_h3xJ66vT0Z6HCIlTDti9emCQjDjw
-      short-id: bcb6b0217a1206b3
-    udp: true
   - name: 美國丨yoyapai.com_1
-    type: vless
-    server: 132.243.231.122
-    port: 8443
-    uuid: 7625adbb-52f7-4ff4-95f8-677471071a77
-    servername: io.ozone.ru
+    type: trojan
+    server: jpbgp.netvigor.cc
+    port: 19128
+    password: gcuCpQfaiVeDBdWG
+    sni: yazhou10.dynu.net
+    skip-cert-verify: false
     tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: A9jwrodyycJJV-apFQ91_rrh1vfJ_hSzZGNP9GBPGCM
-      short-id: 92d0c4089b6c1da3
     udp: true
-  - name: 美國丨yoyapai.com_2
-    type: vless
-    server: france1cxc.chickenkiller.com
-    port: 443
-    uuid: d78c12c4-6927-40b8-8550-ed9be00334da
-    servername: France1cxc.chickenkiller.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: UJSYKOEr3a3V1P_obd9zNBq4Pr3Vbd_a2nHE7-rstRk
-      short-id: 6089640857a72237
+  - name: 荷蘭節點丨yoyapai.com
+    type: ss
+    server: 109.107.182.229
+    port: 51544
+    cipher: chacha20-ietf-poly1305
+    password: MZeSTvpl2uoey1R0frhPyJ
     udp: true
-  - name: 保加利亞丨yoyapai.com_1
-    type: vless
-    server: 87.120.93.146
+  - name: 美國節點丨yoyapai.com_1
+    type: ss
+    server: tinkered-pennies-puppies.freesocks.work
     port: 443
-    uuid: 91e120bc-159a-4390-b4e1-197b19602ea0
-    servername: sub.sbrf-cdn342.ru
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: qq
-    udp: true
-  - name: 美國丨yoyapai.com_3
-    type: vless
-    server: long-forest.ru
-    port: 443
-    uuid: cca617a2-ede0-4855-a2ef-cc7f218ba75d
-    servername: winter-pine.long-forest.ru
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: GFKdmtxlB5JubXEfTy6PNIeuqN8ys53SPwV3zat3Fzg
-      short-id: 3c6a5f13df37ed6e
+    cipher: chacha20-ietf-poly1305
+    password: hbGrpfvNrJsUmKmPbR3iY2
     udp: true
   - name: 美國節點丨yoyapai.com_2
     type: ss
@@ -1113,17 +1165,20 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: hbGrpfvNrJsUmKmPbR3iY2
     udp: true
-  - name: 美國丨yoyapai.com_4
-    type: ss
-    server: tinkered-pennies-puppies.freesocks.work
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: hbGrpfvNrJsUmKmPbR3iY2
-    udp: true
-  - name: 美國節點_22
+  - name: 美國節點_28
     type: vmess
     server: 103.181.164.145
-    port: 51556
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美國節點_29
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
     uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
     alterId: 0
     cipher: auto
@@ -1135,22 +1190,22 @@ proxies:
     server: 103.181.164.145
     port: 54022
     uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 64
+    alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 保加利亞丨yoyapai.com_2
-    type: vless
-    server: 87.120.126.205
-    port: 443
-    uuid: 91e120bc-159a-4390-b4e1-197b19602ea0
-    servername: sub.sbrf-cdn342.ru
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: qq
+  - name: 美國節點_30
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
-  - name: 香港節點_1
+  - name: 香港節點_2
     type: vmess
     server: 103.181.164.145
     port: 51556
@@ -1160,7 +1215,27 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美國節點_23
+  - name: 美國節點_31
+    type: vmess
+    server: 103.181.164.145
+    port: 51556
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 亞太地區
+    type: vmess
+    server: 103.181.164.145
+    port: 51556
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 亞太地區_1
     type: vmess
     server: 103.181.164.145
     port: 54022
@@ -1170,38 +1245,43 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美國節點_24
-    type: vmess
-    server: 103.181.164.145
-    port: 54022
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 0
-    cipher: auto
-    tls: false
+  - name: 韩国+KT电信
+    type: trojan
+    server: 121.178.83.161
+    port: 26214
+    password: GKHWMe2R4qwNcNxu6l3KMkdd
+    sni: vpn1.rnmcnm.com
     skip-cert-verify: false
-    udp: true
-  - name: 美國丨yoyapai.com_5
-    type: vless
-    server: swe-8t.freeonline.pro
-    port: 443
-    uuid: 980231fb-4372-5c81-b696-20aa34d33af0
-    servername: www.microsoft.com
     tls: true
-    flow: xtls-rprx-vision
+    ws-opts:
+      path: /trj-ws
+      headers:
+        Host: vpn1.rnmcnm.com
+    udp: true
+  - name: 韩国+KT电信_1
+    type: trojan
+    server: 121.180.171.43
+    port: 11310
+    password: GKHWMe2R4qwNcNxu6l3KMkdd
+    sni: vpn1.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /trj-ws
+      headers:
+        Host: vpn1.rnmcnm.com
+    udp: true
+  - name: 烏克蘭節點丨yoyapai.com
+    type: vless
+    server: 178.215.238.148
+    port: 8443
+    uuid: 21c1132b-068c-46fb-880e-3268f6a30e7f
+    servername: eh.vk.com
+    tls: true
     client-fingerprint: chrome
     reality-opts:
-      public-key: 978-Yxgtd3AWTVfiXEQqCstdwrT1qgsgleGPIRGQDl8
-      short-id: bdac121c7debdaba
-    udp: true
-  - name: 美國節點_25
-    type: vmess
-    server: 103.181.164.145
-    port: 54022
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
+      public-key: Crjd0I6hcasRXZcfNf7cs-YtJLpQ8u-t1CbwHIDAciU
+      short-id: 478dc6
     udp: true
   - name: 新加坡丨yoyapai.com
     type: vless
@@ -1217,7 +1297,7 @@ proxies:
       headers:
         Host: juzi8186.qea.ccwu.cc
     udp: true
-  - name: 英國丨yoyapai.com_1
+  - name: 英國丨yoyapai.com_2
     type: vless
     server: swe-8t.freeonline.pro
     port: 443
@@ -1243,7 +1323,7 @@ proxies:
       public-key: praGYag8YPbz_rcd_Pa6Fqsi_IiQtO3e1AosYBcu6h4
       short-id: 378086fbdb7c61cd
     udp: true
-  - name: 美國丨yoyapai.com_6
+  - name: 美國丨yoyapai.com_2
     type: anytls
     server: 76842b4a-tb71c0-tgprfk-ddgs.losjan20.west.wctype.com
     port: 8300
@@ -1252,7 +1332,7 @@ proxies:
     skip-cert-verify: true
     tls: true
     udp: true
-  - name: 美國丨yoyapai.com_7
+  - name: 美國丨yoyapai.com_3
     type: vless
     server: 144.31.109.243
     port: 50574
@@ -1265,7 +1345,7 @@ proxies:
       public-key: CVJiOkrMyWN6mIX85kT5xqTlzOtW0_d08eoBIHw8Iyg
       short-id: cbae7fd41d21563e
     udp: true
-  - name: 美國丨yoyapai.com_8
+  - name: 美國丨yoyapai.com_4
     type: vless
     server: www.epicgames.com
     port: 2095
@@ -1277,7 +1357,7 @@ proxies:
       headers:
         Host: cnmfangbinxing-nmsl.cnmfangbinxing-0.workers.dev
     udp: true
-  - name: 德國丨yoyapai.com
+  - name: 德國丨yoyapai.com_1
     type: vless
     server: 77.37.33.50
     port: 8880
@@ -1309,7 +1389,7 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
     udp: true
-  - name: 美國節點_26
+  - name: 美國節點_32
     type: vmess
     server: 82.198.246.97
     port: 180
@@ -1319,7 +1399,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英國節點_43
+  - name: 英國節點_36
     type: vmess
     server: 82.198.246.97
     port: 180
@@ -1329,7 +1409,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英國節點_44
+  - name: 英國節點_37
     type: vmess
     server: 82.198.246.97
     port: 180
@@ -1339,7 +1419,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美國節點_27
+  - name: 英國節點_38
     type: vmess
     server: 82.198.246.97
     port: 180
@@ -1349,7 +1429,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英國節點_45
+  - name: 英國節點_39
     type: vmess
     server: 82.198.246.97
     port: 180
@@ -1359,7 +1439,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英國節點_46
+  - name: 英國節點_40
     type: vmess
     server: 82.198.246.97
     port: 180
@@ -1369,7 +1449,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英國節點_47
+  - name: 英國節點_41
     type: vmess
     server: 82.198.246.97
     port: 180
@@ -1379,117 +1459,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英國節點_48
-    type: vmess
-    server: 82.198.246.97
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_28
-    type: vmess
-    server: 82.198.246.97
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_49
-    type: vmess
-    server: 82.198.246.97
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_50
-    type: vmess
-    server: 82.198.246.97
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_51
-    type: vmess
-    server: 82.198.246.97
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美國節點_29
-    type: vmess
-    server: 82.198.246.97
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_52
-    type: vmess
-    server: 82.198.246.97
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_53
-    type: vmess
-    server: 82.198.246.97
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_54
-    type: vmess
-    server: 82.198.246.97
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_55
-    type: vmess
-    server: 82.198.246.97
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_56
-    type: vmess
-    server: 82.198.246.97
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英國節點_57
+  - name: 英國節點_42
     type: vmess
     server: 82.198.246.97
     port: 180
@@ -1577,71 +1547,6 @@ proxies:
       headers:
         Host: Koma-YT.PAGeS.Dev
     udp: true
-  - name: 荷蘭節點丨yoyapai.com
-    type: trojan
-    server: 152.53.200.89
-    port: 8443
-    password: 8r<[9'l6hAO#8ZQi
-    sni: Koma-YT.PAGeS.Dev
-    skip-cert-verify: true
-    tls: true
-    ws-opts:
-      path: /trTelegram🇨🇳 @WangCai2
-      headers:
-        Host: Koma-YT.PAGeS.Dev
-    udp: true
-  - name: 🇰🇷KR南朝鮮丨yoyapai.com_1
-    type: vless
-    server: 121.180.225.222
-    port: 19530
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.latonyamadeline.ndjp.net
-    tls: true
-    ws-opts:
-      path: /?ed=2560&https://t.me/WangCai2🇨🇳
-      headers:
-        Host: sni.latonyamadeline.ndjp.net
-    udp: true
-  - name: 🇰🇷KR韓國節點丨yoyapai.com_1
-    type: vless
-    server: 121.180.225.222
-    port: 16000
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.latonyamadeline.ndjp.net
-    tls: true
-    ws-opts:
-      path: /?ed=2560&https://t.me/WangCai2🇨🇳
-      headers:
-        Host: sni.latonyamadeline.ndjp.net
-    udp: true
-  - name: 🇳🇱NL荷蘭丨yoyapai.com_3
-    type: trojan
-    server: 91.221.190.80
-    port: 443
-    password: 8r<[9'l6hAO#8ZQi
-    sni: Koma-YT.PAGeS.Dev
-    skip-cert-verify: true
-    tls: true
-    ws-opts:
-      path: /trTelegram🇨🇳 @WangCai2
-      headers:
-        Host: Koma-YT.PAGeS.Dev
-    udp: true
-  - name: 意大利節點🇮🇹IT丨yoyapai.com_1
-    type: trojan
-    server: 151.241.215.148
-    port: 443
-    password: 8r<[9'l6hAO#8ZQi
-    sni: Koma-YT.PAGeS.Dev
-    skip-cert-verify: true
-    tls: true
-    ws-opts:
-      path: /trTelegram🇨🇳 @WangCai2
-      headers:
-        Host: Koma-YT.PAGeS.Dev
-    udp: true
   - name: 荷蘭節點丨yoyapai.com_1
     type: trojan
     server: 152.53.200.89
@@ -1664,13 +1569,6 @@ proxies:
     cipher: auto
     tls: false
     skip-cert-verify: false
-    udp: true
-  - name: 台湾省桃园市+中华电信丨yoyapai.com
-    type: ss
-    server: r3mrcg007117fb8.cybervena.com
-    port: 50099
-    cipher: chacha20-ietf-poly1305
-    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
     udp: true
   - name: 丹麥丨yoyapai.com_1
     type: vless
@@ -1719,339 +1617,422 @@ proxies:
       headers:
         Host: vpn.rnmcnm.com
     udp: true
+  - name: 美國節點丨yoyapai.com_3
+    type: vless
+    server: ns.cloudflare.com
+    port: 2095
+    uuid: 86c50e3a-5b87-49dd-bd20-03c7f2735e40
+    network: ws
+    servername: cnmfangbinxing.cnmfangbinxing-r.workers.dev
+    tls: false
+    ws-opts:
+      path: /
+      headers:
+        Host: cnmfangbinxing.cnmfangbinxing-r.workers.dev
+    udp: true
+  - name: 美國丨yoyapai.com_5
+    type: vless
+    server: france1cxc.chickenkiller.com
+    port: 443
+    uuid: d78c12c4-6927-40b8-8550-ed9be00334da
+    servername: France1cxc.chickenkiller.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: UJSYKOEr3a3V1P_obd9zNBq4Pr3Vbd_a2nHE7-rstRk
+      short-id: 6089640857a72237
+    udp: true
+  - name: 保加利亞丨yoyapai.com
+    type: vless
+    server: 87.120.93.146
+    port: 443
+    uuid: 91e120bc-159a-4390-b4e1-197b19602ea0
+    servername: sub.sbrf-cdn342.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: qq
+    udp: true
+  - name: 美國丨yoyapai.com_6
+    type: vless
+    server: long-forest.ru
+    port: 443
+    uuid: cca617a2-ede0-4855-a2ef-cc7f218ba75d
+    servername: winter-pine.long-forest.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: GFKdmtxlB5JubXEfTy6PNIeuqN8ys53SPwV3zat3Fzg
+      short-id: 3c6a5f13df37ed6e
+    udp: true
+  - name: 美國丨yoyapai.com_7
+    type: vless
+    server: 132.243.231.122
+    port: 8443
+    uuid: 7625adbb-52f7-4ff4-95f8-677471071a77
+    servername: io.ozone.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: A9jwrodyycJJV-apFQ91_rrh1vfJ_hSzZGNP9GBPGCM
+      short-id: 92d0c4089b6c1da3
+    udp: true
+  - name: 保加利亞丨yoyapai.com_1
+    type: vless
+    server: 87.120.126.205
+    port: 443
+    uuid: 91e120bc-159a-4390-b4e1-197b19602ea0
+    servername: sub.sbrf-cdn342.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: qq
+    udp: true
+  - name: 保加利亞丨yoyapai.com_2
+    type: vless
+    server: ger-nnn.prostosetup.org
+    port: 443
+    uuid: 1b43419a-b711-40d4-a0ee-eb5c73e60c92
+    servername: github.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: y3ZMu-ium5mBqE_h3xJ66vT0Z6HCIlTDti9emCQjDjw
+      short-id: bcb6b0217a1206b3
+    udp: true
 proxy-groups:
   - name: 🚀 节点选择
     type: select
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - 俄羅斯節點丨yoyapai.com
-      - 俄羅斯丨yoyapai.com
-      - 俄羅斯丨yoyapai.com_1
-      - 俄羅斯節點丨yoyapai.com_1
-      - 德國節點丨yoyapai.com
-      - 英國節點
-      - 英國
-      - 英國節點_1
       - 美國節點
       - 美國節點_1
-      - 英國節點_2
-      - 美國
+      - 美國節點_2
+      - 日本節點
+      - 美國節點_3
+      - 俄羅斯丨yoyapai.com
+      - 俄羅斯丨yoyapai.com_1
+      - 俄羅斯丨yoyapai.com_2
+      - 俄羅斯節點丨yoyapai.com
+      - 香港丨yoyapai.com
+      - 德國丨yoyapai.com
+      - 香港節點
+      - 美國節點_4
+      - 美國節點_5
+      - 美國節點_6
+      - 美國節點_7
+      - 德國
+      - 英國
       - 英國_1
-      - 英國_2
-      - 🇺🇸 US美國丨yoyapai.com
-      - 英國_3
+      - 美國
       - 美國_1
+      - 德國節點
+      - 德國節點_1
+      - 美國節點_8
+      - 英國節點
+      - 美國節點_9
+      - 德國節點丨yoyapai.com
+      - 🇺🇸 US美國丨yoyapai.com
+      - 英國節點_1
+      - 美國節點_10
+      - 英國節點_2
       - 英國節點_3
       - 英國節點_4
-      - 美國節點_2
-      - 美國節點_3
       - 英國節點_5
       - 英國節點_6
-      - 美國節點_4
-      - 英國節點_7
-      - 德國節點
-      - 英國節點_8
-      - 美國節點_5
-      - 英國節點_9
-      - 英國節點_10
-      - 美國節點_6
-      - 英國節點_11
-      - 美國節點_7
-      - 英國節點_12
-      - 英國節點_13
-      - 美國_2
-      - 英國節點_14
-      - 美國節點_8
-      - 美國節點_9
-      - 英國節點_15
-      - 英國節點_16
-      - 英國節點_17
-      - 德國節點_1
-      - 英國節點_18
-      - 英國_4
-      - 英國節點_19
-      - 英國節點_20
       - 德國節點_2
-      - 英國節點_21
-      - 英國節點_22
-      - 英國節點_23
+      - 英國節點_7
+      - 美國節點_11
+      - 英國節點_8
+      - 美國節點_12
       - 德國節點_3
       - 德國節點_4
-      - 美國節點_10
-      - 美國節點_11
-      - 英國節點_24
-      - 英國節點_25
-      - 英國_5
-      - 美國節點_12
-      - 美國節點_13
       - 德國節點_5
+      - 英國節點_9
+      - 英國節點_10
+      - 英國節點_11
+      - 美國節點_13
+      - 英國節點_12
+      - 英國節點_13
+      - 英國節點_14
+      - 美國節點_14
+      - 英國節點_15
+      - 英國節點_16
+      - 英國_2
+      - 美國節點_15
+      - 美國節點_16
+      - 美國節點_17
+      - 英國節點_17
+      - 美國節點_18
+      - 德國節點_6
+      - 美國節點_19
+      - 英國節點_18
+      - 英國節點_19
+      - 英國節點_20
+      - 英國節點_21
+      - 美國節點_20
+      - 德國節點_7
+      - 英國節點_22
+      - 英國節點_23
+      - 英國節點_24
+      - 美國節點_21
+      - 英國_3
+      - 美國_2
+      - 美國_3
+      - 美國節點_22
+      - 英國節點_25
+      - 英國_4
       - 英國節點_26
+      - 英國_5
+      - 英國丨yoyapai.com
+      - 美國節點_23
+      - 德國節點_8
+      - 美國節點_24
+      - 美國節點_25
+      - 德國節點_9
       - 英國節點_27
       - 英國節點_28
       - 英國節點_29
       - 英國節點_30
-      - 美國_3
-      - 德國節點_6
-      - 英國節點_31
-      - 美國節點_14
-      - 德國節點_7
       - 美國節點丨yoyapai.com
-      - 美國節點_15
+      - 德國節點_10
+      - 德國節點_11
+      - 俄羅斯節點丨yoyapai.com_1
+      - 德國節點_12
+      - 德國節點_13
+      - 德國節點_14
+      - 英國節點_31
       - 英國節點_32
+      - 德國節點_15
+      - 俄羅斯丨yoyapai.com_3
       - 英國節點_33
       - 英國節點_34
-      - 俄羅斯節點丨yoyapai.com_2
-      - 美國節點_16
-      - 美國節點_17
       - 英國節點_35
+      - 英國丨yoyapai.com_1
+      - 香港節點_1
+      - 俄羅斯節點丨yoyapai.com_2
+      - 美國節點_26
+      - 美國節點_27
+      - 烏克蘭丨yoyapai.com
+      - 美國丨yoyapai.com
+      - 美國丨yoyapai.com_1
+      - 荷蘭節點丨yoyapai.com
+      - 美國節點丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_2
+      - 美國節點_28
+      - 美國節點_29
+      - 美國_4
+      - 美國節點_30
+      - 香港節點_2
+      - 美國節點_31
+      - 亞太地區
+      - 亞太地區_1
+      - 韩国+KT电信
+      - 韩国+KT电信_1
+      - 烏克蘭節點丨yoyapai.com
+      - 新加坡丨yoyapai.com
+      - 英國丨yoyapai.com_2
+      - 烏克蘭丨yoyapai.com_1
+      - 美國丨yoyapai.com_2
+      - 美國丨yoyapai.com_3
+      - 美國丨yoyapai.com_4
+      - 德國丨yoyapai.com_1
+      - 丹麥丨yoyapai.com
+      - 臺灣節點丨yoyapai.com
+      - 美國節點_32
       - 英國節點_36
       - 英國節點_37
       - 英國節點_38
       - 英國節點_39
       - 英國節點_40
-      - 美國節點_18
-      - 美國節點_19
       - 英國節點_41
-      - 英國_6
-      - 德國節點_8
       - 英國節點_42
-      - 俄羅斯丨yoyapai.com_2
-      - 美國節點丨yoyapai.com_1
-      - 美國節點_20
-      - 日本節點
-      - 英國丨yoyapai.com
-      - 美國節點_21
-      - 亞太地區
-      - 香港節點
-      - 烏克蘭丨yoyapai.com
-      - 美國丨yoyapai.com
-      - 保加利亞丨yoyapai.com
-      - 美國丨yoyapai.com_1
-      - 美國丨yoyapai.com_2
-      - 保加利亞丨yoyapai.com_1
-      - 美國丨yoyapai.com_3
-      - 美國節點丨yoyapai.com_2
-      - 美國丨yoyapai.com_4
-      - 美國節點_22
-      - 美國_4
-      - 保加利亞丨yoyapai.com_2
-      - 香港節點_1
-      - 美國節點_23
-      - 美國節點_24
-      - 美國丨yoyapai.com_5
-      - 美國節點_25
-      - 新加坡丨yoyapai.com
-      - 英國丨yoyapai.com_1
-      - 烏克蘭丨yoyapai.com_1
-      - 美國丨yoyapai.com_6
-      - 美國丨yoyapai.com_7
-      - 美國丨yoyapai.com_8
-      - 德國丨yoyapai.com
-      - 丹麥丨yoyapai.com
-      - 臺灣節點丨yoyapai.com
-      - 美國節點_26
-      - 英國節點_43
-      - 英國節點_44
-      - 美國節點_27
-      - 英國節點_45
-      - 英國節點_46
-      - 英國節點_47
-      - 英國節點_48
-      - 美國節點_28
-      - 英國節點_49
-      - 英國節點_50
-      - 英國節點_51
-      - 美國節點_29
-      - 英國節點_52
-      - 英國節點_53
-      - 英國節點_54
-      - 英國節點_55
-      - 英國節點_56
-      - 英國節點_57
       - 🇰🇷KR南朝鮮丨yoyapai.com
       - 🇰🇷KR韓國節點丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com
       - 意大利節點🇮🇹IT丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com_1
       - 🇳🇱NL荷蘭丨yoyapai.com_2
-      - 荷蘭節點丨yoyapai.com
-      - 🇰🇷KR南朝鮮丨yoyapai.com_1
-      - 🇰🇷KR韓國節點丨yoyapai.com_1
-      - 🇳🇱NL荷蘭丨yoyapai.com_3
-      - 意大利節點🇮🇹IT丨yoyapai.com_1
       - 荷蘭節點丨yoyapai.com_1
       - 美国 加利福尼亚州圣何塞
-      - 台湾省桃园市+中华电信丨yoyapai.com
       - 丹麥丨yoyapai.com_1
       - 中國臺灣丨yoyapai.com
       - 韓國丨yoyapai.com
       - 韓國丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_3
+      - 美國丨yoyapai.com_5
+      - 保加利亞丨yoyapai.com
+      - 美國丨yoyapai.com_6
+      - 美國丨yoyapai.com_7
+      - 保加利亞丨yoyapai.com_1
+      - 保加利亞丨yoyapai.com_2
   - name: ♻️ 自动选择
     type: url-test
     proxies:
-      - 俄羅斯節點丨yoyapai.com
-      - 俄羅斯丨yoyapai.com
-      - 俄羅斯丨yoyapai.com_1
-      - 俄羅斯節點丨yoyapai.com_1
-      - 德國節點丨yoyapai.com
-      - 英國節點
-      - 英國
-      - 英國節點_1
       - 美國節點
       - 美國節點_1
-      - 英國節點_2
-      - 美國
+      - 美國節點_2
+      - 日本節點
+      - 美國節點_3
+      - 俄羅斯丨yoyapai.com
+      - 俄羅斯丨yoyapai.com_1
+      - 俄羅斯丨yoyapai.com_2
+      - 俄羅斯節點丨yoyapai.com
+      - 香港丨yoyapai.com
+      - 德國丨yoyapai.com
+      - 香港節點
+      - 美國節點_4
+      - 美國節點_5
+      - 美國節點_6
+      - 美國節點_7
+      - 德國
+      - 英國
       - 英國_1
-      - 英國_2
-      - 🇺🇸 US美國丨yoyapai.com
-      - 英國_3
+      - 美國
       - 美國_1
+      - 德國節點
+      - 德國節點_1
+      - 美國節點_8
+      - 英國節點
+      - 美國節點_9
+      - 德國節點丨yoyapai.com
+      - 🇺🇸 US美國丨yoyapai.com
+      - 英國節點_1
+      - 美國節點_10
+      - 英國節點_2
       - 英國節點_3
       - 英國節點_4
-      - 美國節點_2
-      - 美國節點_3
       - 英國節點_5
       - 英國節點_6
-      - 美國節點_4
-      - 英國節點_7
-      - 德國節點
-      - 英國節點_8
-      - 美國節點_5
-      - 英國節點_9
-      - 英國節點_10
-      - 美國節點_6
-      - 英國節點_11
-      - 美國節點_7
-      - 英國節點_12
-      - 英國節點_13
-      - 美國_2
-      - 英國節點_14
-      - 美國節點_8
-      - 美國節點_9
-      - 英國節點_15
-      - 英國節點_16
-      - 英國節點_17
-      - 德國節點_1
-      - 英國節點_18
-      - 英國_4
-      - 英國節點_19
-      - 英國節點_20
       - 德國節點_2
-      - 英國節點_21
-      - 英國節點_22
-      - 英國節點_23
+      - 英國節點_7
+      - 美國節點_11
+      - 英國節點_8
+      - 美國節點_12
       - 德國節點_3
       - 德國節點_4
-      - 美國節點_10
-      - 美國節點_11
-      - 英國節點_24
-      - 英國節點_25
-      - 英國_5
-      - 美國節點_12
-      - 美國節點_13
       - 德國節點_5
+      - 英國節點_9
+      - 英國節點_10
+      - 英國節點_11
+      - 美國節點_13
+      - 英國節點_12
+      - 英國節點_13
+      - 英國節點_14
+      - 美國節點_14
+      - 英國節點_15
+      - 英國節點_16
+      - 英國_2
+      - 美國節點_15
+      - 美國節點_16
+      - 美國節點_17
+      - 英國節點_17
+      - 美國節點_18
+      - 德國節點_6
+      - 美國節點_19
+      - 英國節點_18
+      - 英國節點_19
+      - 英國節點_20
+      - 英國節點_21
+      - 美國節點_20
+      - 德國節點_7
+      - 英國節點_22
+      - 英國節點_23
+      - 英國節點_24
+      - 美國節點_21
+      - 英國_3
+      - 美國_2
+      - 美國_3
+      - 美國節點_22
+      - 英國節點_25
+      - 英國_4
       - 英國節點_26
+      - 英國_5
+      - 英國丨yoyapai.com
+      - 美國節點_23
+      - 德國節點_8
+      - 美國節點_24
+      - 美國節點_25
+      - 德國節點_9
       - 英國節點_27
       - 英國節點_28
       - 英國節點_29
       - 英國節點_30
-      - 美國_3
-      - 德國節點_6
-      - 英國節點_31
-      - 美國節點_14
-      - 德國節點_7
       - 美國節點丨yoyapai.com
-      - 美國節點_15
+      - 德國節點_10
+      - 德國節點_11
+      - 俄羅斯節點丨yoyapai.com_1
+      - 德國節點_12
+      - 德國節點_13
+      - 德國節點_14
+      - 英國節點_31
       - 英國節點_32
+      - 德國節點_15
+      - 俄羅斯丨yoyapai.com_3
       - 英國節點_33
       - 英國節點_34
-      - 俄羅斯節點丨yoyapai.com_2
-      - 美國節點_16
-      - 美國節點_17
       - 英國節點_35
+      - 英國丨yoyapai.com_1
+      - 香港節點_1
+      - 俄羅斯節點丨yoyapai.com_2
+      - 美國節點_26
+      - 美國節點_27
+      - 烏克蘭丨yoyapai.com
+      - 美國丨yoyapai.com
+      - 美國丨yoyapai.com_1
+      - 荷蘭節點丨yoyapai.com
+      - 美國節點丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_2
+      - 美國節點_28
+      - 美國節點_29
+      - 美國_4
+      - 美國節點_30
+      - 香港節點_2
+      - 美國節點_31
+      - 亞太地區
+      - 亞太地區_1
+      - 韩国+KT电信
+      - 韩国+KT电信_1
+      - 烏克蘭節點丨yoyapai.com
+      - 新加坡丨yoyapai.com
+      - 英國丨yoyapai.com_2
+      - 烏克蘭丨yoyapai.com_1
+      - 美國丨yoyapai.com_2
+      - 美國丨yoyapai.com_3
+      - 美國丨yoyapai.com_4
+      - 德國丨yoyapai.com_1
+      - 丹麥丨yoyapai.com
+      - 臺灣節點丨yoyapai.com
+      - 美國節點_32
       - 英國節點_36
       - 英國節點_37
       - 英國節點_38
       - 英國節點_39
       - 英國節點_40
-      - 美國節點_18
-      - 美國節點_19
       - 英國節點_41
-      - 英國_6
-      - 德國節點_8
       - 英國節點_42
-      - 俄羅斯丨yoyapai.com_2
-      - 美國節點丨yoyapai.com_1
-      - 美國節點_20
-      - 日本節點
-      - 英國丨yoyapai.com
-      - 美國節點_21
-      - 亞太地區
-      - 香港節點
-      - 烏克蘭丨yoyapai.com
-      - 美國丨yoyapai.com
-      - 保加利亞丨yoyapai.com
-      - 美國丨yoyapai.com_1
-      - 美國丨yoyapai.com_2
-      - 保加利亞丨yoyapai.com_1
-      - 美國丨yoyapai.com_3
-      - 美國節點丨yoyapai.com_2
-      - 美國丨yoyapai.com_4
-      - 美國節點_22
-      - 美國_4
-      - 保加利亞丨yoyapai.com_2
-      - 香港節點_1
-      - 美國節點_23
-      - 美國節點_24
-      - 美國丨yoyapai.com_5
-      - 美國節點_25
-      - 新加坡丨yoyapai.com
-      - 英國丨yoyapai.com_1
-      - 烏克蘭丨yoyapai.com_1
-      - 美國丨yoyapai.com_6
-      - 美國丨yoyapai.com_7
-      - 美國丨yoyapai.com_8
-      - 德國丨yoyapai.com
-      - 丹麥丨yoyapai.com
-      - 臺灣節點丨yoyapai.com
-      - 美國節點_26
-      - 英國節點_43
-      - 英國節點_44
-      - 美國節點_27
-      - 英國節點_45
-      - 英國節點_46
-      - 英國節點_47
-      - 英國節點_48
-      - 美國節點_28
-      - 英國節點_49
-      - 英國節點_50
-      - 英國節點_51
-      - 美國節點_29
-      - 英國節點_52
-      - 英國節點_53
-      - 英國節點_54
-      - 英國節點_55
-      - 英國節點_56
-      - 英國節點_57
       - 🇰🇷KR南朝鮮丨yoyapai.com
       - 🇰🇷KR韓國節點丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com
       - 意大利節點🇮🇹IT丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com_1
       - 🇳🇱NL荷蘭丨yoyapai.com_2
-      - 荷蘭節點丨yoyapai.com
-      - 🇰🇷KR南朝鮮丨yoyapai.com_1
-      - 🇰🇷KR韓國節點丨yoyapai.com_1
-      - 🇳🇱NL荷蘭丨yoyapai.com_3
-      - 意大利節點🇮🇹IT丨yoyapai.com_1
       - 荷蘭節點丨yoyapai.com_1
       - 美国 加利福尼亚州圣何塞
-      - 台湾省桃园市+中华电信丨yoyapai.com
       - 丹麥丨yoyapai.com_1
       - 中國臺灣丨yoyapai.com
       - 韓國丨yoyapai.com
       - 韓國丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_3
+      - 美國丨yoyapai.com_5
+      - 保加利亞丨yoyapai.com
+      - 美國丨yoyapai.com_6
+      - 美國丨yoyapai.com_7
+      - 保加利亞丨yoyapai.com_1
+      - 保加利亞丨yoyapai.com_2
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -2061,669 +2042,665 @@ proxy-groups:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 俄羅斯節點丨yoyapai.com
-      - 俄羅斯丨yoyapai.com
-      - 俄羅斯丨yoyapai.com_1
-      - 俄羅斯節點丨yoyapai.com_1
-      - 德國節點丨yoyapai.com
-      - 英國節點
-      - 英國
-      - 英國節點_1
       - 美國節點
       - 美國節點_1
-      - 英國節點_2
-      - 美國
+      - 美國節點_2
+      - 日本節點
+      - 美國節點_3
+      - 俄羅斯丨yoyapai.com
+      - 俄羅斯丨yoyapai.com_1
+      - 俄羅斯丨yoyapai.com_2
+      - 俄羅斯節點丨yoyapai.com
+      - 香港丨yoyapai.com
+      - 德國丨yoyapai.com
+      - 香港節點
+      - 美國節點_4
+      - 美國節點_5
+      - 美國節點_6
+      - 美國節點_7
+      - 德國
+      - 英國
       - 英國_1
-      - 英國_2
-      - 🇺🇸 US美國丨yoyapai.com
-      - 英國_3
+      - 美國
       - 美國_1
+      - 德國節點
+      - 德國節點_1
+      - 美國節點_8
+      - 英國節點
+      - 美國節點_9
+      - 德國節點丨yoyapai.com
+      - 🇺🇸 US美國丨yoyapai.com
+      - 英國節點_1
+      - 美國節點_10
+      - 英國節點_2
       - 英國節點_3
       - 英國節點_4
-      - 美國節點_2
-      - 美國節點_3
       - 英國節點_5
       - 英國節點_6
-      - 美國節點_4
-      - 英國節點_7
-      - 德國節點
-      - 英國節點_8
-      - 美國節點_5
-      - 英國節點_9
-      - 英國節點_10
-      - 美國節點_6
-      - 英國節點_11
-      - 美國節點_7
-      - 英國節點_12
-      - 英國節點_13
-      - 美國_2
-      - 英國節點_14
-      - 美國節點_8
-      - 美國節點_9
-      - 英國節點_15
-      - 英國節點_16
-      - 英國節點_17
-      - 德國節點_1
-      - 英國節點_18
-      - 英國_4
-      - 英國節點_19
-      - 英國節點_20
       - 德國節點_2
-      - 英國節點_21
-      - 英國節點_22
-      - 英國節點_23
+      - 英國節點_7
+      - 美國節點_11
+      - 英國節點_8
+      - 美國節點_12
       - 德國節點_3
       - 德國節點_4
-      - 美國節點_10
-      - 美國節點_11
-      - 英國節點_24
-      - 英國節點_25
-      - 英國_5
-      - 美國節點_12
-      - 美國節點_13
       - 德國節點_5
+      - 英國節點_9
+      - 英國節點_10
+      - 英國節點_11
+      - 美國節點_13
+      - 英國節點_12
+      - 英國節點_13
+      - 英國節點_14
+      - 美國節點_14
+      - 英國節點_15
+      - 英國節點_16
+      - 英國_2
+      - 美國節點_15
+      - 美國節點_16
+      - 美國節點_17
+      - 英國節點_17
+      - 美國節點_18
+      - 德國節點_6
+      - 美國節點_19
+      - 英國節點_18
+      - 英國節點_19
+      - 英國節點_20
+      - 英國節點_21
+      - 美國節點_20
+      - 德國節點_7
+      - 英國節點_22
+      - 英國節點_23
+      - 英國節點_24
+      - 美國節點_21
+      - 英國_3
+      - 美國_2
+      - 美國_3
+      - 美國節點_22
+      - 英國節點_25
+      - 英國_4
       - 英國節點_26
+      - 英國_5
+      - 英國丨yoyapai.com
+      - 美國節點_23
+      - 德國節點_8
+      - 美國節點_24
+      - 美國節點_25
+      - 德國節點_9
       - 英國節點_27
       - 英國節點_28
       - 英國節點_29
       - 英國節點_30
-      - 美國_3
-      - 德國節點_6
-      - 英國節點_31
-      - 美國節點_14
-      - 德國節點_7
       - 美國節點丨yoyapai.com
-      - 美國節點_15
+      - 德國節點_10
+      - 德國節點_11
+      - 俄羅斯節點丨yoyapai.com_1
+      - 德國節點_12
+      - 德國節點_13
+      - 德國節點_14
+      - 英國節點_31
       - 英國節點_32
+      - 德國節點_15
+      - 俄羅斯丨yoyapai.com_3
       - 英國節點_33
       - 英國節點_34
-      - 俄羅斯節點丨yoyapai.com_2
-      - 美國節點_16
-      - 美國節點_17
       - 英國節點_35
+      - 英國丨yoyapai.com_1
+      - 香港節點_1
+      - 俄羅斯節點丨yoyapai.com_2
+      - 美國節點_26
+      - 美國節點_27
+      - 烏克蘭丨yoyapai.com
+      - 美國丨yoyapai.com
+      - 美國丨yoyapai.com_1
+      - 荷蘭節點丨yoyapai.com
+      - 美國節點丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_2
+      - 美國節點_28
+      - 美國節點_29
+      - 美國_4
+      - 美國節點_30
+      - 香港節點_2
+      - 美國節點_31
+      - 亞太地區
+      - 亞太地區_1
+      - 韩国+KT电信
+      - 韩国+KT电信_1
+      - 烏克蘭節點丨yoyapai.com
+      - 新加坡丨yoyapai.com
+      - 英國丨yoyapai.com_2
+      - 烏克蘭丨yoyapai.com_1
+      - 美國丨yoyapai.com_2
+      - 美國丨yoyapai.com_3
+      - 美國丨yoyapai.com_4
+      - 德國丨yoyapai.com_1
+      - 丹麥丨yoyapai.com
+      - 臺灣節點丨yoyapai.com
+      - 美國節點_32
       - 英國節點_36
       - 英國節點_37
       - 英國節點_38
       - 英國節點_39
       - 英國節點_40
-      - 美國節點_18
-      - 美國節點_19
       - 英國節點_41
-      - 英國_6
-      - 德國節點_8
       - 英國節點_42
-      - 俄羅斯丨yoyapai.com_2
-      - 美國節點丨yoyapai.com_1
-      - 美國節點_20
-      - 日本節點
-      - 英國丨yoyapai.com
-      - 美國節點_21
-      - 亞太地區
-      - 香港節點
-      - 烏克蘭丨yoyapai.com
-      - 美國丨yoyapai.com
-      - 保加利亞丨yoyapai.com
-      - 美國丨yoyapai.com_1
-      - 美國丨yoyapai.com_2
-      - 保加利亞丨yoyapai.com_1
-      - 美國丨yoyapai.com_3
-      - 美國節點丨yoyapai.com_2
-      - 美國丨yoyapai.com_4
-      - 美國節點_22
-      - 美國_4
-      - 保加利亞丨yoyapai.com_2
-      - 香港節點_1
-      - 美國節點_23
-      - 美國節點_24
-      - 美國丨yoyapai.com_5
-      - 美國節點_25
-      - 新加坡丨yoyapai.com
-      - 英國丨yoyapai.com_1
-      - 烏克蘭丨yoyapai.com_1
-      - 美國丨yoyapai.com_6
-      - 美國丨yoyapai.com_7
-      - 美國丨yoyapai.com_8
-      - 德國丨yoyapai.com
-      - 丹麥丨yoyapai.com
-      - 臺灣節點丨yoyapai.com
-      - 美國節點_26
-      - 英國節點_43
-      - 英國節點_44
-      - 美國節點_27
-      - 英國節點_45
-      - 英國節點_46
-      - 英國節點_47
-      - 英國節點_48
-      - 美國節點_28
-      - 英國節點_49
-      - 英國節點_50
-      - 英國節點_51
-      - 美國節點_29
-      - 英國節點_52
-      - 英國節點_53
-      - 英國節點_54
-      - 英國節點_55
-      - 英國節點_56
-      - 英國節點_57
       - 🇰🇷KR南朝鮮丨yoyapai.com
       - 🇰🇷KR韓國節點丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com
       - 意大利節點🇮🇹IT丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com_1
       - 🇳🇱NL荷蘭丨yoyapai.com_2
-      - 荷蘭節點丨yoyapai.com
-      - 🇰🇷KR南朝鮮丨yoyapai.com_1
-      - 🇰🇷KR韓國節點丨yoyapai.com_1
-      - 🇳🇱NL荷蘭丨yoyapai.com_3
-      - 意大利節點🇮🇹IT丨yoyapai.com_1
       - 荷蘭節點丨yoyapai.com_1
       - 美国 加利福尼亚州圣何塞
-      - 台湾省桃园市+中华电信丨yoyapai.com
       - 丹麥丨yoyapai.com_1
       - 中國臺灣丨yoyapai.com
       - 韓國丨yoyapai.com
       - 韓國丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_3
+      - 美國丨yoyapai.com_5
+      - 保加利亞丨yoyapai.com
+      - 美國丨yoyapai.com_6
+      - 美國丨yoyapai.com_7
+      - 保加利亞丨yoyapai.com_1
+      - 保加利亞丨yoyapai.com_2
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 俄羅斯節點丨yoyapai.com
-      - 俄羅斯丨yoyapai.com
-      - 俄羅斯丨yoyapai.com_1
-      - 俄羅斯節點丨yoyapai.com_1
-      - 德國節點丨yoyapai.com
-      - 英國節點
-      - 英國
-      - 英國節點_1
       - 美國節點
       - 美國節點_1
-      - 英國節點_2
-      - 美國
+      - 美國節點_2
+      - 日本節點
+      - 美國節點_3
+      - 俄羅斯丨yoyapai.com
+      - 俄羅斯丨yoyapai.com_1
+      - 俄羅斯丨yoyapai.com_2
+      - 俄羅斯節點丨yoyapai.com
+      - 香港丨yoyapai.com
+      - 德國丨yoyapai.com
+      - 香港節點
+      - 美國節點_4
+      - 美國節點_5
+      - 美國節點_6
+      - 美國節點_7
+      - 德國
+      - 英國
       - 英國_1
-      - 英國_2
-      - 🇺🇸 US美國丨yoyapai.com
-      - 英國_3
+      - 美國
       - 美國_1
+      - 德國節點
+      - 德國節點_1
+      - 美國節點_8
+      - 英國節點
+      - 美國節點_9
+      - 德國節點丨yoyapai.com
+      - 🇺🇸 US美國丨yoyapai.com
+      - 英國節點_1
+      - 美國節點_10
+      - 英國節點_2
       - 英國節點_3
       - 英國節點_4
-      - 美國節點_2
-      - 美國節點_3
       - 英國節點_5
       - 英國節點_6
-      - 美國節點_4
-      - 英國節點_7
-      - 德國節點
-      - 英國節點_8
-      - 美國節點_5
-      - 英國節點_9
-      - 英國節點_10
-      - 美國節點_6
-      - 英國節點_11
-      - 美國節點_7
-      - 英國節點_12
-      - 英國節點_13
-      - 美國_2
-      - 英國節點_14
-      - 美國節點_8
-      - 美國節點_9
-      - 英國節點_15
-      - 英國節點_16
-      - 英國節點_17
-      - 德國節點_1
-      - 英國節點_18
-      - 英國_4
-      - 英國節點_19
-      - 英國節點_20
       - 德國節點_2
-      - 英國節點_21
-      - 英國節點_22
-      - 英國節點_23
+      - 英國節點_7
+      - 美國節點_11
+      - 英國節點_8
+      - 美國節點_12
       - 德國節點_3
       - 德國節點_4
-      - 美國節點_10
-      - 美國節點_11
-      - 英國節點_24
-      - 英國節點_25
-      - 英國_5
-      - 美國節點_12
-      - 美國節點_13
       - 德國節點_5
+      - 英國節點_9
+      - 英國節點_10
+      - 英國節點_11
+      - 美國節點_13
+      - 英國節點_12
+      - 英國節點_13
+      - 英國節點_14
+      - 美國節點_14
+      - 英國節點_15
+      - 英國節點_16
+      - 英國_2
+      - 美國節點_15
+      - 美國節點_16
+      - 美國節點_17
+      - 英國節點_17
+      - 美國節點_18
+      - 德國節點_6
+      - 美國節點_19
+      - 英國節點_18
+      - 英國節點_19
+      - 英國節點_20
+      - 英國節點_21
+      - 美國節點_20
+      - 德國節點_7
+      - 英國節點_22
+      - 英國節點_23
+      - 英國節點_24
+      - 美國節點_21
+      - 英國_3
+      - 美國_2
+      - 美國_3
+      - 美國節點_22
+      - 英國節點_25
+      - 英國_4
       - 英國節點_26
+      - 英國_5
+      - 英國丨yoyapai.com
+      - 美國節點_23
+      - 德國節點_8
+      - 美國節點_24
+      - 美國節點_25
+      - 德國節點_9
       - 英國節點_27
       - 英國節點_28
       - 英國節點_29
       - 英國節點_30
-      - 美國_3
-      - 德國節點_6
-      - 英國節點_31
-      - 美國節點_14
-      - 德國節點_7
       - 美國節點丨yoyapai.com
-      - 美國節點_15
+      - 德國節點_10
+      - 德國節點_11
+      - 俄羅斯節點丨yoyapai.com_1
+      - 德國節點_12
+      - 德國節點_13
+      - 德國節點_14
+      - 英國節點_31
       - 英國節點_32
+      - 德國節點_15
+      - 俄羅斯丨yoyapai.com_3
       - 英國節點_33
       - 英國節點_34
-      - 俄羅斯節點丨yoyapai.com_2
-      - 美國節點_16
-      - 美國節點_17
       - 英國節點_35
+      - 英國丨yoyapai.com_1
+      - 香港節點_1
+      - 俄羅斯節點丨yoyapai.com_2
+      - 美國節點_26
+      - 美國節點_27
+      - 烏克蘭丨yoyapai.com
+      - 美國丨yoyapai.com
+      - 美國丨yoyapai.com_1
+      - 荷蘭節點丨yoyapai.com
+      - 美國節點丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_2
+      - 美國節點_28
+      - 美國節點_29
+      - 美國_4
+      - 美國節點_30
+      - 香港節點_2
+      - 美國節點_31
+      - 亞太地區
+      - 亞太地區_1
+      - 韩国+KT电信
+      - 韩国+KT电信_1
+      - 烏克蘭節點丨yoyapai.com
+      - 新加坡丨yoyapai.com
+      - 英國丨yoyapai.com_2
+      - 烏克蘭丨yoyapai.com_1
+      - 美國丨yoyapai.com_2
+      - 美國丨yoyapai.com_3
+      - 美國丨yoyapai.com_4
+      - 德國丨yoyapai.com_1
+      - 丹麥丨yoyapai.com
+      - 臺灣節點丨yoyapai.com
+      - 美國節點_32
       - 英國節點_36
       - 英國節點_37
       - 英國節點_38
       - 英國節點_39
       - 英國節點_40
-      - 美國節點_18
-      - 美國節點_19
       - 英國節點_41
-      - 英國_6
-      - 德國節點_8
       - 英國節點_42
-      - 俄羅斯丨yoyapai.com_2
-      - 美國節點丨yoyapai.com_1
-      - 美國節點_20
-      - 日本節點
-      - 英國丨yoyapai.com
-      - 美國節點_21
-      - 亞太地區
-      - 香港節點
-      - 烏克蘭丨yoyapai.com
-      - 美國丨yoyapai.com
-      - 保加利亞丨yoyapai.com
-      - 美國丨yoyapai.com_1
-      - 美國丨yoyapai.com_2
-      - 保加利亞丨yoyapai.com_1
-      - 美國丨yoyapai.com_3
-      - 美國節點丨yoyapai.com_2
-      - 美國丨yoyapai.com_4
-      - 美國節點_22
-      - 美國_4
-      - 保加利亞丨yoyapai.com_2
-      - 香港節點_1
-      - 美國節點_23
-      - 美國節點_24
-      - 美國丨yoyapai.com_5
-      - 美國節點_25
-      - 新加坡丨yoyapai.com
-      - 英國丨yoyapai.com_1
-      - 烏克蘭丨yoyapai.com_1
-      - 美國丨yoyapai.com_6
-      - 美國丨yoyapai.com_7
-      - 美國丨yoyapai.com_8
-      - 德國丨yoyapai.com
-      - 丹麥丨yoyapai.com
-      - 臺灣節點丨yoyapai.com
-      - 美國節點_26
-      - 英國節點_43
-      - 英國節點_44
-      - 美國節點_27
-      - 英國節點_45
-      - 英國節點_46
-      - 英國節點_47
-      - 英國節點_48
-      - 美國節點_28
-      - 英國節點_49
-      - 英國節點_50
-      - 英國節點_51
-      - 美國節點_29
-      - 英國節點_52
-      - 英國節點_53
-      - 英國節點_54
-      - 英國節點_55
-      - 英國節點_56
-      - 英國節點_57
       - 🇰🇷KR南朝鮮丨yoyapai.com
       - 🇰🇷KR韓國節點丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com
       - 意大利節點🇮🇹IT丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com_1
       - 🇳🇱NL荷蘭丨yoyapai.com_2
-      - 荷蘭節點丨yoyapai.com
-      - 🇰🇷KR南朝鮮丨yoyapai.com_1
-      - 🇰🇷KR韓國節點丨yoyapai.com_1
-      - 🇳🇱NL荷蘭丨yoyapai.com_3
-      - 意大利節點🇮🇹IT丨yoyapai.com_1
       - 荷蘭節點丨yoyapai.com_1
       - 美国 加利福尼亚州圣何塞
-      - 台湾省桃园市+中华电信丨yoyapai.com
       - 丹麥丨yoyapai.com_1
       - 中國臺灣丨yoyapai.com
       - 韓國丨yoyapai.com
       - 韓國丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_3
+      - 美國丨yoyapai.com_5
+      - 保加利亞丨yoyapai.com
+      - 美國丨yoyapai.com_6
+      - 美國丨yoyapai.com_7
+      - 保加利亞丨yoyapai.com_1
+      - 保加利亞丨yoyapai.com_2
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - 俄羅斯節點丨yoyapai.com
-      - 俄羅斯丨yoyapai.com
-      - 俄羅斯丨yoyapai.com_1
-      - 俄羅斯節點丨yoyapai.com_1
-      - 德國節點丨yoyapai.com
-      - 英國節點
-      - 英國
-      - 英國節點_1
       - 美國節點
       - 美國節點_1
-      - 英國節點_2
-      - 美國
+      - 美國節點_2
+      - 日本節點
+      - 美國節點_3
+      - 俄羅斯丨yoyapai.com
+      - 俄羅斯丨yoyapai.com_1
+      - 俄羅斯丨yoyapai.com_2
+      - 俄羅斯節點丨yoyapai.com
+      - 香港丨yoyapai.com
+      - 德國丨yoyapai.com
+      - 香港節點
+      - 美國節點_4
+      - 美國節點_5
+      - 美國節點_6
+      - 美國節點_7
+      - 德國
+      - 英國
       - 英國_1
-      - 英國_2
-      - 🇺🇸 US美國丨yoyapai.com
-      - 英國_3
+      - 美國
       - 美國_1
+      - 德國節點
+      - 德國節點_1
+      - 美國節點_8
+      - 英國節點
+      - 美國節點_9
+      - 德國節點丨yoyapai.com
+      - 🇺🇸 US美國丨yoyapai.com
+      - 英國節點_1
+      - 美國節點_10
+      - 英國節點_2
       - 英國節點_3
       - 英國節點_4
-      - 美國節點_2
-      - 美國節點_3
       - 英國節點_5
       - 英國節點_6
-      - 美國節點_4
-      - 英國節點_7
-      - 德國節點
-      - 英國節點_8
-      - 美國節點_5
-      - 英國節點_9
-      - 英國節點_10
-      - 美國節點_6
-      - 英國節點_11
-      - 美國節點_7
-      - 英國節點_12
-      - 英國節點_13
-      - 美國_2
-      - 英國節點_14
-      - 美國節點_8
-      - 美國節點_9
-      - 英國節點_15
-      - 英國節點_16
-      - 英國節點_17
-      - 德國節點_1
-      - 英國節點_18
-      - 英國_4
-      - 英國節點_19
-      - 英國節點_20
       - 德國節點_2
-      - 英國節點_21
-      - 英國節點_22
-      - 英國節點_23
+      - 英國節點_7
+      - 美國節點_11
+      - 英國節點_8
+      - 美國節點_12
       - 德國節點_3
       - 德國節點_4
-      - 美國節點_10
-      - 美國節點_11
-      - 英國節點_24
-      - 英國節點_25
-      - 英國_5
-      - 美國節點_12
-      - 美國節點_13
       - 德國節點_5
+      - 英國節點_9
+      - 英國節點_10
+      - 英國節點_11
+      - 美國節點_13
+      - 英國節點_12
+      - 英國節點_13
+      - 英國節點_14
+      - 美國節點_14
+      - 英國節點_15
+      - 英國節點_16
+      - 英國_2
+      - 美國節點_15
+      - 美國節點_16
+      - 美國節點_17
+      - 英國節點_17
+      - 美國節點_18
+      - 德國節點_6
+      - 美國節點_19
+      - 英國節點_18
+      - 英國節點_19
+      - 英國節點_20
+      - 英國節點_21
+      - 美國節點_20
+      - 德國節點_7
+      - 英國節點_22
+      - 英國節點_23
+      - 英國節點_24
+      - 美國節點_21
+      - 英國_3
+      - 美國_2
+      - 美國_3
+      - 美國節點_22
+      - 英國節點_25
+      - 英國_4
       - 英國節點_26
+      - 英國_5
+      - 英國丨yoyapai.com
+      - 美國節點_23
+      - 德國節點_8
+      - 美國節點_24
+      - 美國節點_25
+      - 德國節點_9
       - 英國節點_27
       - 英國節點_28
       - 英國節點_29
       - 英國節點_30
-      - 美國_3
-      - 德國節點_6
-      - 英國節點_31
-      - 美國節點_14
-      - 德國節點_7
       - 美國節點丨yoyapai.com
-      - 美國節點_15
+      - 德國節點_10
+      - 德國節點_11
+      - 俄羅斯節點丨yoyapai.com_1
+      - 德國節點_12
+      - 德國節點_13
+      - 德國節點_14
+      - 英國節點_31
       - 英國節點_32
+      - 德國節點_15
+      - 俄羅斯丨yoyapai.com_3
       - 英國節點_33
       - 英國節點_34
-      - 俄羅斯節點丨yoyapai.com_2
-      - 美國節點_16
-      - 美國節點_17
       - 英國節點_35
+      - 英國丨yoyapai.com_1
+      - 香港節點_1
+      - 俄羅斯節點丨yoyapai.com_2
+      - 美國節點_26
+      - 美國節點_27
+      - 烏克蘭丨yoyapai.com
+      - 美國丨yoyapai.com
+      - 美國丨yoyapai.com_1
+      - 荷蘭節點丨yoyapai.com
+      - 美國節點丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_2
+      - 美國節點_28
+      - 美國節點_29
+      - 美國_4
+      - 美國節點_30
+      - 香港節點_2
+      - 美國節點_31
+      - 亞太地區
+      - 亞太地區_1
+      - 韩国+KT电信
+      - 韩国+KT电信_1
+      - 烏克蘭節點丨yoyapai.com
+      - 新加坡丨yoyapai.com
+      - 英國丨yoyapai.com_2
+      - 烏克蘭丨yoyapai.com_1
+      - 美國丨yoyapai.com_2
+      - 美國丨yoyapai.com_3
+      - 美國丨yoyapai.com_4
+      - 德國丨yoyapai.com_1
+      - 丹麥丨yoyapai.com
+      - 臺灣節點丨yoyapai.com
+      - 美國節點_32
       - 英國節點_36
       - 英國節點_37
       - 英國節點_38
       - 英國節點_39
       - 英國節點_40
-      - 美國節點_18
-      - 美國節點_19
       - 英國節點_41
-      - 英國_6
-      - 德國節點_8
       - 英國節點_42
-      - 俄羅斯丨yoyapai.com_2
-      - 美國節點丨yoyapai.com_1
-      - 美國節點_20
-      - 日本節點
-      - 英國丨yoyapai.com
-      - 美國節點_21
-      - 亞太地區
-      - 香港節點
-      - 烏克蘭丨yoyapai.com
-      - 美國丨yoyapai.com
-      - 保加利亞丨yoyapai.com
-      - 美國丨yoyapai.com_1
-      - 美國丨yoyapai.com_2
-      - 保加利亞丨yoyapai.com_1
-      - 美國丨yoyapai.com_3
-      - 美國節點丨yoyapai.com_2
-      - 美國丨yoyapai.com_4
-      - 美國節點_22
-      - 美國_4
-      - 保加利亞丨yoyapai.com_2
-      - 香港節點_1
-      - 美國節點_23
-      - 美國節點_24
-      - 美國丨yoyapai.com_5
-      - 美國節點_25
-      - 新加坡丨yoyapai.com
-      - 英國丨yoyapai.com_1
-      - 烏克蘭丨yoyapai.com_1
-      - 美國丨yoyapai.com_6
-      - 美國丨yoyapai.com_7
-      - 美國丨yoyapai.com_8
-      - 德國丨yoyapai.com
-      - 丹麥丨yoyapai.com
-      - 臺灣節點丨yoyapai.com
-      - 美國節點_26
-      - 英國節點_43
-      - 英國節點_44
-      - 美國節點_27
-      - 英國節點_45
-      - 英國節點_46
-      - 英國節點_47
-      - 英國節點_48
-      - 美國節點_28
-      - 英國節點_49
-      - 英國節點_50
-      - 英國節點_51
-      - 美國節點_29
-      - 英國節點_52
-      - 英國節點_53
-      - 英國節點_54
-      - 英國節點_55
-      - 英國節點_56
-      - 英國節點_57
       - 🇰🇷KR南朝鮮丨yoyapai.com
       - 🇰🇷KR韓國節點丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com
       - 意大利節點🇮🇹IT丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com_1
       - 🇳🇱NL荷蘭丨yoyapai.com_2
-      - 荷蘭節點丨yoyapai.com
-      - 🇰🇷KR南朝鮮丨yoyapai.com_1
-      - 🇰🇷KR韓國節點丨yoyapai.com_1
-      - 🇳🇱NL荷蘭丨yoyapai.com_3
-      - 意大利節點🇮🇹IT丨yoyapai.com_1
       - 荷蘭節點丨yoyapai.com_1
       - 美国 加利福尼亚州圣何塞
-      - 台湾省桃园市+中华电信丨yoyapai.com
       - 丹麥丨yoyapai.com_1
       - 中國臺灣丨yoyapai.com
       - 韓國丨yoyapai.com
       - 韓國丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_3
+      - 美國丨yoyapai.com_5
+      - 保加利亞丨yoyapai.com
+      - 美國丨yoyapai.com_6
+      - 美國丨yoyapai.com_7
+      - 保加利亞丨yoyapai.com_1
+      - 保加利亞丨yoyapai.com_2
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 俄羅斯節點丨yoyapai.com
-      - 俄羅斯丨yoyapai.com
-      - 俄羅斯丨yoyapai.com_1
-      - 俄羅斯節點丨yoyapai.com_1
-      - 德國節點丨yoyapai.com
-      - 英國節點
-      - 英國
-      - 英國節點_1
       - 美國節點
       - 美國節點_1
-      - 英國節點_2
-      - 美國
+      - 美國節點_2
+      - 日本節點
+      - 美國節點_3
+      - 俄羅斯丨yoyapai.com
+      - 俄羅斯丨yoyapai.com_1
+      - 俄羅斯丨yoyapai.com_2
+      - 俄羅斯節點丨yoyapai.com
+      - 香港丨yoyapai.com
+      - 德國丨yoyapai.com
+      - 香港節點
+      - 美國節點_4
+      - 美國節點_5
+      - 美國節點_6
+      - 美國節點_7
+      - 德國
+      - 英國
       - 英國_1
-      - 英國_2
-      - 🇺🇸 US美國丨yoyapai.com
-      - 英國_3
+      - 美國
       - 美國_1
+      - 德國節點
+      - 德國節點_1
+      - 美國節點_8
+      - 英國節點
+      - 美國節點_9
+      - 德國節點丨yoyapai.com
+      - 🇺🇸 US美國丨yoyapai.com
+      - 英國節點_1
+      - 美國節點_10
+      - 英國節點_2
       - 英國節點_3
       - 英國節點_4
-      - 美國節點_2
-      - 美國節點_3
       - 英國節點_5
       - 英國節點_6
-      - 美國節點_4
-      - 英國節點_7
-      - 德國節點
-      - 英國節點_8
-      - 美國節點_5
-      - 英國節點_9
-      - 英國節點_10
-      - 美國節點_6
-      - 英國節點_11
-      - 美國節點_7
-      - 英國節點_12
-      - 英國節點_13
-      - 美國_2
-      - 英國節點_14
-      - 美國節點_8
-      - 美國節點_9
-      - 英國節點_15
-      - 英國節點_16
-      - 英國節點_17
-      - 德國節點_1
-      - 英國節點_18
-      - 英國_4
-      - 英國節點_19
-      - 英國節點_20
       - 德國節點_2
-      - 英國節點_21
-      - 英國節點_22
-      - 英國節點_23
+      - 英國節點_7
+      - 美國節點_11
+      - 英國節點_8
+      - 美國節點_12
       - 德國節點_3
       - 德國節點_4
-      - 美國節點_10
-      - 美國節點_11
-      - 英國節點_24
-      - 英國節點_25
-      - 英國_5
-      - 美國節點_12
-      - 美國節點_13
       - 德國節點_5
+      - 英國節點_9
+      - 英國節點_10
+      - 英國節點_11
+      - 美國節點_13
+      - 英國節點_12
+      - 英國節點_13
+      - 英國節點_14
+      - 美國節點_14
+      - 英國節點_15
+      - 英國節點_16
+      - 英國_2
+      - 美國節點_15
+      - 美國節點_16
+      - 美國節點_17
+      - 英國節點_17
+      - 美國節點_18
+      - 德國節點_6
+      - 美國節點_19
+      - 英國節點_18
+      - 英國節點_19
+      - 英國節點_20
+      - 英國節點_21
+      - 美國節點_20
+      - 德國節點_7
+      - 英國節點_22
+      - 英國節點_23
+      - 英國節點_24
+      - 美國節點_21
+      - 英國_3
+      - 美國_2
+      - 美國_3
+      - 美國節點_22
+      - 英國節點_25
+      - 英國_4
       - 英國節點_26
+      - 英國_5
+      - 英國丨yoyapai.com
+      - 美國節點_23
+      - 德國節點_8
+      - 美國節點_24
+      - 美國節點_25
+      - 德國節點_9
       - 英國節點_27
       - 英國節點_28
       - 英國節點_29
       - 英國節點_30
-      - 美國_3
-      - 德國節點_6
-      - 英國節點_31
-      - 美國節點_14
-      - 德國節點_7
       - 美國節點丨yoyapai.com
-      - 美國節點_15
+      - 德國節點_10
+      - 德國節點_11
+      - 俄羅斯節點丨yoyapai.com_1
+      - 德國節點_12
+      - 德國節點_13
+      - 德國節點_14
+      - 英國節點_31
       - 英國節點_32
+      - 德國節點_15
+      - 俄羅斯丨yoyapai.com_3
       - 英國節點_33
       - 英國節點_34
-      - 俄羅斯節點丨yoyapai.com_2
-      - 美國節點_16
-      - 美國節點_17
       - 英國節點_35
+      - 英國丨yoyapai.com_1
+      - 香港節點_1
+      - 俄羅斯節點丨yoyapai.com_2
+      - 美國節點_26
+      - 美國節點_27
+      - 烏克蘭丨yoyapai.com
+      - 美國丨yoyapai.com
+      - 美國丨yoyapai.com_1
+      - 荷蘭節點丨yoyapai.com
+      - 美國節點丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_2
+      - 美國節點_28
+      - 美國節點_29
+      - 美國_4
+      - 美國節點_30
+      - 香港節點_2
+      - 美國節點_31
+      - 亞太地區
+      - 亞太地區_1
+      - 韩国+KT电信
+      - 韩国+KT电信_1
+      - 烏克蘭節點丨yoyapai.com
+      - 新加坡丨yoyapai.com
+      - 英國丨yoyapai.com_2
+      - 烏克蘭丨yoyapai.com_1
+      - 美國丨yoyapai.com_2
+      - 美國丨yoyapai.com_3
+      - 美國丨yoyapai.com_4
+      - 德國丨yoyapai.com_1
+      - 丹麥丨yoyapai.com
+      - 臺灣節點丨yoyapai.com
+      - 美國節點_32
       - 英國節點_36
       - 英國節點_37
       - 英國節點_38
       - 英國節點_39
       - 英國節點_40
-      - 美國節點_18
-      - 美國節點_19
       - 英國節點_41
-      - 英國_6
-      - 德國節點_8
       - 英國節點_42
-      - 俄羅斯丨yoyapai.com_2
-      - 美國節點丨yoyapai.com_1
-      - 美國節點_20
-      - 日本節點
-      - 英國丨yoyapai.com
-      - 美國節點_21
-      - 亞太地區
-      - 香港節點
-      - 烏克蘭丨yoyapai.com
-      - 美國丨yoyapai.com
-      - 保加利亞丨yoyapai.com
-      - 美國丨yoyapai.com_1
-      - 美國丨yoyapai.com_2
-      - 保加利亞丨yoyapai.com_1
-      - 美國丨yoyapai.com_3
-      - 美國節點丨yoyapai.com_2
-      - 美國丨yoyapai.com_4
-      - 美國節點_22
-      - 美國_4
-      - 保加利亞丨yoyapai.com_2
-      - 香港節點_1
-      - 美國節點_23
-      - 美國節點_24
-      - 美國丨yoyapai.com_5
-      - 美國節點_25
-      - 新加坡丨yoyapai.com
-      - 英國丨yoyapai.com_1
-      - 烏克蘭丨yoyapai.com_1
-      - 美國丨yoyapai.com_6
-      - 美國丨yoyapai.com_7
-      - 美國丨yoyapai.com_8
-      - 德國丨yoyapai.com
-      - 丹麥丨yoyapai.com
-      - 臺灣節點丨yoyapai.com
-      - 美國節點_26
-      - 英國節點_43
-      - 英國節點_44
-      - 美國節點_27
-      - 英國節點_45
-      - 英國節點_46
-      - 英國節點_47
-      - 英國節點_48
-      - 美國節點_28
-      - 英國節點_49
-      - 英國節點_50
-      - 英國節點_51
-      - 美國節點_29
-      - 英國節點_52
-      - 英國節點_53
-      - 英國節點_54
-      - 英國節點_55
-      - 英國節點_56
-      - 英國節點_57
       - 🇰🇷KR南朝鮮丨yoyapai.com
       - 🇰🇷KR韓國節點丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com
       - 意大利節點🇮🇹IT丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com_1
       - 🇳🇱NL荷蘭丨yoyapai.com_2
-      - 荷蘭節點丨yoyapai.com
-      - 🇰🇷KR南朝鮮丨yoyapai.com_1
-      - 🇰🇷KR韓國節點丨yoyapai.com_1
-      - 🇳🇱NL荷蘭丨yoyapai.com_3
-      - 意大利節點🇮🇹IT丨yoyapai.com_1
       - 荷蘭節點丨yoyapai.com_1
       - 美国 加利福尼亚州圣何塞
-      - 台湾省桃园市+中华电信丨yoyapai.com
       - 丹麥丨yoyapai.com_1
       - 中國臺灣丨yoyapai.com
       - 韓國丨yoyapai.com
       - 韓國丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_3
+      - 美國丨yoyapai.com_5
+      - 保加利亞丨yoyapai.com
+      - 美國丨yoyapai.com_6
+      - 美國丨yoyapai.com_7
+      - 保加利亞丨yoyapai.com_1
+      - 保加利亞丨yoyapai.com_2
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -2746,168 +2723,167 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 俄羅斯節點丨yoyapai.com
-      - 俄羅斯丨yoyapai.com
-      - 俄羅斯丨yoyapai.com_1
-      - 俄羅斯節點丨yoyapai.com_1
-      - 德國節點丨yoyapai.com
-      - 英國節點
-      - 英國
-      - 英國節點_1
       - 美國節點
       - 美國節點_1
-      - 英國節點_2
-      - 美國
+      - 美國節點_2
+      - 日本節點
+      - 美國節點_3
+      - 俄羅斯丨yoyapai.com
+      - 俄羅斯丨yoyapai.com_1
+      - 俄羅斯丨yoyapai.com_2
+      - 俄羅斯節點丨yoyapai.com
+      - 香港丨yoyapai.com
+      - 德國丨yoyapai.com
+      - 香港節點
+      - 美國節點_4
+      - 美國節點_5
+      - 美國節點_6
+      - 美國節點_7
+      - 德國
+      - 英國
       - 英國_1
-      - 英國_2
-      - 🇺🇸 US美國丨yoyapai.com
-      - 英國_3
+      - 美國
       - 美國_1
+      - 德國節點
+      - 德國節點_1
+      - 美國節點_8
+      - 英國節點
+      - 美國節點_9
+      - 德國節點丨yoyapai.com
+      - 🇺🇸 US美國丨yoyapai.com
+      - 英國節點_1
+      - 美國節點_10
+      - 英國節點_2
       - 英國節點_3
       - 英國節點_4
-      - 美國節點_2
-      - 美國節點_3
       - 英國節點_5
       - 英國節點_6
-      - 美國節點_4
-      - 英國節點_7
-      - 德國節點
-      - 英國節點_8
-      - 美國節點_5
-      - 英國節點_9
-      - 英國節點_10
-      - 美國節點_6
-      - 英國節點_11
-      - 美國節點_7
-      - 英國節點_12
-      - 英國節點_13
-      - 美國_2
-      - 英國節點_14
-      - 美國節點_8
-      - 美國節點_9
-      - 英國節點_15
-      - 英國節點_16
-      - 英國節點_17
-      - 德國節點_1
-      - 英國節點_18
-      - 英國_4
-      - 英國節點_19
-      - 英國節點_20
       - 德國節點_2
-      - 英國節點_21
-      - 英國節點_22
-      - 英國節點_23
+      - 英國節點_7
+      - 美國節點_11
+      - 英國節點_8
+      - 美國節點_12
       - 德國節點_3
       - 德國節點_4
-      - 美國節點_10
-      - 美國節點_11
-      - 英國節點_24
-      - 英國節點_25
-      - 英國_5
-      - 美國節點_12
-      - 美國節點_13
       - 德國節點_5
+      - 英國節點_9
+      - 英國節點_10
+      - 英國節點_11
+      - 美國節點_13
+      - 英國節點_12
+      - 英國節點_13
+      - 英國節點_14
+      - 美國節點_14
+      - 英國節點_15
+      - 英國節點_16
+      - 英國_2
+      - 美國節點_15
+      - 美國節點_16
+      - 美國節點_17
+      - 英國節點_17
+      - 美國節點_18
+      - 德國節點_6
+      - 美國節點_19
+      - 英國節點_18
+      - 英國節點_19
+      - 英國節點_20
+      - 英國節點_21
+      - 美國節點_20
+      - 德國節點_7
+      - 英國節點_22
+      - 英國節點_23
+      - 英國節點_24
+      - 美國節點_21
+      - 英國_3
+      - 美國_2
+      - 美國_3
+      - 美國節點_22
+      - 英國節點_25
+      - 英國_4
       - 英國節點_26
+      - 英國_5
+      - 英國丨yoyapai.com
+      - 美國節點_23
+      - 德國節點_8
+      - 美國節點_24
+      - 美國節點_25
+      - 德國節點_9
       - 英國節點_27
       - 英國節點_28
       - 英國節點_29
       - 英國節點_30
-      - 美國_3
-      - 德國節點_6
-      - 英國節點_31
-      - 美國節點_14
-      - 德國節點_7
       - 美國節點丨yoyapai.com
-      - 美國節點_15
+      - 德國節點_10
+      - 德國節點_11
+      - 俄羅斯節點丨yoyapai.com_1
+      - 德國節點_12
+      - 德國節點_13
+      - 德國節點_14
+      - 英國節點_31
       - 英國節點_32
+      - 德國節點_15
+      - 俄羅斯丨yoyapai.com_3
       - 英國節點_33
       - 英國節點_34
-      - 俄羅斯節點丨yoyapai.com_2
-      - 美國節點_16
-      - 美國節點_17
       - 英國節點_35
+      - 英國丨yoyapai.com_1
+      - 香港節點_1
+      - 俄羅斯節點丨yoyapai.com_2
+      - 美國節點_26
+      - 美國節點_27
+      - 烏克蘭丨yoyapai.com
+      - 美國丨yoyapai.com
+      - 美國丨yoyapai.com_1
+      - 荷蘭節點丨yoyapai.com
+      - 美國節點丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_2
+      - 美國節點_28
+      - 美國節點_29
+      - 美國_4
+      - 美國節點_30
+      - 香港節點_2
+      - 美國節點_31
+      - 亞太地區
+      - 亞太地區_1
+      - 韩国+KT电信
+      - 韩国+KT电信_1
+      - 烏克蘭節點丨yoyapai.com
+      - 新加坡丨yoyapai.com
+      - 英國丨yoyapai.com_2
+      - 烏克蘭丨yoyapai.com_1
+      - 美國丨yoyapai.com_2
+      - 美國丨yoyapai.com_3
+      - 美國丨yoyapai.com_4
+      - 德國丨yoyapai.com_1
+      - 丹麥丨yoyapai.com
+      - 臺灣節點丨yoyapai.com
+      - 美國節點_32
       - 英國節點_36
       - 英國節點_37
       - 英國節點_38
       - 英國節點_39
       - 英國節點_40
-      - 美國節點_18
-      - 美國節點_19
       - 英國節點_41
-      - 英國_6
-      - 德國節點_8
       - 英國節點_42
-      - 俄羅斯丨yoyapai.com_2
-      - 美國節點丨yoyapai.com_1
-      - 美國節點_20
-      - 日本節點
-      - 英國丨yoyapai.com
-      - 美國節點_21
-      - 亞太地區
-      - 香港節點
-      - 烏克蘭丨yoyapai.com
-      - 美國丨yoyapai.com
-      - 保加利亞丨yoyapai.com
-      - 美國丨yoyapai.com_1
-      - 美國丨yoyapai.com_2
-      - 保加利亞丨yoyapai.com_1
-      - 美國丨yoyapai.com_3
-      - 美國節點丨yoyapai.com_2
-      - 美國丨yoyapai.com_4
-      - 美國節點_22
-      - 美國_4
-      - 保加利亞丨yoyapai.com_2
-      - 香港節點_1
-      - 美國節點_23
-      - 美國節點_24
-      - 美國丨yoyapai.com_5
-      - 美國節點_25
-      - 新加坡丨yoyapai.com
-      - 英國丨yoyapai.com_1
-      - 烏克蘭丨yoyapai.com_1
-      - 美國丨yoyapai.com_6
-      - 美國丨yoyapai.com_7
-      - 美國丨yoyapai.com_8
-      - 德國丨yoyapai.com
-      - 丹麥丨yoyapai.com
-      - 臺灣節點丨yoyapai.com
-      - 美國節點_26
-      - 英國節點_43
-      - 英國節點_44
-      - 美國節點_27
-      - 英國節點_45
-      - 英國節點_46
-      - 英國節點_47
-      - 英國節點_48
-      - 美國節點_28
-      - 英國節點_49
-      - 英國節點_50
-      - 英國節點_51
-      - 美國節點_29
-      - 英國節點_52
-      - 英國節點_53
-      - 英國節點_54
-      - 英國節點_55
-      - 英國節點_56
-      - 英國節點_57
       - 🇰🇷KR南朝鮮丨yoyapai.com
       - 🇰🇷KR韓國節點丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com
       - 意大利節點🇮🇹IT丨yoyapai.com
       - 🇳🇱NL荷蘭丨yoyapai.com_1
       - 🇳🇱NL荷蘭丨yoyapai.com_2
-      - 荷蘭節點丨yoyapai.com
-      - 🇰🇷KR南朝鮮丨yoyapai.com_1
-      - 🇰🇷KR韓國節點丨yoyapai.com_1
-      - 🇳🇱NL荷蘭丨yoyapai.com_3
-      - 意大利節點🇮🇹IT丨yoyapai.com_1
       - 荷蘭節點丨yoyapai.com_1
       - 美国 加利福尼亚州圣何塞
-      - 台湾省桃园市+中华电信丨yoyapai.com
       - 丹麥丨yoyapai.com_1
       - 中國臺灣丨yoyapai.com
       - 韓國丨yoyapai.com
       - 韓國丨yoyapai.com_1
+      - 美國節點丨yoyapai.com_3
+      - 美國丨yoyapai.com_5
+      - 保加利亞丨yoyapai.com
+      - 美國丨yoyapai.com_6
+      - 美國丨yoyapai.com_7
+      - 保加利亞丨yoyapai.com_1
+      - 保加利亞丨yoyapai.com_2
 rule-providers:
   LocalAreaNetwork:
     type: http
@@ -3003,14 +2979,26 @@ dns:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
 proxies:
-  - name: GB英国(mibei77.com 米贝节点分享)
-    type: ss
-    server: 212.192.15.225
-    port: 20129
-    cipher: aes-256-gcm
-    password: 7e1dd4c55bf85da5
+  - name: DE德国(mibei77.com 米贝节点分享)
+    type: vless
+    server: 31.185.108.30
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /
+      headers:
+        Host: vms.lifetime23.workers.dev
     udp: true
-  - name: GB英国(mibei77.com 米贝节点分享)_1
+  - name: DE德国(mibei77.com 米贝节点分享)_1
+    type: ss
+    server: hackney-latest-strike.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: XUMTygEM1jVYIvysXKqA5T
+    udp: true
+  - name: GB英国(mibei77.com 米贝节点分享)
     type: trojan
     server: 103.45.245.208
     port: 2053
@@ -3023,62 +3011,17 @@ proxies:
       headers:
         Host: vpn5.rnmcnm.com
     udp: true
-  - name: KR韩国(mibei77.com 米贝节点分享)
-    type: vless
-    server: 222.113.18.214
-    port: 11310
-    uuid: b2b62085-f202-4c49-9f19-a44676a3d76d
-    network: ws
-    servername: vpn2.rnmcnm.com
-    tls: true
-    ws-opts:
-      path: /ray
-      headers:
-        Host: vpn2.rnmcnm.com
-    udp: true
-  - name: KR韩国(mibei77.com 米贝节点分享)_1
-    type: ss
-    server: 176.32.39.99
-    port: 40519
-    cipher: aes-256-gcm
-    password: 1a87017d0bf57f34
-    udp: true
-  - name: KR韩国(mibei77.com 米贝节点分享)_2
-    type: ss
-    server: 195.133.2.2
-    port: 34898
-    cipher: chacha20-ietf-poly1305
-    password: v2LIewZzNUsIrqODr22FVc
-    udp: true
   - name: US美国(mibei77.com 米贝节点分享)
-    type: ss
-    server: hackney-latest-strike.freesocks.work
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: XUMTygEM1jVYIvysXKqA5T
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
   - name: US美国(mibei77.com 米贝节点分享)_1
-    type: ss
-    server: tinkered-pennies-puppies.freesocks.work
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: hbGrpfvNrJsUmKmPbR3iY2
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_2
-    type: ss
-    server: 45.140.169.216
-    port: 30129
-    cipher: aes-256-gcm
-    password: c5fcdf7829112cb4
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_3
-    type: ss
-    server: 45.140.169.244
-    port: 60156
-    cipher: aes-256-gcm
-    password: cfe685726eea2c4b
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_4
     type: trojan
     server: 172.64.152.23
     port: 443
@@ -3091,116 +3034,14 @@ proxies:
       headers:
         Host: www.calmlunch.com
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_5
-    type: vless
-    server: 185.255.95.247
-    port: 27265
-    uuid: 1f01e53a-f9d1-48a3-8b35-6f10b9be0736
-    network: ws
-    servername: 185.255.95.247
-    tls: false
-    ws-opts:
-      path: /ws
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_6
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_7
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_8
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_9
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_10
-    type: trojan
-    server: 103.45.245.208
-    port: 2053
-    password: rYuChHcwQZskq9E0zdoR
-    sni: vpn5.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /ws-79dffb8106db
-      headers:
-        Host: vpn5.rnmcnm.com
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_11
+  - name: US美国(mibei77.com 米贝节点分享)_2
     type: ss
-    server: 212.192.15.222
-    port: 8388
-    cipher: aes-256-gcm
-    password: oIu6zc7sYBef
+    server: chengbai02.ascwt179.com
+    port: 13223
+    cipher: aes-128-gcm
+    password: JVrsLLN1tkN8oXZO
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_12
-    type: trojan
-    server: 193.180.209.21
-    port: 443
-    password: rYuChHcwQZskq9E0zdoR
-    sni: vpn5.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /ws-79dffb8106db
-      headers:
-        Host: vpn5.rnmcnm.com
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_13
-    type: vless
-    server: 185.255.95.247
-    port: 27265
-    uuid: 1f01e53a-f9d1-48a3-8b35-6f10b9be0736
-    network: ws
-    tls: false
-    ws-opts:
-      path: /ws
-      headers:
-        Host: 185.255.95.247
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_14
-    type: vless
-    server: 185.18.250.127
-    port: 2096
-    uuid: 2ee26119-94e5-40b4-ba3a-16354021b600
-    network: ws
-    servername: 69565ce3109804e7813f98ee.mmdbay.blog
-    tls: true
-    ws-opts:
-      path: /graphql
-      headers:
-        Host: 69565ce3109804e7813f98ee.mmdbay.blog
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_15
+  - name: US美国(mibei77.com 米贝节点分享)_3
     type: vless
     server: 222.113.18.214
     port: 11310
@@ -3213,9 +3054,65 @@ proxies:
       headers:
         Host: vpn2.rnmcnm.com
     udp: true
-  - name: DE德国(mibei77.com 米贝节点分享)
+  - name: US美国(mibei77.com 米贝节点分享)_4
+    type: trojan
+    server: 121.154.96.50
+    port: 18000
+    password: 433e785b-2077-47f7-a43d-985f63dd18d1
+    sni: vpn.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /trojan
+      headers:
+        Host: vpn.rnmcnm.com
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_5
+    type: trojan
+    server: 193.180.209.21
+    port: 443
+    password: rYuChHcwQZskq9E0zdoR
+    sni: vpn5.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /ws-79dffb8106db
+      headers:
+        Host: vpn5.rnmcnm.com
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_6
     type: vmess
-    server: 82.198.246.250
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_7
+    type: ss
+    server: tinkered-pennies-puppies.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: hbGrpfvNrJsUmKmPbR3iY2
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_8
+    type: trojan
+    server: 121.191.33.84
+    port: 30303
+    password: 433e785b-2077-47f7-a43d-985f63dd18d1
+    sni: vpn.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /trojan
+      headers:
+        Host: vpn.rnmcnm.com
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_9
+    type: vmess
+    server: 82.198.246.37
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -3223,16 +3120,39 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: DE德国(mibei77.com 米贝节点分享)_1
-    type: ss
-    server: hackney-latest-strike.freesocks.work
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: XUMTygEM1jVYIvysXKqA5T
+  - name: US美国(mibei77.com 米贝节点分享)_10
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_11
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_12
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
   - name: DE德国(mibei77.com 米贝节点分享)_2
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -3242,7 +3162,57 @@ proxies:
     udp: true
   - name: DE德国(mibei77.com 米贝节点分享)_3
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_13
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: aes-128-gcm
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_14
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: aes-128-gcm
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_15
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_16
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_17
+    type: vmess
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -3281,16 +3251,14 @@ proxies:
     skip-cert-verify: false
     udp: true
   - name: DE德国(mibei77.com 米贝节点分享)_7
-    type: vless
-    server: 31.185.108.30
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
     tls: false
-    ws-opts:
-      path: /
-      headers:
-        Host: vms.lifetime23.workers.dev
+    skip-cert-verify: false
     udp: true
   - name: DE德国(mibei77.com 米贝节点分享)_8
     type: vmess
@@ -3322,183 +3290,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_16
-    type: vmess
-    server: 1b267619c4812cc46ee281747884ca50.qos.onl
-    port: 10034
-    uuid: 52f9cbfb-5bb3-3dd3-b947-725e365c59f3
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: v2pr9feoh0z86anj2gz9onnjg9viuev0j.mobgslb.tbcache.com
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_17
-    type: vless
-    server: up2-df6.pages.dev
-    port: 443
-    uuid: ce69190e-935a-4394-9e5e-2ab2872ba242
-    network: ws
-    servername: up2-df6.pages.dev
-    tls: true
-    ws-opts:
-      path: /uTZSXPBI2IfoxF86
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_18
-    type: vmess
-    server: 6654c734ccab8f440ff0825eb443dc7f.qos.onl
-    port: 10034
-    uuid: 52f9cbfb-5bb3-3dd3-b947-725e365c59f3
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: v2pr9feoh0z86anj2gz9onnjg9viuev0j.mobgslb.tbcache.com
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_19
-    type: trojan
-    server: 121.191.33.84
-    port: 30303
-    password: 433e785b-2077-47f7-a43d-985f63dd18d1
-    sni: vpn.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /trojan
-      headers:
-        Host: vpn.rnmcnm.com
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_20
-    type: trojan
-    server: 172.64.152.23
-    port: 443
-    password: humanity
-    sni: www.calmlunch.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /assignment
-      headers:
-        Host: www.calmlunch.com
-    udp: true
-  - name: 芬兰(mibei77.com 米贝节点分享)
-    type: vless
-    server: 185.18.250.127
-    port: 2096
-    uuid: 2ee26119-94e5-40b4-ba3a-16354021b600
-    network: ws
-    servername: 69565ce3109804e7813f98ee.mmdbay.blog
-    tls: true
-    ws-opts:
-      path: /graphql
-      headers:
-        Host: 69565ce3109804e7813f98ee.mmdbay.blog
-    udp: true
-  - name: 芬兰(mibei77.com 米贝节点分享)_1
-    type: ss
-    server: 109.107.182.229
-    port: 51544
-    cipher: chacha20-ietf-poly1305
-    password: MZeSTvpl2uoey1R0frhPyJ
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_21
-    type: ss
-    server: 195.133.2.2
-    port: 34898
-    cipher: chacha20-ietf-poly1305
-    password: v2LIewZzNUsIrqODr22FVc
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_22
-    type: vmess
-    server: 103.181.164.145
-    port: 51556
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_23
-    type: vmess
-    server: v10.hdacd.com
-    port: 30807
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_24
-    type: ss
-    server: tinkered-pennies-puppies.freesocks.work
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: hbGrpfvNrJsUmKmPbR3iY2
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_25
-    type: vless
-    server: 185.255.95.247
-    port: 27265
-    uuid: 1f01e53a-f9d1-48a3-8b35-6f10b9be0736
-    network: ws
-    servername: 185.255.95.247
-    tls: false
-    ws-opts:
-      path: /ws
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_26
-    type: ss
-    server: 176.32.39.99
-    port: 40519
-    cipher: aes-256-gcm
-    password: 1a87017d0bf57f34
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_27
-    type: vmess
-    server: 2a02:6ea0:d32f::f8fe:349b
-    port: 24202
-    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /github.com/Alvin9999-newpac/fanqiang
-      headers:
-        Host: 2a02:6ea0:d32f::f8fe:349b
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_28
-    type: vmess
-    server: 2a02:6ea0:d32f::f8fe:349b
-    port: 24202
-    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /github.com/Alvin9999-newpac/fanqiang
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_29
-    type: trojan
-    server: jpbgp.netvigor.cc
-    port: 19128
-    password: gcuCpQfaiVeDBdWG
-    sni: yazhou10.dynu.net
-    skip-cert-verify: false
-    tls: true
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_30
+  - name: DE德国(mibei77.com 米贝节点分享)_11
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -3508,17 +3300,14 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_31
-    type: vmess
-    server: v29.hdacd.com
-    port: 30829
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
+  - name: DE德国(mibei77.com 米贝节点分享)_12
+    type: ss
+    server: hackney-latest-strike.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: XUMTygEM1jVYIvysXKqA5T
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_32
+  - name: US美国(mibei77.com 米贝节点分享)_18
     type: vmess
     server: skk.moe
     port: 80
@@ -3533,6 +3322,207 @@ proxies:
       headers:
         Host: accklsj.bufu.us.ci
     udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_19
+    type: ss
+    server: tinkered-pennies-puppies.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: hbGrpfvNrJsUmKmPbR3iY2
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_20
+    type: vless
+    server: a1-tss.pages.dev
+    port: 443
+    uuid: f86f5a03-3872-46b5-bf03-a50388a0261d
+    network: ws
+    servername: a1-tss.pages.dev
+    tls: true
+    ws-opts:
+      path: /
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_21
+    type: vmess
+    server: 6654c734ccab8f440ff0825eb443dc7f.qos.onl
+    port: 10020
+    uuid: 52f9cbfb-5bb3-3dd3-b947-725e365c59f3
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: v2pr9feoh0z86anj2gz9onnjg9viuev0j.mobgslb.tbcache.com
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_22
+    type: ss
+    server: chengbai02.ascwt179.com
+    port: 13223
+    cipher: aes-128-gcm
+    password: JVrsLLN1tkN8oXZO
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_23
+    type: trojan
+    server: www.ignitelimit.com
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /assignment
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_24
+    type: vmess
+    server: renderer-stream-1-411.mirra.now
+    port: 443
+    uuid: df9c9355-b02c-4c12-909d-0dbeb725d52b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /api/v1/gpu-stream/socket
+      headers:
+        Host: renderer-stream-1-411.mirra.now
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_25
+    type: trojan
+    server: 172.64.152.23
+    port: 443
+    password: humanity
+    sni: www.creationlong.org
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.creationlong.org
+    udp: true
+  - name: 芬兰(mibei77.com 米贝节点分享)
+    type: ss
+    server: 109.107.182.229
+    port: 51544
+    cipher: chacha20-ietf-poly1305
+    password: MZeSTvpl2uoey1R0frhPyJ
+    udp: true
+  - name: 芬兰(mibei77.com 米贝节点分享)_1
+    type: vless
+    server: 185.18.250.127
+    port: 2096
+    uuid: 2ee26119-94e5-40b4-ba3a-16354021b600
+    network: ws
+    servername: 69565ce3109804e7813f98ee.mmdbay.blog
+    tls: true
+    ws-opts:
+      path: /graphql
+      headers:
+        Host: 69565ce3109804e7813f98ee.mmdbay.blog
+    udp: true
+  - name: KR韩国(mibei77.com 米贝节点分享)
+    type: vless
+    server: 222.113.18.214
+    port: 11310
+    uuid: b2b62085-f202-4c49-9f19-a44676a3d76d
+    network: ws
+    servername: vpn2.rnmcnm.com
+    tls: true
+    ws-opts:
+      path: /ray
+      headers:
+        Host: vpn2.rnmcnm.com
+    udp: true
+  - name: NL荷兰(mibei77.com 米贝节点分享)
+    type: vmess
+    server: renderer-stream-1-411.mirra.now
+    port: 443
+    uuid: df9c9355-b02c-4c12-909d-0dbeb725d52b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: false
+    servername: renderer-stream-1-411.mirra.now
+    network: ws
+    ws-opts:
+      path: /api/v1/gpu-stream/socket
+      headers:
+        Host: renderer-stream-1-411.mirra.now
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_26
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_27
+    type: vmess
+    server: 2a02:6ea0:d32f::f8fe:349b
+    port: 24202
+    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /github.com/Alvin9999-newpac/fanqiang
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_28
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    servername: <nil>
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_29
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_30
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_31
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_32
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
   - name: US美国(mibei77.com 米贝节点分享)_33
     type: vmess
     server: 82.198.246.250
@@ -3544,23 +3534,46 @@ proxies:
     skip-cert-verify: false
     udp: true
   - name: US美国(mibei77.com 米贝节点分享)_34
+    type: ss
+    server: 109.107.182.229
+    port: 51544
+    cipher: chacha20-ietf-poly1305
+    password: MZeSTvpl2uoey1R0frhPyJ
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_35
+    type: trojan
+    server: 121.191.33.84
+    port: 30303
+    password: 433e785b-2077-47f7-a43d-985f63dd18d1
+    sni: vpn.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /trojan
+      headers:
+        Host: vpn.rnmcnm.com
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_36
     type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
+    server: v36.hdacd.com
+    port: 30836
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_35
-    type: ss
-    server: 45.140.169.216
-    port: 30129
-    cipher: aes-256-gcm
-    password: c5fcdf7829112cb4
+  - name: US美国(mibei77.com 米贝节点分享)_37
+    type: vmess
+    server: v29.hdacd.com
+    port: 30829
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_36
+  - name: US美国(mibei77.com 米贝节点分享)_38
     type: vmess
     server: v4.hdacd.com
     port: 30804
@@ -3570,30 +3583,10 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_37
-    type: vmess
-    server: v35.hdacd.com
-    port: 30835
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_38
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6004
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
   - name: US美国(mibei77.com 米贝节点分享)_39
     type: vmess
-    server: v33.hdacd.com
-    port: 30833
+    server: v10.hdacd.com
+    port: 30807
     uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
     alterId: 2
     cipher: auto
@@ -3602,10 +3595,10 @@ proxies:
     udp: true
   - name: US美国(mibei77.com 米贝节点分享)_40
     type: vmess
-    server: v24.hdacd.com
-    port: 30824
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6003
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
@@ -3621,16 +3614,39 @@ proxies:
     skip-cert-verify: false
     udp: true
   - name: US美国(mibei77.com 米贝节点分享)_42
+    type: trojan
+    server: 172.64.152.23
+    port: 443
+    password: humanity
+    sni: www.calmlunch.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_43
     type: vmess
-    server: 103.181.164.145
-    port: 54022
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 64
+    server: v33.hdacd.com
+    port: 30833
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_43
+  - name: US美国(mibei77.com 米贝节点分享)_44
+    type: vmess
+    server: v35.hdacd.com
+    port: 30835
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_45
     type: vmess
     server: v29.hdacd.com
     port: 30829
@@ -3640,182 +3656,20 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_44
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_45
-    type: vmess
-    server: v24.hdacd.com
-    port: 30824
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
   - name: US美国(mibei77.com 米贝节点分享)_46
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: aes-128-gcm
-    tls: false
+    type: trojan
+    server: 193.180.209.21
+    port: 443
+    password: rYuChHcwQZskq9E0zdoR
+    sni: vpn5.rnmcnm.com
     skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /ws-79dffb8106db
+      headers:
+        Host: vpn5.rnmcnm.com
     udp: true
   - name: US美国(mibei77.com 米贝节点分享)_47
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_48
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_49
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_50
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: aes-128-gcm
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_51
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_52
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_53
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6001
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_54
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6003
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_55
-    type: vmess
-    server: 103.181.164.145
-    port: 54022
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_56
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_57
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    servername: <nil>
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_58
-    type: ss
-    server: 212.192.15.225
-    port: 20129
-    cipher: aes-256-gcm
-    password: 7e1dd4c55bf85da5
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_59
-    type: vmess
-    server: v36.hdacd.com
-    port: 30836
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_60
-    type: vmess
-    server: v9.hdacd.com
-    port: 30809
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_61
-    type: ss
-    server: chengbai02.ascwt179.com
-    port: 13223
-    cipher: aes-128-gcm
-    password: JVrsLLN1tkN8oXZO
-    udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_62
     type: vmess
     server: gtm-sg-cc54q7d1q01.365cloud0285.com
     port: 6004
@@ -3825,24 +3679,39 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_63
+  - name: US美国(mibei77.com 米贝节点分享)_48
     type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    server: v9.hdacd.com
+    port: 30809
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: US美国(mibei77.com 米贝节点分享)_49
+    type: vmess
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6001
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_64
-    type: ss
-    server: 45.140.169.244
-    port: 60156
-    cipher: aes-256-gcm
-    password: cfe685726eea2c4b
+  - name: US美国(mibei77.com 米贝节点分享)_50
+    type: vless
+    server: 31.185.108.30
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /
+      headers:
+        Host: vms.lifetime23.workers.dev
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_65
+  - name: US美国(mibei77.com 米贝节点分享)_51
     type: trojan
     server: 121.154.96.50
     port: 18000
@@ -3855,15 +3724,14 @@ proxies:
       headers:
         Host: vpn.rnmcnm.com
     udp: true
-  - name: US美国(mibei77.com 米贝节点分享)_66
-    type: vmess
-    server: 103.181.164.145
-    port: 54022
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 0
-    cipher: auto
-    tls: false
+  - name: US美国(mibei77.com 米贝节点分享)_52
+    type: trojan
+    server: jpbgp.netvigor.cc
+    port: 19128
+    password: gcuCpQfaiVeDBdWG
+    sni: yazhou10.dynu.net
     skip-cert-verify: false
+    tls: true
     udp: true
   - name: 挪威(mibei77.com 米贝节点分享)
     type: trojan
@@ -3880,8 +3748,8 @@ proxies:
     udp: true
   - name: 挪威(mibei77.com 米贝节点分享)_1
     type: trojan
-    server: 193.180.209.21
-    port: 443
+    server: 103.45.245.208
+    port: 2053
     password: rYuChHcwQZskq9E0zdoR
     sni: vpn5.rnmcnm.com
     skip-cert-verify: false
@@ -3891,12 +3759,27 @@ proxies:
       headers:
         Host: vpn5.rnmcnm.com
     udp: true
+  - name: JP日本(mibei77.com 米贝节点分享)
+    type: vmess
+    server: 2a02:6ea0:d32f::f8fe:349b
+    port: 24202
+    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /github.com/Alvin9999-newpac/fanqiang
+      headers:
+        Host: 2a02:6ea0:d32f::f8fe:349b
+    udp: true
   - name: HK香港(mibei77.com 米贝节点分享)
     type: vmess
-    server: v10.hdacd.com
-    port: 30807
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
@@ -3913,9 +3796,29 @@ proxies:
     udp: true
   - name: HK香港(mibei77.com 米贝节点分享)_2
     type: vmess
-    server: 103.181.164.145
-    port: 54022
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    server: v10.hdacd.com
+    port: 30807
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: SG新加坡(mibei77.com 米贝节点分享)
+    type: vmess
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6004
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: GB英国(mibei77.com 米贝节点分享)_1
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
     cipher: auto
     tls: false
@@ -3933,7 +3836,7 @@ proxies:
     udp: true
   - name: GB英国(mibei77.com 米贝节点分享)_3
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -3943,7 +3846,7 @@ proxies:
     udp: true
   - name: GB英国(mibei77.com 米贝节点分享)_4
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -3953,7 +3856,7 @@ proxies:
     udp: true
   - name: GB英国(mibei77.com 米贝节点分享)_5
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.37
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -3963,10 +3866,10 @@ proxies:
     udp: true
   - name: GB英国(mibei77.com 米贝节点分享)_6
     type: vmess
-    server: v36.hdacd.com
-    port: 30836
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
@@ -3983,7 +3886,7 @@ proxies:
     udp: true
   - name: GB英国(mibei77.com 米贝节点分享)_8
     type: vmess
-    server: 82.198.246.214
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -3993,7 +3896,7 @@ proxies:
     udp: true
   - name: GB英国(mibei77.com 米贝节点分享)_9
     type: vmess
-    server: 82.198.246.214
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -4003,115 +3906,15 @@ proxies:
     udp: true
   - name: GB英国(mibei77.com 米贝节点分享)_10
     type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
+    server: v36.hdacd.com
+    port: 30836
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
   - name: GB英国(mibei77.com 米贝节点分享)_11
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: GB英国(mibei77.com 米贝节点分享)_12
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: GB英国(mibei77.com 米贝节点分享)_13
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: GB英国(mibei77.com 米贝节点分享)_14
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: GB英国(mibei77.com 米贝节点分享)_15
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: GB英国(mibei77.com 米贝节点分享)_16
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: GB英国(mibei77.com 米贝节点分享)_17
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: GB英国(mibei77.com 米贝节点分享)_18
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: GB英国(mibei77.com 米贝节点分享)_19
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: GB英国(mibei77.com 米贝节点分享)_20
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: GB英国(mibei77.com 米贝节点分享)_21
     type: vmess
     server: 82.198.246.214
     port: 180
@@ -4127,11 +3930,9 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - DIRECT
+      - DE德国(mibei77.com 米贝节点分享)
+      - DE德国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)
-      - GB英国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)
-      - KR韩国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)_2
       - US美国(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_2
@@ -4145,13 +3946,13 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_10
       - US美国(mibei77.com 米贝节点分享)_11
       - US美国(mibei77.com 米贝节点分享)_12
+      - DE德国(mibei77.com 米贝节点分享)_2
+      - DE德国(mibei77.com 米贝节点分享)_3
       - US美国(mibei77.com 米贝节点分享)_13
       - US美国(mibei77.com 米贝节点分享)_14
       - US美国(mibei77.com 米贝节点分享)_15
-      - DE德国(mibei77.com 米贝节点分享)
-      - DE德国(mibei77.com 米贝节点分享)_1
-      - DE德国(mibei77.com 米贝节点分享)_2
-      - DE德国(mibei77.com 米贝节点分享)_3
+      - US美国(mibei77.com 米贝节点分享)_16
+      - US美国(mibei77.com 米贝节点分享)_17
       - DE德国(mibei77.com 米贝节点分享)_4
       - DE德国(mibei77.com 米贝节点分享)_5
       - DE德国(mibei77.com 米贝节点分享)_6
@@ -4159,18 +3960,20 @@ proxy-groups:
       - DE德国(mibei77.com 米贝节点分享)_8
       - DE德国(mibei77.com 米贝节点分享)_9
       - DE德国(mibei77.com 米贝节点分享)_10
-      - US美国(mibei77.com 米贝节点分享)_16
-      - US美国(mibei77.com 米贝节点分享)_17
+      - DE德国(mibei77.com 米贝节点分享)_11
+      - DE德国(mibei77.com 米贝节点分享)_12
       - US美国(mibei77.com 米贝节点分享)_18
       - US美国(mibei77.com 米贝节点分享)_19
       - US美国(mibei77.com 米贝节点分享)_20
-      - 芬兰(mibei77.com 米贝节点分享)
-      - 芬兰(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_21
       - US美国(mibei77.com 米贝节点分享)_22
       - US美国(mibei77.com 米贝节点分享)_23
       - US美国(mibei77.com 米贝节点分享)_24
       - US美国(mibei77.com 米贝节点分享)_25
+      - 芬兰(mibei77.com 米贝节点分享)
+      - 芬兰(mibei77.com 米贝节点分享)_1
+      - KR韩国(mibei77.com 米贝节点分享)
+      - NL荷兰(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_26
       - US美国(mibei77.com 米贝节点分享)_27
       - US美国(mibei77.com 米贝节点分享)_28
@@ -4198,25 +4001,14 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_50
       - US美国(mibei77.com 米贝节点分享)_51
       - US美国(mibei77.com 米贝节点分享)_52
-      - US美国(mibei77.com 米贝节点分享)_53
-      - US美国(mibei77.com 米贝节点分享)_54
-      - US美国(mibei77.com 米贝节点分享)_55
-      - US美国(mibei77.com 米贝节点分享)_56
-      - US美国(mibei77.com 米贝节点分享)_57
-      - US美国(mibei77.com 米贝节点分享)_58
-      - US美国(mibei77.com 米贝节点分享)_59
-      - US美国(mibei77.com 米贝节点分享)_60
-      - US美国(mibei77.com 米贝节点分享)_61
-      - US美国(mibei77.com 米贝节点分享)_62
-      - US美国(mibei77.com 米贝节点分享)_63
-      - US美国(mibei77.com 米贝节点分享)_64
-      - US美国(mibei77.com 米贝节点分享)_65
-      - US美国(mibei77.com 米贝节点分享)_66
       - 挪威(mibei77.com 米贝节点分享)
       - 挪威(mibei77.com 米贝节点分享)_1
+      - JP日本(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)_1
       - HK香港(mibei77.com 米贝节点分享)_2
+      - SG新加坡(mibei77.com 米贝节点分享)
+      - GB英国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)_2
       - GB英国(mibei77.com 米贝节点分享)_3
       - GB英国(mibei77.com 米贝节点分享)_4
@@ -4227,24 +4019,12 @@ proxy-groups:
       - GB英国(mibei77.com 米贝节点分享)_9
       - GB英国(mibei77.com 米贝节点分享)_10
       - GB英国(mibei77.com 米贝节点分享)_11
-      - GB英国(mibei77.com 米贝节点分享)_12
-      - GB英国(mibei77.com 米贝节点分享)_13
-      - GB英国(mibei77.com 米贝节点分享)_14
-      - GB英国(mibei77.com 米贝节点分享)_15
-      - GB英国(mibei77.com 米贝节点分享)_16
-      - GB英国(mibei77.com 米贝节点分享)_17
-      - GB英国(mibei77.com 米贝节点分享)_18
-      - GB英国(mibei77.com 米贝节点分享)_19
-      - GB英国(mibei77.com 米贝节点分享)_20
-      - GB英国(mibei77.com 米贝节点分享)_21
   - name: ♻️ 自动选择
     type: url-test
     proxies:
+      - DE德国(mibei77.com 米贝节点分享)
+      - DE德国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)
-      - GB英国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)
-      - KR韩国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)_2
       - US美国(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_2
@@ -4258,13 +4038,13 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_10
       - US美国(mibei77.com 米贝节点分享)_11
       - US美国(mibei77.com 米贝节点分享)_12
+      - DE德国(mibei77.com 米贝节点分享)_2
+      - DE德国(mibei77.com 米贝节点分享)_3
       - US美国(mibei77.com 米贝节点分享)_13
       - US美国(mibei77.com 米贝节点分享)_14
       - US美国(mibei77.com 米贝节点分享)_15
-      - DE德国(mibei77.com 米贝节点分享)
-      - DE德国(mibei77.com 米贝节点分享)_1
-      - DE德国(mibei77.com 米贝节点分享)_2
-      - DE德国(mibei77.com 米贝节点分享)_3
+      - US美国(mibei77.com 米贝节点分享)_16
+      - US美国(mibei77.com 米贝节点分享)_17
       - DE德国(mibei77.com 米贝节点分享)_4
       - DE德国(mibei77.com 米贝节点分享)_5
       - DE德国(mibei77.com 米贝节点分享)_6
@@ -4272,18 +4052,20 @@ proxy-groups:
       - DE德国(mibei77.com 米贝节点分享)_8
       - DE德国(mibei77.com 米贝节点分享)_9
       - DE德国(mibei77.com 米贝节点分享)_10
-      - US美国(mibei77.com 米贝节点分享)_16
-      - US美国(mibei77.com 米贝节点分享)_17
+      - DE德国(mibei77.com 米贝节点分享)_11
+      - DE德国(mibei77.com 米贝节点分享)_12
       - US美国(mibei77.com 米贝节点分享)_18
       - US美国(mibei77.com 米贝节点分享)_19
       - US美国(mibei77.com 米贝节点分享)_20
-      - 芬兰(mibei77.com 米贝节点分享)
-      - 芬兰(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_21
       - US美国(mibei77.com 米贝节点分享)_22
       - US美国(mibei77.com 米贝节点分享)_23
       - US美国(mibei77.com 米贝节点分享)_24
       - US美国(mibei77.com 米贝节点分享)_25
+      - 芬兰(mibei77.com 米贝节点分享)
+      - 芬兰(mibei77.com 米贝节点分享)_1
+      - KR韩国(mibei77.com 米贝节点分享)
+      - NL荷兰(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_26
       - US美国(mibei77.com 米贝节点分享)_27
       - US美国(mibei77.com 米贝节点分享)_28
@@ -4311,25 +4093,14 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_50
       - US美国(mibei77.com 米贝节点分享)_51
       - US美国(mibei77.com 米贝节点分享)_52
-      - US美国(mibei77.com 米贝节点分享)_53
-      - US美国(mibei77.com 米贝节点分享)_54
-      - US美国(mibei77.com 米贝节点分享)_55
-      - US美国(mibei77.com 米贝节点分享)_56
-      - US美国(mibei77.com 米贝节点分享)_57
-      - US美国(mibei77.com 米贝节点分享)_58
-      - US美国(mibei77.com 米贝节点分享)_59
-      - US美国(mibei77.com 米贝节点分享)_60
-      - US美国(mibei77.com 米贝节点分享)_61
-      - US美国(mibei77.com 米贝节点分享)_62
-      - US美国(mibei77.com 米贝节点分享)_63
-      - US美国(mibei77.com 米贝节点分享)_64
-      - US美国(mibei77.com 米贝节点分享)_65
-      - US美国(mibei77.com 米贝节点分享)_66
       - 挪威(mibei77.com 米贝节点分享)
       - 挪威(mibei77.com 米贝节点分享)_1
+      - JP日本(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)_1
       - HK香港(mibei77.com 米贝节点分享)_2
+      - SG新加坡(mibei77.com 米贝节点分享)
+      - GB英国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)_2
       - GB英国(mibei77.com 米贝节点分享)_3
       - GB英国(mibei77.com 米贝节点分享)_4
@@ -4340,16 +4111,6 @@ proxy-groups:
       - GB英国(mibei77.com 米贝节点分享)_9
       - GB英国(mibei77.com 米贝节点分享)_10
       - GB英国(mibei77.com 米贝节点分享)_11
-      - GB英国(mibei77.com 米贝节点分享)_12
-      - GB英国(mibei77.com 米贝节点分享)_13
-      - GB英国(mibei77.com 米贝节点分享)_14
-      - GB英国(mibei77.com 米贝节点分享)_15
-      - GB英国(mibei77.com 米贝节点分享)_16
-      - GB英国(mibei77.com 米贝节点分享)_17
-      - GB英国(mibei77.com 米贝节点分享)_18
-      - GB英国(mibei77.com 米贝节点分享)_19
-      - GB英国(mibei77.com 米贝节点分享)_20
-      - GB英国(mibei77.com 米贝节点分享)_21
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -4359,11 +4120,9 @@ proxy-groups:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
+      - DE德国(mibei77.com 米贝节点分享)
+      - DE德国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)
-      - GB英国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)
-      - KR韩国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)_2
       - US美国(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_2
@@ -4377,13 +4136,13 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_10
       - US美国(mibei77.com 米贝节点分享)_11
       - US美国(mibei77.com 米贝节点分享)_12
+      - DE德国(mibei77.com 米贝节点分享)_2
+      - DE德国(mibei77.com 米贝节点分享)_3
       - US美国(mibei77.com 米贝节点分享)_13
       - US美国(mibei77.com 米贝节点分享)_14
       - US美国(mibei77.com 米贝节点分享)_15
-      - DE德国(mibei77.com 米贝节点分享)
-      - DE德国(mibei77.com 米贝节点分享)_1
-      - DE德国(mibei77.com 米贝节点分享)_2
-      - DE德国(mibei77.com 米贝节点分享)_3
+      - US美国(mibei77.com 米贝节点分享)_16
+      - US美国(mibei77.com 米贝节点分享)_17
       - DE德国(mibei77.com 米贝节点分享)_4
       - DE德国(mibei77.com 米贝节点分享)_5
       - DE德国(mibei77.com 米贝节点分享)_6
@@ -4391,18 +4150,20 @@ proxy-groups:
       - DE德国(mibei77.com 米贝节点分享)_8
       - DE德国(mibei77.com 米贝节点分享)_9
       - DE德国(mibei77.com 米贝节点分享)_10
-      - US美国(mibei77.com 米贝节点分享)_16
-      - US美国(mibei77.com 米贝节点分享)_17
+      - DE德国(mibei77.com 米贝节点分享)_11
+      - DE德国(mibei77.com 米贝节点分享)_12
       - US美国(mibei77.com 米贝节点分享)_18
       - US美国(mibei77.com 米贝节点分享)_19
       - US美国(mibei77.com 米贝节点分享)_20
-      - 芬兰(mibei77.com 米贝节点分享)
-      - 芬兰(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_21
       - US美国(mibei77.com 米贝节点分享)_22
       - US美国(mibei77.com 米贝节点分享)_23
       - US美国(mibei77.com 米贝节点分享)_24
       - US美国(mibei77.com 米贝节点分享)_25
+      - 芬兰(mibei77.com 米贝节点分享)
+      - 芬兰(mibei77.com 米贝节点分享)_1
+      - KR韩国(mibei77.com 米贝节点分享)
+      - NL荷兰(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_26
       - US美国(mibei77.com 米贝节点分享)_27
       - US美国(mibei77.com 米贝节点分享)_28
@@ -4430,25 +4191,14 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_50
       - US美国(mibei77.com 米贝节点分享)_51
       - US美国(mibei77.com 米贝节点分享)_52
-      - US美国(mibei77.com 米贝节点分享)_53
-      - US美国(mibei77.com 米贝节点分享)_54
-      - US美国(mibei77.com 米贝节点分享)_55
-      - US美国(mibei77.com 米贝节点分享)_56
-      - US美国(mibei77.com 米贝节点分享)_57
-      - US美国(mibei77.com 米贝节点分享)_58
-      - US美国(mibei77.com 米贝节点分享)_59
-      - US美国(mibei77.com 米贝节点分享)_60
-      - US美国(mibei77.com 米贝节点分享)_61
-      - US美国(mibei77.com 米贝节点分享)_62
-      - US美国(mibei77.com 米贝节点分享)_63
-      - US美国(mibei77.com 米贝节点分享)_64
-      - US美国(mibei77.com 米贝节点分享)_65
-      - US美国(mibei77.com 米贝节点分享)_66
       - 挪威(mibei77.com 米贝节点分享)
       - 挪威(mibei77.com 米贝节点分享)_1
+      - JP日本(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)_1
       - HK香港(mibei77.com 米贝节点分享)_2
+      - SG新加坡(mibei77.com 米贝节点分享)
+      - GB英国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)_2
       - GB英国(mibei77.com 米贝节点分享)_3
       - GB英国(mibei77.com 米贝节点分享)_4
@@ -4459,26 +4209,14 @@ proxy-groups:
       - GB英国(mibei77.com 米贝节点分享)_9
       - GB英国(mibei77.com 米贝节点分享)_10
       - GB英国(mibei77.com 米贝节点分享)_11
-      - GB英国(mibei77.com 米贝节点分享)_12
-      - GB英国(mibei77.com 米贝节点分享)_13
-      - GB英国(mibei77.com 米贝节点分享)_14
-      - GB英国(mibei77.com 米贝节点分享)_15
-      - GB英国(mibei77.com 米贝节点分享)_16
-      - GB英国(mibei77.com 米贝节点分享)_17
-      - GB英国(mibei77.com 米贝节点分享)_18
-      - GB英国(mibei77.com 米贝节点分享)_19
-      - GB英国(mibei77.com 米贝节点分享)_20
-      - GB英国(mibei77.com 米贝节点分享)_21
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
+      - DE德国(mibei77.com 米贝节点分享)
+      - DE德国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)
-      - GB英国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)
-      - KR韩国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)_2
       - US美国(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_2
@@ -4492,13 +4230,13 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_10
       - US美国(mibei77.com 米贝节点分享)_11
       - US美国(mibei77.com 米贝节点分享)_12
+      - DE德国(mibei77.com 米贝节点分享)_2
+      - DE德国(mibei77.com 米贝节点分享)_3
       - US美国(mibei77.com 米贝节点分享)_13
       - US美国(mibei77.com 米贝节点分享)_14
       - US美国(mibei77.com 米贝节点分享)_15
-      - DE德国(mibei77.com 米贝节点分享)
-      - DE德国(mibei77.com 米贝节点分享)_1
-      - DE德国(mibei77.com 米贝节点分享)_2
-      - DE德国(mibei77.com 米贝节点分享)_3
+      - US美国(mibei77.com 米贝节点分享)_16
+      - US美国(mibei77.com 米贝节点分享)_17
       - DE德国(mibei77.com 米贝节点分享)_4
       - DE德国(mibei77.com 米贝节点分享)_5
       - DE德国(mibei77.com 米贝节点分享)_6
@@ -4506,18 +4244,20 @@ proxy-groups:
       - DE德国(mibei77.com 米贝节点分享)_8
       - DE德国(mibei77.com 米贝节点分享)_9
       - DE德国(mibei77.com 米贝节点分享)_10
-      - US美国(mibei77.com 米贝节点分享)_16
-      - US美国(mibei77.com 米贝节点分享)_17
+      - DE德国(mibei77.com 米贝节点分享)_11
+      - DE德国(mibei77.com 米贝节点分享)_12
       - US美国(mibei77.com 米贝节点分享)_18
       - US美国(mibei77.com 米贝节点分享)_19
       - US美国(mibei77.com 米贝节点分享)_20
-      - 芬兰(mibei77.com 米贝节点分享)
-      - 芬兰(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_21
       - US美国(mibei77.com 米贝节点分享)_22
       - US美国(mibei77.com 米贝节点分享)_23
       - US美国(mibei77.com 米贝节点分享)_24
       - US美国(mibei77.com 米贝节点分享)_25
+      - 芬兰(mibei77.com 米贝节点分享)
+      - 芬兰(mibei77.com 米贝节点分享)_1
+      - KR韩国(mibei77.com 米贝节点分享)
+      - NL荷兰(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_26
       - US美国(mibei77.com 米贝节点分享)_27
       - US美国(mibei77.com 米贝节点分享)_28
@@ -4545,25 +4285,14 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_50
       - US美国(mibei77.com 米贝节点分享)_51
       - US美国(mibei77.com 米贝节点分享)_52
-      - US美国(mibei77.com 米贝节点分享)_53
-      - US美国(mibei77.com 米贝节点分享)_54
-      - US美国(mibei77.com 米贝节点分享)_55
-      - US美国(mibei77.com 米贝节点分享)_56
-      - US美国(mibei77.com 米贝节点分享)_57
-      - US美国(mibei77.com 米贝节点分享)_58
-      - US美国(mibei77.com 米贝节点分享)_59
-      - US美国(mibei77.com 米贝节点分享)_60
-      - US美国(mibei77.com 米贝节点分享)_61
-      - US美国(mibei77.com 米贝节点分享)_62
-      - US美国(mibei77.com 米贝节点分享)_63
-      - US美国(mibei77.com 米贝节点分享)_64
-      - US美国(mibei77.com 米贝节点分享)_65
-      - US美国(mibei77.com 米贝节点分享)_66
       - 挪威(mibei77.com 米贝节点分享)
       - 挪威(mibei77.com 米贝节点分享)_1
+      - JP日本(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)_1
       - HK香港(mibei77.com 米贝节点分享)_2
+      - SG新加坡(mibei77.com 米贝节点分享)
+      - GB英国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)_2
       - GB英国(mibei77.com 米贝节点分享)_3
       - GB英国(mibei77.com 米贝节点分享)_4
@@ -4574,26 +4303,14 @@ proxy-groups:
       - GB英国(mibei77.com 米贝节点分享)_9
       - GB英国(mibei77.com 米贝节点分享)_10
       - GB英国(mibei77.com 米贝节点分享)_11
-      - GB英国(mibei77.com 米贝节点分享)_12
-      - GB英国(mibei77.com 米贝节点分享)_13
-      - GB英国(mibei77.com 米贝节点分享)_14
-      - GB英国(mibei77.com 米贝节点分享)_15
-      - GB英国(mibei77.com 米贝节点分享)_16
-      - GB英国(mibei77.com 米贝节点分享)_17
-      - GB英国(mibei77.com 米贝节点分享)_18
-      - GB英国(mibei77.com 米贝节点分享)_19
-      - GB英国(mibei77.com 米贝节点分享)_20
-      - GB英国(mibei77.com 米贝节点分享)_21
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
+      - DE德国(mibei77.com 米贝节点分享)
+      - DE德国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)
-      - GB英国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)
-      - KR韩国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)_2
       - US美国(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_2
@@ -4607,13 +4324,13 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_10
       - US美国(mibei77.com 米贝节点分享)_11
       - US美国(mibei77.com 米贝节点分享)_12
+      - DE德国(mibei77.com 米贝节点分享)_2
+      - DE德国(mibei77.com 米贝节点分享)_3
       - US美国(mibei77.com 米贝节点分享)_13
       - US美国(mibei77.com 米贝节点分享)_14
       - US美国(mibei77.com 米贝节点分享)_15
-      - DE德国(mibei77.com 米贝节点分享)
-      - DE德国(mibei77.com 米贝节点分享)_1
-      - DE德国(mibei77.com 米贝节点分享)_2
-      - DE德国(mibei77.com 米贝节点分享)_3
+      - US美国(mibei77.com 米贝节点分享)_16
+      - US美国(mibei77.com 米贝节点分享)_17
       - DE德国(mibei77.com 米贝节点分享)_4
       - DE德国(mibei77.com 米贝节点分享)_5
       - DE德国(mibei77.com 米贝节点分享)_6
@@ -4621,18 +4338,20 @@ proxy-groups:
       - DE德国(mibei77.com 米贝节点分享)_8
       - DE德国(mibei77.com 米贝节点分享)_9
       - DE德国(mibei77.com 米贝节点分享)_10
-      - US美国(mibei77.com 米贝节点分享)_16
-      - US美国(mibei77.com 米贝节点分享)_17
+      - DE德国(mibei77.com 米贝节点分享)_11
+      - DE德国(mibei77.com 米贝节点分享)_12
       - US美国(mibei77.com 米贝节点分享)_18
       - US美国(mibei77.com 米贝节点分享)_19
       - US美国(mibei77.com 米贝节点分享)_20
-      - 芬兰(mibei77.com 米贝节点分享)
-      - 芬兰(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_21
       - US美国(mibei77.com 米贝节点分享)_22
       - US美国(mibei77.com 米贝节点分享)_23
       - US美国(mibei77.com 米贝节点分享)_24
       - US美国(mibei77.com 米贝节点分享)_25
+      - 芬兰(mibei77.com 米贝节点分享)
+      - 芬兰(mibei77.com 米贝节点分享)_1
+      - KR韩国(mibei77.com 米贝节点分享)
+      - NL荷兰(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_26
       - US美国(mibei77.com 米贝节点分享)_27
       - US美国(mibei77.com 米贝节点分享)_28
@@ -4660,25 +4379,14 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_50
       - US美国(mibei77.com 米贝节点分享)_51
       - US美国(mibei77.com 米贝节点分享)_52
-      - US美国(mibei77.com 米贝节点分享)_53
-      - US美国(mibei77.com 米贝节点分享)_54
-      - US美国(mibei77.com 米贝节点分享)_55
-      - US美国(mibei77.com 米贝节点分享)_56
-      - US美国(mibei77.com 米贝节点分享)_57
-      - US美国(mibei77.com 米贝节点分享)_58
-      - US美国(mibei77.com 米贝节点分享)_59
-      - US美国(mibei77.com 米贝节点分享)_60
-      - US美国(mibei77.com 米贝节点分享)_61
-      - US美国(mibei77.com 米贝节点分享)_62
-      - US美国(mibei77.com 米贝节点分享)_63
-      - US美国(mibei77.com 米贝节点分享)_64
-      - US美国(mibei77.com 米贝节点分享)_65
-      - US美国(mibei77.com 米贝节点分享)_66
       - 挪威(mibei77.com 米贝节点分享)
       - 挪威(mibei77.com 米贝节点分享)_1
+      - JP日本(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)_1
       - HK香港(mibei77.com 米贝节点分享)_2
+      - SG新加坡(mibei77.com 米贝节点分享)
+      - GB英国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)_2
       - GB英国(mibei77.com 米贝节点分享)_3
       - GB英国(mibei77.com 米贝节点分享)_4
@@ -4689,26 +4397,14 @@ proxy-groups:
       - GB英国(mibei77.com 米贝节点分享)_9
       - GB英国(mibei77.com 米贝节点分享)_10
       - GB英国(mibei77.com 米贝节点分享)_11
-      - GB英国(mibei77.com 米贝节点分享)_12
-      - GB英国(mibei77.com 米贝节点分享)_13
-      - GB英国(mibei77.com 米贝节点分享)_14
-      - GB英国(mibei77.com 米贝节点分享)_15
-      - GB英国(mibei77.com 米贝节点分享)_16
-      - GB英国(mibei77.com 米贝节点分享)_17
-      - GB英国(mibei77.com 米贝节点分享)_18
-      - GB英国(mibei77.com 米贝节点分享)_19
-      - GB英国(mibei77.com 米贝节点分享)_20
-      - GB英国(mibei77.com 米贝节点分享)_21
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
+      - DE德国(mibei77.com 米贝节点分享)
+      - DE德国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)
-      - GB英国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)
-      - KR韩国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)_2
       - US美国(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_2
@@ -4722,13 +4418,13 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_10
       - US美国(mibei77.com 米贝节点分享)_11
       - US美国(mibei77.com 米贝节点分享)_12
+      - DE德国(mibei77.com 米贝节点分享)_2
+      - DE德国(mibei77.com 米贝节点分享)_3
       - US美国(mibei77.com 米贝节点分享)_13
       - US美国(mibei77.com 米贝节点分享)_14
       - US美国(mibei77.com 米贝节点分享)_15
-      - DE德国(mibei77.com 米贝节点分享)
-      - DE德国(mibei77.com 米贝节点分享)_1
-      - DE德国(mibei77.com 米贝节点分享)_2
-      - DE德国(mibei77.com 米贝节点分享)_3
+      - US美国(mibei77.com 米贝节点分享)_16
+      - US美国(mibei77.com 米贝节点分享)_17
       - DE德国(mibei77.com 米贝节点分享)_4
       - DE德国(mibei77.com 米贝节点分享)_5
       - DE德国(mibei77.com 米贝节点分享)_6
@@ -4736,18 +4432,20 @@ proxy-groups:
       - DE德国(mibei77.com 米贝节点分享)_8
       - DE德国(mibei77.com 米贝节点分享)_9
       - DE德国(mibei77.com 米贝节点分享)_10
-      - US美国(mibei77.com 米贝节点分享)_16
-      - US美国(mibei77.com 米贝节点分享)_17
+      - DE德国(mibei77.com 米贝节点分享)_11
+      - DE德国(mibei77.com 米贝节点分享)_12
       - US美国(mibei77.com 米贝节点分享)_18
       - US美国(mibei77.com 米贝节点分享)_19
       - US美国(mibei77.com 米贝节点分享)_20
-      - 芬兰(mibei77.com 米贝节点分享)
-      - 芬兰(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_21
       - US美国(mibei77.com 米贝节点分享)_22
       - US美国(mibei77.com 米贝节点分享)_23
       - US美国(mibei77.com 米贝节点分享)_24
       - US美国(mibei77.com 米贝节点分享)_25
+      - 芬兰(mibei77.com 米贝节点分享)
+      - 芬兰(mibei77.com 米贝节点分享)_1
+      - KR韩国(mibei77.com 米贝节点分享)
+      - NL荷兰(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_26
       - US美国(mibei77.com 米贝节点分享)_27
       - US美国(mibei77.com 米贝节点分享)_28
@@ -4775,25 +4473,14 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_50
       - US美国(mibei77.com 米贝节点分享)_51
       - US美国(mibei77.com 米贝节点分享)_52
-      - US美国(mibei77.com 米贝节点分享)_53
-      - US美国(mibei77.com 米贝节点分享)_54
-      - US美国(mibei77.com 米贝节点分享)_55
-      - US美国(mibei77.com 米贝节点分享)_56
-      - US美国(mibei77.com 米贝节点分享)_57
-      - US美国(mibei77.com 米贝节点分享)_58
-      - US美国(mibei77.com 米贝节点分享)_59
-      - US美国(mibei77.com 米贝节点分享)_60
-      - US美国(mibei77.com 米贝节点分享)_61
-      - US美国(mibei77.com 米贝节点分享)_62
-      - US美国(mibei77.com 米贝节点分享)_63
-      - US美国(mibei77.com 米贝节点分享)_64
-      - US美国(mibei77.com 米贝节点分享)_65
-      - US美国(mibei77.com 米贝节点分享)_66
       - 挪威(mibei77.com 米贝节点分享)
       - 挪威(mibei77.com 米贝节点分享)_1
+      - JP日本(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)_1
       - HK香港(mibei77.com 米贝节点分享)_2
+      - SG新加坡(mibei77.com 米贝节点分享)
+      - GB英国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)_2
       - GB英国(mibei77.com 米贝节点分享)_3
       - GB英国(mibei77.com 米贝节点分享)_4
@@ -4804,16 +4491,6 @@ proxy-groups:
       - GB英国(mibei77.com 米贝节点分享)_9
       - GB英国(mibei77.com 米贝节点分享)_10
       - GB英国(mibei77.com 米贝节点分享)_11
-      - GB英国(mibei77.com 米贝节点分享)_12
-      - GB英国(mibei77.com 米贝节点分享)_13
-      - GB英国(mibei77.com 米贝节点分享)_14
-      - GB英国(mibei77.com 米贝节点分享)_15
-      - GB英国(mibei77.com 米贝节点分享)_16
-      - GB英国(mibei77.com 米贝节点分享)_17
-      - GB英国(mibei77.com 米贝节点分享)_18
-      - GB英国(mibei77.com 米贝节点分享)_19
-      - GB英国(mibei77.com 米贝节点分享)_20
-      - GB英国(mibei77.com 米贝节点分享)_21
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -4836,11 +4513,9 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
+      - DE德国(mibei77.com 米贝节点分享)
+      - DE德国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)
-      - GB英国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)
-      - KR韩国(mibei77.com 米贝节点分享)_1
-      - KR韩国(mibei77.com 米贝节点分享)_2
       - US美国(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_2
@@ -4854,13 +4529,13 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_10
       - US美国(mibei77.com 米贝节点分享)_11
       - US美国(mibei77.com 米贝节点分享)_12
+      - DE德国(mibei77.com 米贝节点分享)_2
+      - DE德国(mibei77.com 米贝节点分享)_3
       - US美国(mibei77.com 米贝节点分享)_13
       - US美国(mibei77.com 米贝节点分享)_14
       - US美国(mibei77.com 米贝节点分享)_15
-      - DE德国(mibei77.com 米贝节点分享)
-      - DE德国(mibei77.com 米贝节点分享)_1
-      - DE德国(mibei77.com 米贝节点分享)_2
-      - DE德国(mibei77.com 米贝节点分享)_3
+      - US美国(mibei77.com 米贝节点分享)_16
+      - US美国(mibei77.com 米贝节点分享)_17
       - DE德国(mibei77.com 米贝节点分享)_4
       - DE德国(mibei77.com 米贝节点分享)_5
       - DE德国(mibei77.com 米贝节点分享)_6
@@ -4868,18 +4543,20 @@ proxy-groups:
       - DE德国(mibei77.com 米贝节点分享)_8
       - DE德国(mibei77.com 米贝节点分享)_9
       - DE德国(mibei77.com 米贝节点分享)_10
-      - US美国(mibei77.com 米贝节点分享)_16
-      - US美国(mibei77.com 米贝节点分享)_17
+      - DE德国(mibei77.com 米贝节点分享)_11
+      - DE德国(mibei77.com 米贝节点分享)_12
       - US美国(mibei77.com 米贝节点分享)_18
       - US美国(mibei77.com 米贝节点分享)_19
       - US美国(mibei77.com 米贝节点分享)_20
-      - 芬兰(mibei77.com 米贝节点分享)
-      - 芬兰(mibei77.com 米贝节点分享)_1
       - US美国(mibei77.com 米贝节点分享)_21
       - US美国(mibei77.com 米贝节点分享)_22
       - US美国(mibei77.com 米贝节点分享)_23
       - US美国(mibei77.com 米贝节点分享)_24
       - US美国(mibei77.com 米贝节点分享)_25
+      - 芬兰(mibei77.com 米贝节点分享)
+      - 芬兰(mibei77.com 米贝节点分享)_1
+      - KR韩国(mibei77.com 米贝节点分享)
+      - NL荷兰(mibei77.com 米贝节点分享)
       - US美国(mibei77.com 米贝节点分享)_26
       - US美国(mibei77.com 米贝节点分享)_27
       - US美国(mibei77.com 米贝节点分享)_28
@@ -4907,25 +4584,14 @@ proxy-groups:
       - US美国(mibei77.com 米贝节点分享)_50
       - US美国(mibei77.com 米贝节点分享)_51
       - US美国(mibei77.com 米贝节点分享)_52
-      - US美国(mibei77.com 米贝节点分享)_53
-      - US美国(mibei77.com 米贝节点分享)_54
-      - US美国(mibei77.com 米贝节点分享)_55
-      - US美国(mibei77.com 米贝节点分享)_56
-      - US美国(mibei77.com 米贝节点分享)_57
-      - US美国(mibei77.com 米贝节点分享)_58
-      - US美国(mibei77.com 米贝节点分享)_59
-      - US美国(mibei77.com 米贝节点分享)_60
-      - US美国(mibei77.com 米贝节点分享)_61
-      - US美国(mibei77.com 米贝节点分享)_62
-      - US美国(mibei77.com 米贝节点分享)_63
-      - US美国(mibei77.com 米贝节点分享)_64
-      - US美国(mibei77.com 米贝节点分享)_65
-      - US美国(mibei77.com 米贝节点分享)_66
       - 挪威(mibei77.com 米贝节点分享)
       - 挪威(mibei77.com 米贝节点分享)_1
+      - JP日本(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)
       - HK香港(mibei77.com 米贝节点分享)_1
       - HK香港(mibei77.com 米贝节点分享)_2
+      - SG新加坡(mibei77.com 米贝节点分享)
+      - GB英国(mibei77.com 米贝节点分享)_1
       - GB英国(mibei77.com 米贝节点分享)_2
       - GB英国(mibei77.com 米贝节点分享)_3
       - GB英国(mibei77.com 米贝节点分享)_4
@@ -4936,16 +4602,6 @@ proxy-groups:
       - GB英国(mibei77.com 米贝节点分享)_9
       - GB英国(mibei77.com 米贝节点分享)_10
       - GB英国(mibei77.com 米贝节点分享)_11
-      - GB英国(mibei77.com 米贝节点分享)_12
-      - GB英国(mibei77.com 米贝节点分享)_13
-      - GB英国(mibei77.com 米贝节点分享)_14
-      - GB英国(mibei77.com 米贝节点分享)_15
-      - GB英国(mibei77.com 米贝节点分享)_16
-      - GB英国(mibei77.com 米贝节点分享)_17
-      - GB英国(mibei77.com 米贝节点分享)_18
-      - GB英国(mibei77.com 米贝节点分享)_19
-      - GB英国(mibei77.com 米贝节点分享)_20
-      - GB英国(mibei77.com 米贝节点分享)_21
 rule-providers:
   LocalAreaNetwork:
     type: http
@@ -5031,17 +4687,22 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
   - {name: 8元老牌专线机场：cczzuu.top, server: efan.dnsefan04881.com, port: 7754, type: vmess, uuid: 009e558d-3cf4-49d8-b5e4-82c9e14fe1a4, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
-  - {name: 🇺🇸 美国 Microsoft数据中心, server: 20.164.221.1, port: 443, type: ss, cipher: chacha20-ietf-poly1305, password: WUpTYsnFmIND14vx}
-  - {name: 🇳🇿 新西兰 starcorenode.com, server: 202.37.33.81, port: 443, type: vless, uuid: 3b01a777-55e7-49f6-8637-d94ee69607c6, tls: true, alpn: [http/1.1], tfo: false, skip-cert-verify: false, servername: m.udemy.com.cyylr.eu.cc, client-fingerprint: chrome, network: ws, ws-opts: {path: /id-tksi, headers: {Host: m.udemy.com.cyylr.eu.cc}}}
-  - {name: 🇺🇸 美国 Akamai科技公司CDN网络节点, server: 172.236.220.10, port: 443, type: trojan, password: s_WEN9lMmufG+qDIsn-4C7JOVAnDdbS3Ui, sni: 172.236.220.10, skip-cert-verify: false}
-  - {name: 🇧🇬 保加利亚 starcorenode.com, server: 87.120.126.205, port: 443, type: vless, uuid: 91e120bc-159a-4390-b4e1-197b19602ea0, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: sub.sbrf-cdn342.ru, client-fingerprint: chrome, network: tcp}
-  - {name: 🇺🇦 乌克兰 starcorenode.com, server: 91.225.217.28, port: 443, type: vless, uuid: 296bbba2-b100-4d91-b8df-3fe03cc863c4, tls: true, tfo: false, skip-cert-verify: false, reality-opts: {public-key: CnFVrSvJ1Mhl_6QqKCCvXtEdlaJjN4MXWBkSswJ_gX0, short-id: "106c" }, servername: yahoo.com, client-fingerprint: chrome, network: tcp}
-  - {name: 🇺🇸 美国 CloudFlare节点, server: a1-tss.pages.dev, port: 443, type: vless, uuid: f86f5a03-3872-46b5-bf03-a50388a0261d, tls: true, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: a1-tss.pages.dev}}}
   - {name: 🇨🇳 台湾省 starcorenode.com, server: 211.76.176.98, port: 19128, type: trojan, password: gcuCpQfaiVeDBdWG, sni: yazhou10.dynu.net, skip-cert-verify: false}
-  - {name: 🇬🇧 英国 威尔士阿伯斯威大学, server: 144.124.228.113, port: 443, type: vless, uuid: ea484535-0170-4ec8-bb3c-a9dbaa7412d7, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, reality-opts: {public-key: odHeTqoDcoPA6jeZStmaFPqoFg0ZiWwOKREEB0X-ez4, short-id: "e069bfaf9ba2069c" }, servername: nl3.panel11.ru, client-fingerprint: chrome, network: tcp}
-  - {name: 🇨🇳 台湾省 starcorenode.com 2, server: jpbgp.netvigor.cc, port: 19128, type: trojan, password: gcuCpQfaiVeDBdWG, sni: yazhou10.dynu.net, skip-cert-verify: false}
-  - {name: 🇩🇪 德国 黑森州法兰克福Linode数据中心, server: 172.104.237.100, port: 443, type: trojan, password: VPTFm=oZ++SuNT+jMRqGZqrAnWq-r8KJyY, sni: 172.104.237.100, skip-cert-verify: false}
-  - {name: 🇺🇸 美国 starcorenode.com, server: 45.130.125.206, port: 443, type: vless, uuid: f9fa9ed3-1381-441c-8672-588cbedd012d, tls: true, tfo: false, skip-cert-verify: false, servername: r.bibak.bz, network: ws, ws-opts: {path: /, headers: {Host: r.bibak.bz}}}
+  - {name: 🇺🇸 美国 starcorenode.com, server: 65.20.90.225, port: 443, type: trojan, password: Tu1fZjElnkRg0ECRj0sI0u54PY8ptUmATg, sni: www.sandbox-cloud.click, skip-cert-verify: false}
+  - {name: 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司, server: 130.94.68.100, port: 443, type: trojan, password: l64tlWoGT6USQr%3D3WnjWedzvVSHXn8TNTE, sni: www.rolll.click, skip-cert-verify: false}
+  - {name: 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 2, server: 130.94.104.210, port: 443, type: trojan, password: lTs6OZOMoqYAkDEbK10t-tE8KMjuREBW3m, sni: www.cdn-structure.click, skip-cert-verify: false}
+  - {name: 🇷🇺 俄罗斯 starcorenode.com, server: 85.234.114.53, port: 443, type: vless, uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: r1.mizulina.top, client-fingerprint: edge, network: tcp}
+  - {name: 🇧🇬 保加利亚 starcorenode.com, server: 87.120.93.140, port: 443, type: vless, uuid: 91e120bc-159a-4390-b4e1-197b19602ea0, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: sub.sbrf-cdn342.ru, client-fingerprint: chrome, network: tcp}
+  - {name: 🇺🇸 美国 starcorenode.com 2, server: gtm-sg-cc54q7d1q01.365cloud0285.com, port: 6003, type: vmess, uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
+  - {name: 亚太地区 starcorenode.com, server: 103.181.164.145, port: 51556, type: vmess, uuid: 418048af-a293-4b99-9b0c-98ca3580dd24, alterId: 0, cipher: auto, tls: false, skip-cert-verify: false}
+  - {name: 🇰🇷 韩国 KT电信, server: 121.178.83.161, port: 26214, type: trojan, password: GKHWMe2R4qwNcNxu6l3KMkdd, sni: vpn1.rnmcnm.com, skip-cert-verify: false, network: ws, ws-opts: {path: /trj-ws, headers: {Host: vpn1.rnmcnm.com}}}
+  - {name: 🇺🇸 美国 Akamai科技公司CDN网络节点, server: 172.236.220.10, port: 443, type: trojan, password: s_WEN9lMmufG+qDIsn-4C7JOVAnDdbS3Ui, sni: 172.236.220.10, skip-cert-verify: false}
+  - {name: 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 3, server: 130.94.65.52, port: 443, type: trojan, password: IbezlLAYfrLRwFn9.mHn5FDwk1asLi599U, sni: www.static-cast.click, skip-cert-verify: false}
+  - {name: 🇰🇷 韩国 KT电信 2, server: 121.154.96.50, port: 18000, type: trojan, password: 433e785b-2077-47f7-a43d-985f63dd18d1, sni: vpn.rnmcnm.com, skip-cert-verify: false, network: ws, ws-opts: {path: /trojan, headers: {Host: vpn.rnmcnm.com}}}
+  - {name: 🇧🇬 保加利亚 starcorenode.com 2, server: 87.120.93.131, port: 443, type: vless, uuid: 91e120bc-159a-4390-b4e1-197b19602ea0, tls: true, tfo: false, flow: xtls-rprx-vision, skip-cert-verify: false, servername: sub.sbrf-cdn342.ru, client-fingerprint: qq, network: tcp}
+  - {name: 🇧🇷 巴西圣保罗 CloudFlare节点, server: 188.114.97.6, port: 443, type: vless, uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8, tls: true, alpn: ["h3,h2,http/1.1"], tfo: false, skip-cert-verify: false, servername: octopusss5.info, client-fingerprint: chrome, network: ws, ws-opts: {path: /udfyfws, headers: {Host: octopusss5.info}}}
+  - {name: 🇺🇸 美国 CloudFlare节点, server: up2-df6.pages.dev, port: 443, type: vless, uuid: ce69190e-935a-4394-9e5e-2ab2872ba242, tls: true, tfo: false, skip-cert-verify: false, servername: up2-df6.pages.dev, network: ws, ws-opts: {path: /uTZSXPBI2IfoxF86, headers: {Host: up2-df6.pages.dev}}}
+  - {name: 🇺🇸 美国 Fastly全球Anycast节点, server: 151.101.193.57, port: 80, type: vless, uuid: 2c15f192-3812-98db-85a2-88cd7d02b868, tls: false, tfo: false, skip-cert-verify: false, network: ws, ws-opts: {path: "/?ed=2048", headers: {Host: Vpsdelta.com}}}
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -5049,17 +4710,22 @@ proxy-groups:
       - ♻️ 自动选择
       - DIRECT
       - 8元老牌专线机场：cczzuu.top
-      - 🇺🇸 美国 Microsoft数据中心
-      - 🇳🇿 新西兰 starcorenode.com
-      - 🇺🇸 美国 Akamai科技公司CDN网络节点
-      - 🇧🇬 保加利亚 starcorenode.com
-      - 🇺🇦 乌克兰 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点
       - 🇨🇳 台湾省 starcorenode.com
-      - 🇬🇧 英国 威尔士阿伯斯威大学
-      - 🇨🇳 台湾省 starcorenode.com 2
-      - 🇩🇪 德国 黑森州法兰克福Linode数据中心
       - 🇺🇸 美国 starcorenode.com
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 2
+      - 🇷🇺 俄罗斯 starcorenode.com
+      - 🇧🇬 保加利亚 starcorenode.com
+      - 🇺🇸 美国 starcorenode.com 2
+      - 亚太地区 starcorenode.com
+      - 🇰🇷 韩国 KT电信
+      - 🇺🇸 美国 Akamai科技公司CDN网络节点
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 3
+      - 🇰🇷 韩国 KT电信 2
+      - 🇧🇬 保加利亚 starcorenode.com 2
+      - 🇧🇷 巴西圣保罗 CloudFlare节点
+      - 🇺🇸 美国 CloudFlare节点
+      - 🇺🇸 美国 Fastly全球Anycast节点
   - name: ♻️ 自动选择
     type: url-test
     url: http://www.gstatic.com/generate_204
@@ -5067,17 +4733,22 @@ proxy-groups:
     tolerance: 50
     proxies:
       - 8元老牌专线机场：cczzuu.top
-      - 🇺🇸 美国 Microsoft数据中心
-      - 🇳🇿 新西兰 starcorenode.com
-      - 🇺🇸 美国 Akamai科技公司CDN网络节点
-      - 🇧🇬 保加利亚 starcorenode.com
-      - 🇺🇦 乌克兰 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点
       - 🇨🇳 台湾省 starcorenode.com
-      - 🇬🇧 英国 威尔士阿伯斯威大学
-      - 🇨🇳 台湾省 starcorenode.com 2
-      - 🇩🇪 德国 黑森州法兰克福Linode数据中心
       - 🇺🇸 美国 starcorenode.com
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 2
+      - 🇷🇺 俄罗斯 starcorenode.com
+      - 🇧🇬 保加利亚 starcorenode.com
+      - 🇺🇸 美国 starcorenode.com 2
+      - 亚太地区 starcorenode.com
+      - 🇰🇷 韩国 KT电信
+      - 🇺🇸 美国 Akamai科技公司CDN网络节点
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 3
+      - 🇰🇷 韩国 KT电信 2
+      - 🇧🇬 保加利亚 starcorenode.com 2
+      - 🇧🇷 巴西圣保罗 CloudFlare节点
+      - 🇺🇸 美国 CloudFlare节点
+      - 🇺🇸 美国 Fastly全球Anycast节点
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -5085,68 +4756,88 @@ proxy-groups:
       - ♻️ 自动选择
       - 🎯 全球直连
       - 8元老牌专线机场：cczzuu.top
-      - 🇺🇸 美国 Microsoft数据中心
-      - 🇳🇿 新西兰 starcorenode.com
-      - 🇺🇸 美国 Akamai科技公司CDN网络节点
-      - 🇧🇬 保加利亚 starcorenode.com
-      - 🇺🇦 乌克兰 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点
       - 🇨🇳 台湾省 starcorenode.com
-      - 🇬🇧 英国 威尔士阿伯斯威大学
-      - 🇨🇳 台湾省 starcorenode.com 2
-      - 🇩🇪 德国 黑森州法兰克福Linode数据中心
       - 🇺🇸 美国 starcorenode.com
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 2
+      - 🇷🇺 俄罗斯 starcorenode.com
+      - 🇧🇬 保加利亚 starcorenode.com
+      - 🇺🇸 美国 starcorenode.com 2
+      - 亚太地区 starcorenode.com
+      - 🇰🇷 韩国 KT电信
+      - 🇺🇸 美国 Akamai科技公司CDN网络节点
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 3
+      - 🇰🇷 韩国 KT电信 2
+      - 🇧🇬 保加利亚 starcorenode.com 2
+      - 🇧🇷 巴西圣保罗 CloudFlare节点
+      - 🇺🇸 美国 CloudFlare节点
+      - 🇺🇸 美国 Fastly全球Anycast节点
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - 8元老牌专线机场：cczzuu.top
-      - 🇺🇸 美国 Microsoft数据中心
-      - 🇳🇿 新西兰 starcorenode.com
-      - 🇺🇸 美国 Akamai科技公司CDN网络节点
-      - 🇧🇬 保加利亚 starcorenode.com
-      - 🇺🇦 乌克兰 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点
       - 🇨🇳 台湾省 starcorenode.com
-      - 🇬🇧 英国 威尔士阿伯斯威大学
-      - 🇨🇳 台湾省 starcorenode.com 2
-      - 🇩🇪 德国 黑森州法兰克福Linode数据中心
       - 🇺🇸 美国 starcorenode.com
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 2
+      - 🇷🇺 俄罗斯 starcorenode.com
+      - 🇧🇬 保加利亚 starcorenode.com
+      - 🇺🇸 美国 starcorenode.com 2
+      - 亚太地区 starcorenode.com
+      - 🇰🇷 韩国 KT电信
+      - 🇺🇸 美国 Akamai科技公司CDN网络节点
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 3
+      - 🇰🇷 韩国 KT电信 2
+      - 🇧🇬 保加利亚 starcorenode.com 2
+      - 🇧🇷 巴西圣保罗 CloudFlare节点
+      - 🇺🇸 美国 CloudFlare节点
+      - 🇺🇸 美国 Fastly全球Anycast节点
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
       - 8元老牌专线机场：cczzuu.top
-      - 🇺🇸 美国 Microsoft数据中心
-      - 🇳🇿 新西兰 starcorenode.com
-      - 🇺🇸 美国 Akamai科技公司CDN网络节点
-      - 🇧🇬 保加利亚 starcorenode.com
-      - 🇺🇦 乌克兰 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点
       - 🇨🇳 台湾省 starcorenode.com
-      - 🇬🇧 英国 威尔士阿伯斯威大学
-      - 🇨🇳 台湾省 starcorenode.com 2
-      - 🇩🇪 德国 黑森州法兰克福Linode数据中心
       - 🇺🇸 美国 starcorenode.com
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 2
+      - 🇷🇺 俄罗斯 starcorenode.com
+      - 🇧🇬 保加利亚 starcorenode.com
+      - 🇺🇸 美国 starcorenode.com 2
+      - 亚太地区 starcorenode.com
+      - 🇰🇷 韩国 KT电信
+      - 🇺🇸 美国 Akamai科技公司CDN网络节点
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 3
+      - 🇰🇷 韩国 KT电信 2
+      - 🇧🇬 保加利亚 starcorenode.com 2
+      - 🇧🇷 巴西圣保罗 CloudFlare节点
+      - 🇺🇸 美国 CloudFlare节点
+      - 🇺🇸 美国 Fastly全球Anycast节点
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
       - 8元老牌专线机场：cczzuu.top
-      - 🇺🇸 美国 Microsoft数据中心
-      - 🇳🇿 新西兰 starcorenode.com
-      - 🇺🇸 美国 Akamai科技公司CDN网络节点
-      - 🇧🇬 保加利亚 starcorenode.com
-      - 🇺🇦 乌克兰 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点
       - 🇨🇳 台湾省 starcorenode.com
-      - 🇬🇧 英国 威尔士阿伯斯威大学
-      - 🇨🇳 台湾省 starcorenode.com 2
-      - 🇩🇪 德国 黑森州法兰克福Linode数据中心
       - 🇺🇸 美国 starcorenode.com
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 2
+      - 🇷🇺 俄罗斯 starcorenode.com
+      - 🇧🇬 保加利亚 starcorenode.com
+      - 🇺🇸 美国 starcorenode.com 2
+      - 亚太地区 starcorenode.com
+      - 🇰🇷 韩国 KT电信
+      - 🇺🇸 美国 Akamai科技公司CDN网络节点
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 3
+      - 🇰🇷 韩国 KT电信 2
+      - 🇧🇬 保加利亚 starcorenode.com 2
+      - 🇧🇷 巴西圣保罗 CloudFlare节点
+      - 🇺🇸 美国 CloudFlare节点
+      - 🇺🇸 美国 Fastly全球Anycast节点
   - name: 📢 谷歌FCM
     type: select
     proxies:
@@ -5154,17 +4845,22 @@ proxy-groups:
       - 🎯 全球直连
       - ♻️ 自动选择
       - 8元老牌专线机场：cczzuu.top
-      - 🇺🇸 美国 Microsoft数据中心
-      - 🇳🇿 新西兰 starcorenode.com
-      - 🇺🇸 美国 Akamai科技公司CDN网络节点
-      - 🇧🇬 保加利亚 starcorenode.com
-      - 🇺🇦 乌克兰 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点
       - 🇨🇳 台湾省 starcorenode.com
-      - 🇬🇧 英国 威尔士阿伯斯威大学
-      - 🇨🇳 台湾省 starcorenode.com 2
-      - 🇩🇪 德国 黑森州法兰克福Linode数据中心
       - 🇺🇸 美国 starcorenode.com
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 2
+      - 🇷🇺 俄罗斯 starcorenode.com
+      - 🇧🇬 保加利亚 starcorenode.com
+      - 🇺🇸 美国 starcorenode.com 2
+      - 亚太地区 starcorenode.com
+      - 🇰🇷 韩国 KT电信
+      - 🇺🇸 美国 Akamai科技公司CDN网络节点
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 3
+      - 🇰🇷 韩国 KT电信 2
+      - 🇧🇬 保加利亚 starcorenode.com 2
+      - 🇧🇷 巴西圣保罗 CloudFlare节点
+      - 🇺🇸 美国 CloudFlare节点
+      - 🇺🇸 美国 Fastly全球Anycast节点
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -5188,17 +4884,22 @@ proxy-groups:
       - 🎯 全球直连
       - ♻️ 自动选择
       - 8元老牌专线机场：cczzuu.top
-      - 🇺🇸 美国 Microsoft数据中心
-      - 🇳🇿 新西兰 starcorenode.com
-      - 🇺🇸 美国 Akamai科技公司CDN网络节点
-      - 🇧🇬 保加利亚 starcorenode.com
-      - 🇺🇦 乌克兰 starcorenode.com
-      - 🇺🇸 美国 CloudFlare节点
       - 🇨🇳 台湾省 starcorenode.com
-      - 🇬🇧 英国 威尔士阿伯斯威大学
-      - 🇨🇳 台湾省 starcorenode.com 2
-      - 🇩🇪 德国 黑森州法兰克福Linode数据中心
       - 🇺🇸 美国 starcorenode.com
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 2
+      - 🇷🇺 俄罗斯 starcorenode.com
+      - 🇧🇬 保加利亚 starcorenode.com
+      - 🇺🇸 美国 starcorenode.com 2
+      - 亚太地区 starcorenode.com
+      - 🇰🇷 韩国 KT电信
+      - 🇺🇸 美国 Akamai科技公司CDN网络节点
+      - 🇺🇸 美国 科罗拉多州阿拉帕霍县格林伍德村市NTT美国股份有限公司 3
+      - 🇰🇷 韩国 KT电信 2
+      - 🇧🇬 保加利亚 starcorenode.com 2
+      - 🇧🇷 巴西圣保罗 CloudFlare节点
+      - 🇺🇸 美国 CloudFlare节点
+      - 🇺🇸 美国 Fastly全球Anycast节点
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 全球直连
   - DOMAIN-SUFFIX,ip6-localhost,🎯 全球直连
@@ -8748,327 +8449,205 @@ dns:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
 proxies:
-  - name: 🇻🇳_VN_越南
-    type: ss
-    server: 103.186.154.181
-    port: 38388
-    cipher: aes-256-cfb
-    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-    udp: true
-  - name: 🇳🇱_NL_荷兰->🇺🇸_US_美国
+  - name: 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
     type: vless
-    server: 188.42.88.238
-    port: 2096
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.jpmj.dev
+    server: 85.234.114.53
+    port: 22231
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
     tls: true
-    ws-opts:
-      headers:
-        Host: sni.jpmj.dev
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
     udp: true
-  - name: 🇧🇿_BZ_伯利兹
+  - name: 🇵🇱_PL_波兰
     type: vless
-    server: 45.131.6.191
-    port: 2096
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.my111000.tech
-    tls: true
-    ws-opts:
-      path: Telegram%F0%9F%87%A8%F0%9F%87%B3@WangCai2/
-      headers:
-        Host: sni.my111000.tech
-    udp: true
-  - name: 🇺🇸_US_美国
-    type: vless
-    server: 135.84.73.245
+    server: pl.prostosetup.org
     port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.111000.dynv6.net
-    tls: true
-    ws-opts:
-      headers:
-        Host: sni.111000.dynv6.net
-    udp: true
-  - name: 🇪🇸_ES_西班牙
-    type: ss
-    server: 5.188.181.201
-    port: 9029
-    cipher: aes-256-cfb
-    password: dU3DSNS8wYPXzEKw
-    udp: true
-  - name: 🇧🇿_BZ_伯利兹_1
-    type: vless
-    server: 45.131.4.192
-    port: 80
-    uuid: 5f4845b4-11dc-41d6-9508-4ff6a02e36c1
-    network: ws
-    tls: false
-    ws-opts:
-      path: /
-      headers:
-        Host: silent-paper-fa57.fipiyag989.workers.dev
-    udp: true
-  - name: 🇻🇳_VN_越南_1
-    type: ss
-    server: 103.186.154.166
-    port: 38388
-    cipher: aes-256-cfb
-    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-    udp: true
-  - name: 🇫🇮_FI_芬兰
-    type: vless
-    server: 144.31.82.47
-    port: 18038
-    uuid: a42c8b66-d0a7-4b49-9143-b98f1c84edba
-    servername: www.microsoft.com
+    uuid: 1b43419a-b711-40d4-a0ee-eb5c73e60c92
+    servername: pl.prostosetup.org
     tls: true
     flow: xtls-rprx-vision
     client-fingerprint: chrome
     reality-opts:
-      public-key: UDLhjunZjP-5A6KBMeuWe3qp_FusLAshcQIcCF7EZh8
-      short-id: ce9f790791426d83
+      public-key: ps7eCLLKAqgSGPFRQl1-R1PhzUeO1Z1EwNl02Ac63UA
+      short-id: 514d02a2addd6476
     udp: true
-  - name: 🇯🇵_JP_日本->🇹🇼_TW_中国台湾
+  - name: 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+    type: vmess
+    server: v24.hdacd.com
+    port: 30824
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇳🇱_NL_荷兰
     type: vless
-    server: 216.23.108.4
-    port: 55309
-    uuid: 9c5d1bf0-d58b-4001-9e7c-0c1fa314068c
-    servername: download.windowsupdate.com
+    server: 144.124.228.113
+    port: 443
+    uuid: ea484535-0170-4ec8-bb3c-a9dbaa7412d7
+    servername: nl3.panel11.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: odHeTqoDcoPA6jeZStmaFPqoFg0ZiWwOKREEB0X-ez4
+      short-id: e069bfaf9ba2069c
+    udp: true
+  - name: 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+    type: vmess
+    server: world.t.51guangtaobao.com
+    port: 2510
+    uuid: 1d3d868e-ae7b-3762-b9d9-a7f267494c7e
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇺🇸_US_美国->🇨🇭_CH_瑞士
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 45553
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: ch.01.naiun.bilibili.com
+    skip-cert-verify: true
+    tls: false
+    udp: true
+  - name: 🇫🇮_FI_芬兰
+    type: ss
+    server: 109.107.182.229
+    port: 51544
+    cipher: chacha20-ietf-poly1305
+    password: MZeSTvpl2uoey1R0frhPyJ
+    udp: true
+  - name: 🇩🇪_DE_德国
+    type: vless
+    server: 178.215.238.148
+    port: 8443
+    uuid: 21c1132b-068c-46fb-880e-3268f6a30e7f
+    network: raw
+    servername: eh.vk.com
+    tls: true
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Crjd0I6hcasRXZcfNf7cs-YtJLpQ8u-t1CbwHIDAciU
+      short-id: 478dc6
+    udp: true
+  - name: 🇭🇰_HK_中国香港
+    type: vless
+    server: 47.83.153.19
+    port: 59750
+    uuid: 9e76cfb8-b7a6-40f6-c2aa-9905aa19f31b
+    servername: www.amd.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: W9BjX6YmCIVsjhKMlz233Yoe0xcf0SVHfvPKqbf3vCg
+    udp: true
+  - name: 🇺🇸_US_美国->🇸🇬_SG_新加坡
+    type: vmess
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6004
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇺🇸_US_美国
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 🇩🇪_DE_德国_1
+    type: vless
+    server: 87.120.126.205
+    port: 443
+    uuid: 91e120bc-159a-4390-b4e1-197b19602ea0
+    servername: sub.sbrf-cdn342.ru
     tls: true
     flow: xtls-rprx-vision
     client-fingerprint: qq
-    reality-opts:
-      public-key: 7BS-JUFgYVaWrwwyDSiVq_YDoG36w8cRd4U8HvEg-F0
-      short-id: 4bcbc85d
     udp: true
-  - name: 🇯🇵_JP_日本
+  - name: 🇱🇻_LV_拉脱维亚
     type: vless
-    server: 216.23.108.4
-    port: 55305
-    uuid: 9c5d1bf0-d58b-4001-9e7c-0c1fa314068c
-    servername: download.windowsupdate.com
+    server: 90.156.254.164
+    port: 19562
+    uuid: 5b96be74-656d-4bb7-85c2-d2d8a3b7c2f3
+    network: raw
+    servername: yahoo.com
     tls: true
-    flow: xtls-rprx-vision
     client-fingerprint: chrome
     reality-opts:
-      public-key: 7BS-JUFgYVaWrwwyDSiVq_YDoG36w8cRd4U8HvEg-F0
-      short-id: 4bcbc85d
+      public-key: T66pm2f_PN4Hya_A_5K0X1HQb717SUCODyoUO7Gk3Ws
+      short-id: 9e
     udp: true
-  - name: 🇬🇧_GB_英国
-    type: vless
-    server: london1.ap221.com
-    port: 443
-    uuid: 3a1d7c1d-09c6-4c81-8e11-75dd4ab1ac07
-    servername: london.ap221.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
+  - name: 🇺🇸_US_美国->🇫🇷_FR_法国
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 45619
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: fr.01.naiun.bilibili.com
+    skip-cert-verify: true
+    tls: false
     udp: true
-  - name: 🇰🇷_KR_韩国
-    type: vless
-    server: 59.4.161.71
-    port: 38241
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.111000.v6.army
-    tls: true
-    ws-opts:
-      path: /?ed=2560
-      headers:
-        Host: sni.111000.v6.army
-    udp: true
-  - name: 🇻🇳_VN_越南_2
+  - name: 🇨🇦_CA_加拿大
     type: ss
-    server: 103.186.154.174
-    port: 38388
-    cipher: aes-256-cfb
-    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-    udp: true
-  - name: 🇯🇵_JP_日本->🇸🇬_SG_新加坡
-    type: vless
-    server: 216.23.108.4
-    port: 55313
-    uuid: 9c5d1bf0-d58b-4001-9e7c-0c1fa314068c
-    servername: download.windowsupdate.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: safari
-    reality-opts:
-      public-key: 7BS-JUFgYVaWrwwyDSiVq_YDoG36w8cRd4U8HvEg-F0
-      short-id: 4bcbc85d
-    udp: true
-  - name: 🇻🇳_VN_越南_3
-    type: ss
-    server: 103.186.154.40
-    port: 38388
-    cipher: aes-256-cfb
-    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-    udp: true
-  - name: 🇹🇭_TH_泰国
-    type: vless
-    server: 47.81.36.237
+    server: 15.223.186.62
     port: 443
-    uuid: 3e7f67de-648e-4871-b51a-a225214d41ee
-    servername: api.digital-help-prd.autodesk.com
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: 🇫🇮_FI_芬兰_1
+    type: ss
+    server: 195.133.2.2
+    port: 34898
+    cipher: chacha20-ietf-poly1305
+    password: v2LIewZzNUsIrqODr22FVc
+    udp: true
+  - name: 🇫🇮_FI_芬兰_2
+    type: vless
+    server: 138.124.244.248
+    port: 443
+    uuid: 476caa1d-7c04-48ab-8de5-2c1af0d13a66
+    servername: yahoo.com
     tls: true
     client-fingerprint: chrome
     reality-opts:
-      public-key: TRP10HqKUXEQ3O-cfsq93DycfBmbJe9KM36yvSa8Mmw
-    udp: true
-  - name: 🇰🇷_KR_韩国_1
-    type: vless
-    server: 121.175.77.73
-    port: 10333
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.111000.v6.army
-    tls: true
-    ws-opts:
-      path: /?ed=2560
-      headers:
-        Host: sni.111000.v6.army
+      public-key: PYX0lu3m0L_h28eW4186s63gRFHXoTc3K9wKeFewDUQ
+      short-id: e9a8
     udp: true
   - name: 🇺🇸_US_美国_1
-    type: vless
-    server: 104.18.12.149
-    port: 443
-    uuid: b60e5c32-3d4e-425c-a785-a36cd0621a72
-    network: ws
-    servername: S4-f45.pAGeS.DeV
-    tls: true
-    ws-opts:
-      path: /
-      headers:
-        Host: S4-f45.pAGeS.DeV
-    udp: true
-  - name: 🇺🇸_US_美国_2
-    type: vless
-    server: 104.250.239.8
-    port: 17195
-    uuid: 2219a1b1-9290-4ac5-94fd-6cfc1fb25280
-    servername: usvless.yydzx.xyz
-    tls: true
-    flow: xtls-rprx-vision
-    udp: true
-  - name: 🇯🇵_JP_日本_1
-    type: vless
-    server: 158.51.110.12
-    port: 443
-    uuid: ae0dd58e-e222-40bf-84ae-365a97532737
-    network: ws
-    servername: pagescm.freen5.cc.cd
-    tls: true
-    ws-opts:
-      path: /showfp=chrome
-      headers:
-        Host: pagescm.freen5.cc.cd
-    udp: true
-  - name: 🇺🇸_US_美国_3
-    type: vless
-    server: 104.17.101.139
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.111000.dynv6.net
-    tls: true
-    ws-opts:
-      path: /?proxyip=ip.111000.de5.net%3A443
-      headers:
-        Host: sni.111000.dynv6.net
-    udp: true
-  - name: 🇭🇰_HK_中国香港
-    type: ss
-    server: 103.149.182.105
-    port: 8388
-    cipher: chacha20-ietf
-    password: asd123456
-    udp: true
-  - name: 🇰🇿_KZ_哈萨克斯坦
-    type: vless
-    server: 31.43.179.238
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.jpmj.dev
-    tls: true
-    ws-opts:
-      headers:
-        Host: sni.jpmj.dev
-    udp: true
-  - name: 🇺🇸_US_美国_4
-    type: vless
-    server: 139.64.235.238
-    port: 2096
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.jpmj.dev
-    tls: true
-    client-fingerprint: chrome
-    ws-opts:
-      path: /
-      headers:
-        Host: sni.jpmj.dev
-    udp: true
-  - name: 🇺🇸_US_美国_5
-    type: vless
-    server: 45.153.7.191
-    port: 2096
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.my111000.tech
-    tls: true
-    ws-opts:
-      headers:
-        Host: sni.my111000.tech
-    udp: true
-  - name: 🇺🇸_US_美国_6
-    type: vless
-    server: 162.159.17.207
-    port: 443
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.111000.v6.army
-    tls: true
-    ws-opts:
-      path: /?https%3A%2F%2Ft.me%2Fwangcai2%F0%9F%87%A8%F0%9F%87%B3=
-      headers:
-        Host: sni.111000.v6.army
-    udp: true
-  - name: 🇻🇳_VN_越南_4
-    type: ss
-    server: 103.186.155.114
-    port: 38388
-    cipher: aes-256-cfb
-    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-    udp: true
-  - name: 🇻🇳_VN_越南_5
-    type: ss
-    server: 103.186.154.234
-    port: 38388
-    cipher: aes-256-cfb
-    password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
-    udp: true
-  - name: 🇨🇾_CY_塞浦路斯
-    type: vless
-    server: 77.37.33.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 47909
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: is.01.naiun.bilibili.com
+    skip-cert-verify: true
     tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/youtube@ZYFXS🇨🇳
-      headers:
-        Host: vms.lifetime57.workers.dev
+    udp: true
+  - name: 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 41943
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: az.01.naiun.bilibili.com
+    skip-cert-verify: true
+    tls: false
     udp: true
   - name: 🇷🇺_RU_俄罗斯
     type: ss
-    server: ru.safepass.click
-    port: 442
-    cipher: aes-128-gcm
-    password: 6784aee2-0dfe-474f-8446-480259ff9918
+    server: 45.140.169.216
+    port: 30129
+    cipher: aes-256-gcm
+    password: c5fcdf7829112cb4
     udp: true
 proxy-groups:
   - name: 🚀 节点选择
@@ -9076,68 +8655,48 @@ proxy-groups:
     proxies:
       - ♻️ 自动选择
       - DIRECT
-      - 🇻🇳_VN_越南
-      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
-      - 🇧🇿_BZ_伯利兹
-      - 🇺🇸_US_美国
-      - 🇪🇸_ES_西班牙
-      - 🇧🇿_BZ_伯利兹_1
-      - 🇻🇳_VN_越南_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
       - 🇫🇮_FI_芬兰
-      - 🇯🇵_JP_日本->🇹🇼_TW_中国台湾
-      - 🇯🇵_JP_日本
-      - 🇬🇧_GB_英国
-      - 🇰🇷_KR_韩国
-      - 🇻🇳_VN_越南_2
-      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡
-      - 🇻🇳_VN_越南_3
-      - 🇹🇭_TH_泰国
-      - 🇰🇷_KR_韩国_1
-      - 🇺🇸_US_美国_1
-      - 🇺🇸_US_美国_2
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国
       - 🇭🇰_HK_中国香港
-      - 🇰🇿_KZ_哈萨克斯坦
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇺🇸_US_美国_6
-      - 🇻🇳_VN_越南_4
-      - 🇻🇳_VN_越南_5
-      - 🇨🇾_CY_塞浦路斯
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
       - 🇷🇺_RU_俄罗斯
   - name: ♻️ 自动选择
     type: url-test
     proxies:
-      - 🇻🇳_VN_越南
-      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
-      - 🇧🇿_BZ_伯利兹
-      - 🇺🇸_US_美国
-      - 🇪🇸_ES_西班牙
-      - 🇧🇿_BZ_伯利兹_1
-      - 🇻🇳_VN_越南_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
       - 🇫🇮_FI_芬兰
-      - 🇯🇵_JP_日本->🇹🇼_TW_中国台湾
-      - 🇯🇵_JP_日本
-      - 🇬🇧_GB_英国
-      - 🇰🇷_KR_韩国
-      - 🇻🇳_VN_越南_2
-      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡
-      - 🇻🇳_VN_越南_3
-      - 🇹🇭_TH_泰国
-      - 🇰🇷_KR_韩国_1
-      - 🇺🇸_US_美国_1
-      - 🇺🇸_US_美国_2
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国
       - 🇭🇰_HK_中国香港
-      - 🇰🇿_KZ_哈萨克斯坦
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇺🇸_US_美国_6
-      - 🇻🇳_VN_越南_4
-      - 🇻🇳_VN_越南_5
-      - 🇨🇾_CY_塞浦路斯
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
       - 🇷🇺_RU_俄罗斯
     url: http://www.gstatic.com/generate_204
     interval: 300
@@ -9148,140 +8707,100 @@ proxy-groups:
       - 🚀 节点选择
       - ♻️ 自动选择
       - 🎯 全球直连
-      - 🇻🇳_VN_越南
-      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
-      - 🇧🇿_BZ_伯利兹
-      - 🇺🇸_US_美国
-      - 🇪🇸_ES_西班牙
-      - 🇧🇿_BZ_伯利兹_1
-      - 🇻🇳_VN_越南_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
       - 🇫🇮_FI_芬兰
-      - 🇯🇵_JP_日本->🇹🇼_TW_中国台湾
-      - 🇯🇵_JP_日本
-      - 🇬🇧_GB_英国
-      - 🇰🇷_KR_韩国
-      - 🇻🇳_VN_越南_2
-      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡
-      - 🇻🇳_VN_越南_3
-      - 🇹🇭_TH_泰国
-      - 🇰🇷_KR_韩国_1
-      - 🇺🇸_US_美国_1
-      - 🇺🇸_US_美国_2
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国
       - 🇭🇰_HK_中国香港
-      - 🇰🇿_KZ_哈萨克斯坦
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇺🇸_US_美国_6
-      - 🇻🇳_VN_越南_4
-      - 🇻🇳_VN_越南_5
-      - 🇨🇾_CY_塞浦路斯
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
       - 🇷🇺_RU_俄罗斯
   - name: 📲 电报信息
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 🇻🇳_VN_越南
-      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
-      - 🇧🇿_BZ_伯利兹
-      - 🇺🇸_US_美国
-      - 🇪🇸_ES_西班牙
-      - 🇧🇿_BZ_伯利兹_1
-      - 🇻🇳_VN_越南_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
       - 🇫🇮_FI_芬兰
-      - 🇯🇵_JP_日本->🇹🇼_TW_中国台湾
-      - 🇯🇵_JP_日本
-      - 🇬🇧_GB_英国
-      - 🇰🇷_KR_韩国
-      - 🇻🇳_VN_越南_2
-      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡
-      - 🇻🇳_VN_越南_3
-      - 🇹🇭_TH_泰国
-      - 🇰🇷_KR_韩国_1
-      - 🇺🇸_US_美国_1
-      - 🇺🇸_US_美国_2
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国
       - 🇭🇰_HK_中国香港
-      - 🇰🇿_KZ_哈萨克斯坦
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇺🇸_US_美国_6
-      - 🇻🇳_VN_越南_4
-      - 🇻🇳_VN_越南_5
-      - 🇨🇾_CY_塞浦路斯
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
       - 🇷🇺_RU_俄罗斯
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
       - 🚀 节点选择
-      - 🇻🇳_VN_越南
-      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
-      - 🇧🇿_BZ_伯利兹
-      - 🇺🇸_US_美国
-      - 🇪🇸_ES_西班牙
-      - 🇧🇿_BZ_伯利兹_1
-      - 🇻🇳_VN_越南_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
       - 🇫🇮_FI_芬兰
-      - 🇯🇵_JP_日本->🇹🇼_TW_中国台湾
-      - 🇯🇵_JP_日本
-      - 🇬🇧_GB_英国
-      - 🇰🇷_KR_韩国
-      - 🇻🇳_VN_越南_2
-      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡
-      - 🇻🇳_VN_越南_3
-      - 🇹🇭_TH_泰国
-      - 🇰🇷_KR_韩国_1
-      - 🇺🇸_US_美国_1
-      - 🇺🇸_US_美国_2
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国
       - 🇭🇰_HK_中国香港
-      - 🇰🇿_KZ_哈萨克斯坦
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇺🇸_US_美国_6
-      - 🇻🇳_VN_越南_4
-      - 🇻🇳_VN_越南_5
-      - 🇨🇾_CY_塞浦路斯
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
       - 🇷🇺_RU_俄罗斯
   - name: 🍎 苹果服务
     type: select
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
-      - 🇻🇳_VN_越南
-      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
-      - 🇧🇿_BZ_伯利兹
-      - 🇺🇸_US_美国
-      - 🇪🇸_ES_西班牙
-      - 🇧🇿_BZ_伯利兹_1
-      - 🇻🇳_VN_越南_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
       - 🇫🇮_FI_芬兰
-      - 🇯🇵_JP_日本->🇹🇼_TW_中国台湾
-      - 🇯🇵_JP_日本
-      - 🇬🇧_GB_英国
-      - 🇰🇷_KR_韩国
-      - 🇻🇳_VN_越南_2
-      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡
-      - 🇻🇳_VN_越南_3
-      - 🇹🇭_TH_泰国
-      - 🇰🇷_KR_韩国_1
-      - 🇺🇸_US_美国_1
-      - 🇺🇸_US_美国_2
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国
       - 🇭🇰_HK_中国香港
-      - 🇰🇿_KZ_哈萨克斯坦
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇺🇸_US_美国_6
-      - 🇻🇳_VN_越南_4
-      - 🇻🇳_VN_越南_5
-      - 🇨🇾_CY_塞浦路斯
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
       - 🇷🇺_RU_俄罗斯
   - name: 🎯 全球直连
     type: select
@@ -9305,34 +8824,24 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
       - ♻️ 自动选择
-      - 🇻🇳_VN_越南
-      - 🇳🇱_NL_荷兰->🇺🇸_US_美国
-      - 🇧🇿_BZ_伯利兹
-      - 🇺🇸_US_美国
-      - 🇪🇸_ES_西班牙
-      - 🇧🇿_BZ_伯利兹_1
-      - 🇻🇳_VN_越南_1
+      - 🇬🇧_GB_英国->🇬🇪_GE_格鲁吉亚
+      - 🇵🇱_PL_波兰
+      - 🇲🇾_MY_马来西亚->🇺🇸_US_美国
+      - 🇳🇱_NL_荷兰
+      - 🇭🇰_HK_中国香港->🇹🇼_TW_中国台湾
+      - 🇺🇸_US_美国->🇨🇭_CH_瑞士
       - 🇫🇮_FI_芬兰
-      - 🇯🇵_JP_日本->🇹🇼_TW_中国台湾
-      - 🇯🇵_JP_日本
-      - 🇬🇧_GB_英国
-      - 🇰🇷_KR_韩国
-      - 🇻🇳_VN_越南_2
-      - 🇯🇵_JP_日本->🇸🇬_SG_新加坡
-      - 🇻🇳_VN_越南_3
-      - 🇹🇭_TH_泰国
-      - 🇰🇷_KR_韩国_1
-      - 🇺🇸_US_美国_1
-      - 🇺🇸_US_美国_2
-      - 🇯🇵_JP_日本_1
-      - 🇺🇸_US_美国_3
+      - 🇩🇪_DE_德国
       - 🇭🇰_HK_中国香港
-      - 🇰🇿_KZ_哈萨克斯坦
-      - 🇺🇸_US_美国_4
-      - 🇺🇸_US_美国_5
-      - 🇺🇸_US_美国_6
-      - 🇻🇳_VN_越南_4
-      - 🇻🇳_VN_越南_5
-      - 🇨🇾_CY_塞浦路斯
+      - 🇺🇸_US_美国->🇸🇬_SG_新加坡
+      - 🇺🇸_US_美国
+      - 🇩🇪_DE_德国_1
+      - 🇱🇻_LV_拉脱维亚
+      - 🇺🇸_US_美国->🇫🇷_FR_法国
+      - 🇨🇦_CA_加拿大
+      - 🇫🇮_FI_芬兰_1
+      - 🇫🇮_FI_芬兰_2
+      - 🇺🇸_US_美国_1
+      - 🇺🇸_US_美国->🇦🇿_AZ_阿塞拜疆
       - 🇷🇺_RU_俄罗斯
 error code: 520
