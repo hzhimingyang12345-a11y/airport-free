@@ -395,7 +395,12 @@ def dedupe_nodes(nodes: Iterable[Node], mode: str) -> list[Node]:
     seen = set()
     unique = []
     for node in nodes:
-        key = node.endpoint_key if mode == "endpoint" else node.config_key
+        if mode == "raw":
+            key = node.raw.strip()
+        elif mode == "endpoint":
+            key = node.endpoint_key
+        else:
+            key = node.config_key
         if key in seen:
             continue
         seen.add(key)
@@ -587,7 +592,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--max-candidates", type=positive_int, default=2500, help="Maximum candidate nodes to output.")
     parser.add_argument("--keep-plain-tcp", action="store_true", help="Keep low-potential plain TCP nodes.")
     parser.add_argument("--preserve-order", action="store_true", help="Preserve source order instead of sorting by feature score.")
-    parser.add_argument("--dedupe-mode", choices=("config", "endpoint"), default="config", help="Use config to keep same endpoint with different SNI/path/user.")
+    parser.add_argument("--dedupe-mode", choices=("raw", "config", "endpoint"), default="raw", help="Use raw to remove only identical links; config and endpoint are more aggressive.")
     parser.add_argument("--limit", type=positive_int, help="Optional input limit for local testing.")
     return parser
 
