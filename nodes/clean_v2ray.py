@@ -14,8 +14,22 @@ from urllib.parse import parse_qsl, quote, urlencode, urlsplit
 import requests
 
 
-SUPPORTED_SCHEMES = ("vmess", "vless", "ss", "ssr", "trojan", "hysteria", "hy2")
-URL_SCHEMES = ("vless", "trojan", "hysteria", "hy2")
+SUPPORTED_SCHEMES = (
+    "vmess",
+    "vless",
+    "ss",
+    "ssr",
+    "trojan",
+    "hysteria",
+    "hysteria2",
+    "hy2",
+    "http",
+    "https",
+    "socks",
+    "socks5",
+    "v2rayn",
+)
+URL_SCHEMES = ("vless", "trojan", "hysteria", "hysteria2", "hy2", "http", "https", "socks", "socks5")
 CDN_PORTS = {443, 8443, 2053, 2083, 2087, 2096}
 CDN_HINTS = (
     "cloudflare",
@@ -186,7 +200,7 @@ def parse_url_node(raw: str, scheme: str) -> Node | None:
     params = dict(parse_qsl(parsed.query, keep_blank_values=True))
     network = first_value(params, ("type", "network", "net"), "tcp").lower()
     security = first_value(params, ("security", "tls"), "").lower()
-    if scheme in ("trojan", "hysteria", "hy2") and not security:
+    if scheme in ("trojan", "hysteria", "hysteria2", "hy2") and not security:
         security = "tls"
     user_id = parsed.username or ""
     host_header = first_value(params, ("host", "authority"), "")
@@ -277,6 +291,10 @@ def parse_node(raw: str) -> Node | None:
         return parse_ss(raw)
     if scheme == "ssr":
         return parse_ssr(raw)
+    if scheme == "v2rayn":
+        # v2rayN uses this opaque share-link format for several proxy types.
+        # Its payload is client-defined, so retain it unchanged rather than rewriting it.
+        return Node(raw=raw, scheme=scheme, host="v2rayn.invalid", port=1, network="custom")
     if scheme in URL_SCHEMES:
         return parse_url_node(raw, scheme)
     return None
@@ -527,6 +545,8 @@ def rename_ssr(raw: str, name: str) -> str:
 
 
 def rename_node(node: Node, name: str) -> str:
+    if node.scheme == "v2rayn":
+        return node.raw
     if node.scheme == "vmess":
         return rename_vmess(node.raw, name)
     if node.scheme == "ssr":

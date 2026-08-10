@@ -15,7 +15,13 @@ PROTOCOLS = (
     "ssr://",
     "trojan://",
     "hysteria://",
+    "hysteria2://",
     "hy2://",
+    "http://",
+    "https://",
+    "socks://",
+    "socks5://",
+    "v2rayn://",
 )
 
 urls = [
