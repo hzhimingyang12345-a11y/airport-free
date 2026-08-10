@@ -19,11 +19,11 @@ PROTOCOLS = (
 )
 
 urls = [
-    "https://raw.githubusercontent.com/mfuu/v2ray/master/v2ray",
-    "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt",
+    "https://raw.githubusercontent.com/zhimingyang25/v2rayn-subscription/main/subscriptions/v2rayn-tls-http.txt",
+    "https://sub.luoxi.me/sub?token=aab07528942566340aac60a82a2e9628",
     "https://raw.githubusercontent.com/wenxig/dongtai-sub/refs/heads/main/data/sub.txt",
-    "https://234.qzz.io/fsllist64",
-    "https://fa.zmxoo.xyz/linkapi",
+    "https://sub.doing1024.qzz.io/sub-2def74536e818a7c4445e0cf871796e6",
+    "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt",
 ]
 
 
