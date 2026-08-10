@@ -1,7 +1,7 @@
 # Airport-Free
 ## Free nodes, automatically renews subscription every 3h
 
-- Update time（UTC+8）：`2026-08-06 10:10:58`
+- Update time（UTC+8）：`2026-08-11 04:31:10`
 - [v2ray nodes all in one](https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray.txt).（Not recommended）
 - [v2ray nodes all in one](https://ghproxy.net/https://github.com/xiaoji235/airport-free/blob/main/v2ray.txt) （ you can use this if can not access）
 - Since CDN acceleration will cache and cause nodes updates to lag, you can go to [Github](https://github.com/xiaoji235/airport-free) fetch [clash files](https://github.com/xiaoji235/airport-free/tree/main/clash) or [v2ray files](https://github.com/xiaoji235/airport-free/tree/main/v2ray)
@@ -10,10 +10,7 @@
 
 <table style="width:90%">
 <tr><td><strong>v2ray</strong></td>
-<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/clashnodecc.txt">v2ray nodes 1</a></td>
-<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/github_public.txt">v2ray nodes 2</a></td>
-<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/naidounode.txt">v2ray nodes 3</a></td>
-<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/v2rayshare.txt">v2ray nodes 4</a></td>
+<td align="center"><a href="https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/github_public.txt">v2ray nodes 1</a></td>
 
 
 </tr>
@@ -30,10 +27,7 @@
 
 <table style="width:90%">
 <tr><td><strong>v2ray</strong></td>
-<td align="center"><a href="https://ghproxy.net/https://github.com/xiaoji235/airport-free/blob/main/v2ray/clashnodecc.txt">v2ray nodes 1</a></td>
-<td align="center"><a href="https://ghproxy.net/https://github.com/xiaoji235/airport-free/blob/main/v2ray/github_public.txt">v2ray nodes 2</a></td>
-<td align="center"><a href="https://ghproxy.net/https://github.com/xiaoji235/airport-free/blob/main/v2ray/naidounode.txt">v2ray nodes 3</a></td>
-<td align="center"><a href="https://ghproxy.net/https://github.com/xiaoji235/airport-free/blob/main/v2ray/v2rayshare.txt">v2ray nodes 4</a></td>
+<td align="center"><a href="https://ghproxy.net/https://github.com/xiaoji235/airport-free/blob/main/v2ray/github_public.txt">v2ray nodes 1</a></td>
 
 
 </tr>
