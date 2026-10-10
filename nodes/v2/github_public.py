@@ -24,11 +24,11 @@ PROTOCOLS = (
     "v2rayn://",
 )
 
+# 2026-10-10 本机实测：sub.luoxi.me 与 sub.doing1024.qzz.io 均已 SSL 握手失败，
+# 取不到任何节点，故从此列表删除。
 urls = [
     "https://raw.githubusercontent.com/zhimingyang25/v2rayn-subscription/main/subscriptions/v2rayn-tls-http.txt",
-    "https://sub.luoxi.me/sub?token=aab07528942566340aac60a82a2e9628",
     "https://raw.githubusercontent.com/wenxig/dongtai-sub/refs/heads/main/data/sub.txt",
-    "https://sub.doing1024.qzz.io/sub-2def74536e818a7c4445e0cf871796e6",
     "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt",
 ]
 
