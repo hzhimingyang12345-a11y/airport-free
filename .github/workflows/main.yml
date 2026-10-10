@@ -10,6 +10,8 @@ permissions:
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  # 仓库名不再写死：fork、改名后都无需再改本文件
+  REPO: ${{ github.repository }}
 
 jobs:
   run-script:
@@ -74,7 +76,7 @@ jobs:
           i=1
           for file in *.txt; do
             if [ -f "$file" ]; then
-              list+="<td align=\"center\"><a href=\"https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/clash/$file\">clash nodes $i</a></td>\n"
+              list+="<td align=\"center\"><a href=\"https://cdn.jsdelivr.net/gh/$REPO/clash/$file\">clash nodes $i</a></td>\n"
               ((i++))
             fi
           done
@@ -89,7 +91,7 @@ jobs:
           i=1
           for file in *.txt; do
             if [ -f "$file" ]; then
-              list+="<td align=\"center\"><a href=\"https://cdn.jsdelivr.net/gh/xiaoji235/airport-free/v2ray/$file\">v2ray nodes $i</a></td>\n"
+              list+="<td align=\"center\"><a href=\"https://cdn.jsdelivr.net/gh/$REPO/v2ray/$file\">v2ray nodes $i</a></td>\n"
               ((i++))
             fi
           done
@@ -104,7 +106,7 @@ jobs:
           i=1
           for file in *.txt; do
             if [ -f "$file" ]; then
-              list+="<td align=\"center\"><a href=\"<PROXY>/https://github.com/xiaoji235/airport-free/blob/main/clash/$file\">clash nodes $i</a></td>\n"
+              list+="<td align=\"center\"><a href=\"<PROXY>/https://github.com/$REPO/blob/main/clash/$file\">clash nodes $i</a></td>\n"
               ((i++))
             fi
           done
@@ -119,7 +121,7 @@ jobs:
           i=1
           for file in *.txt; do
             if [ -f "$file" ]; then
-              list+="<td align=\"center\"><a href=\"<PROXY>/https://github.com/xiaoji235/airport-free/blob/main/v2ray/$file\">v2ray nodes $i</a></td>\n"
+              list+="<td align=\"center\"><a href=\"<PROXY>/https://github.com/$REPO/blob/main/v2ray/$file\">v2ray nodes $i</a></td>\n"
               ((i++))
             fi
           done
