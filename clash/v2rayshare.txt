@@ -1,359 +1,210 @@
 mixed-port: 7890
 allow-lan: false
 mode: rule
-log-level: info
-ipv6: false
-external-controller: 127.0.0.1:9090
+log-level: warning
+ipv6: true
 dns:
   enable: true
   listen: 127.0.0.1:1053
-  ipv6: false
+  ipv6: true
+  prefer-h3: false
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
-  default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-  nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+    - localhost
+    - +.localhost
+    - +.lan
+    - +.local
+    - +.home.arpa
+  use-hosts: true
+  use-system-hosts: true
+  respect-rules: true
   proxy-server-nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - https://223.5.5.5/dns-query#DIRECT
+    - https://223.6.6.6/dns-query#DIRECT
+  direct-nameserver:
+    - https://223.5.5.5/dns-query#DIRECT
+  direct-nameserver-follow-policy: false
+  nameserver:
+    - https://1.1.1.1/dns-query
+    - https://1.0.0.1/dns-query
 proxies:
-  - name: ð¦ð²_AM_äºç¾å°¼äº
-    type: vless
-    server: 2.56.204.183
-    port: 443
-    uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-    network: ws
-    servername: shuma.ccwu.cc
-    tls: true
-    client-fingerprint: chrome
-    ws-opts:
-      path: /
-      headers:
-        Host: shuma.ccwu.cc
-    skip-cert-verify: true
-    udp: true
-  - name: ð¹ð¼_TW_ä¸­å½å°æ¹¾
-    type: vmess
-    server: 654168416355441.oylfmxz.cn
-    port: 443
-    uuid: d90e4077-bc7e-414d-a650-70bf1baae4d6
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    network: ws
-    udp: true
-  - name: ðªð¸_ES_è¥¿ç­ç
-    type: vless
-    server: 152.114.195.163
-    port: 8443
-    uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-    network: ws
-    servername: shuma.ccwu.cc
-    tls: true
-    client-fingerprint: chrome
-    ws-opts:
-      path: /
-      headers:
-        Host: shuma.ccwu.cc
-    skip-cert-verify: true
-    udp: true
-  - name: ðºð¸_US_ç¾å½
-    type: vless
-    server: 66.33.22.221
-    port: 15262
-    uuid: 9edfe008-51a5-48ee-ae99-945971227100
-    network: ws
+  - type: ss
+    name: ð®ð¹_IT_æå¤§å©_IPV4
+    server: 202.50.253.54
+    port: 19999
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    cipher: aes-256-gcm
     tls: false
-    skip-cert-verify: true
-    udp: true
-  - name: ðºð¸_US_ç¾å½_1
-    type: vless
-    server: 172.67.130.159
-    port: 2096
-    uuid: 550d6eb0-1775-44a4-a464-9176e3d74b50
-    network: ws
-    servername: cdn-us.skyvora.app
-    tls: true
-    client-fingerprint: chrome
-    ws-opts:
-      path: /0i027asku
-      headers:
-        Host: cdn-us.skyvora.app
-    skip-cert-verify: true
-    udp: true
-  - name: ð©ðª_DE_å¾·å½
-    type: vless
-    server: de777.lavivas.org
-    port: 7444
-    uuid: 44e1105d-b46e-402f-933b-eaa136fcbb24
-    tls: true
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    udp: true
-  - name: ð©ðª_DE_å¾·å½_1
-    type: vless
-    server: gesmankos.sadiepinki.com
-    port: 443
-    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
-    servername: gesmankos.sadiepinki.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs
-      short-id: 4fa44664f6a566d3
-    skip-cert-verify: true
-    udp: true
-  - name: ð©ðª_DE_å¾·å½_2
-    type: vless
-    server: 2.59.134.226
-    port: 443
-    uuid: 88281d02-b387-4fe3-918e-26ed331e6d08
-    servername: rich-falcon.cdn.cachefleet.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 1sSmdw90uTiGuitDvp_q8zcXTcHXKQS3IVjA7T1UNiY
-    skip-cert-verify: true
-    udp: true
-  - name: ðºð¸_US_ç¾å½_2
-    type: vless
-    server: 72.56.41.33
-    port: 40443
-    uuid: 5be7fb02-b6a5-450f-b041-3243b98e8420
-    servername: deepl.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: Uvj5H9pDJP0HX2bN7NN7sCQwVCrC5N2NbKf-yuy1ikE
-      short-id: ee33
-    skip-cert-verify: true
-    udp: true
-  - name: ðºð¸_US_ç¾å½->ð«ð®_FI_è¬å°
-    type: vless
-    server: a2.arshia-nova.ir
-    port: 443
-    uuid: 1fac5e18-2ca8-4626-c299-1f3f21c6b55e
-    network: ws
-    servername: ssl.fastly.com
-    tls: true
-    client-fingerprint: firefox
-    ws-opts:
-      path: /
-      headers:
-        Host: c12.com
-    skip-cert-verify: true
-    udp: true
-  - name: ð©ðª_DE_å¾·å½_3
-    type: vless
-    server: 45.95.96.236
-    port: 443
-    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
-    servername: gesmankos.sadiepinki.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs
-      short-id: 4fa44664f6a566d3
-    skip-cert-verify: true
-    udp: true
-  - name: ðµð±_PL_æ³¢å°
-    type: vless
-    server: 103.167.234.26
-    port: 443
-    uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-    network: ws
-    servername: shuma.ccwu.cc
-    tls: true
-    client-fingerprint: chrome
-    ws-opts:
-      path: /
-      headers:
-        Host: shuma.ccwu.cc
-    skip-cert-verify: true
-    udp: true
-  - name: ðºð¸_US_ç¾å½_3
-    type: vless
-    server: 66.33.22.219
-    port: 27534
-    uuid: 55333b48-43d2-40f5-99ef-982046bdf437
-    network: ws
+    skip-cert-verify: false
+  - type: ss
+    name: ð®ð¹_IT_æå¤§å©_IPV4 (2)
+    server: 202.50.253.63
+    port: 19999
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    cipher: aes-256-gcm
     tls: false
-    skip-cert-verify: true
-    udp: true
-  - name: ð­ð°_HK_ä¸­å½é¦æ¸¯->ð¸ð¬_SG_æ°å å¡
-    type: vless
-    server: 103.143.81.178
-    port: 443
-    uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-    network: ws
-    servername: shuma.ccwu.cc
-    tls: true
-    client-fingerprint: chrome
-    ws-opts:
-      path: /
-      headers:
-        Host: shuma.ccwu.cc
-    skip-cert-verify: true
-    udp: true
-  - name: ð¦ðº_AU_æ¾³å¤§å©äº->ð«ð®_FI_è¬å°
-    type: vless
-    server: 202.166.187.132
-    port: 443
-    uuid: 8be20011-59b1-4118-91ed-83e8e6b662cd
-    network: ws
-    servername: f.yoptybla.ru
-    tls: true
-    client-fingerprint: chrome
-    ws-opts:
-      path: /
-      headers:
-        Host: f.yoptybla.ru
-    skip-cert-verify: true
-    udp: true
-  - name: ð¯ðµ_JP_æ¥æ¬
-    type: vless
-    server: 35.72.179.15
-    port: 443
-    uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-    network: ws
-    servername: shuma.ccwu.cc
-    tls: true
-    client-fingerprint: chrome
-    ws-opts:
-      path: /
-      headers:
-        Host: shuma.ccwu.cc
-    skip-cert-verify: true
-    udp: true
-  - name: ð¹ð·_TR_åè³å¶->ð³ð±_NL_è·å°
-    type: vless
-    server: 104.143.204.23
-    port: 8443
-    uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-    network: ws
-    servername: shuma.ccwu.cc
-    tls: true
-    client-fingerprint: chrome
-    ws-opts:
-      path: /
-      headers:
-        Host: shuma.ccwu.cc
-    skip-cert-verify: true
-    udp: true
-  - name: ðºð¸_US_ç¾å½_4
-    type: vless
-    server: 104.21.78.105
-    port: 443
-    uuid: a1a6a3be-2bf9-46a2-bc24-328306e49ab7
-    network: ws
-    servername: 6-m17.KUWaiT.kdNs.fR
-    tls: true
-    client-fingerprint: chrome
-    ws-opts:
-      path: /fVs1qv0xm8dxmnwuaPwokxgY4XlP
-      headers:
-        Host: 6-M17.kuwAit.kDns.Fr
-    skip-cert-verify: true
-    udp: true
-  - name: ð¨ð³_CN_ä¸­å½
-    type: vmess
-    server: 112.132.215.108
-    port: 50002
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 64
-    cipher: auto
+    skip-cert-verify: false
+  - type: ss
+    name: ð®ð¹_IT_æå¤§å©_IPV4 (3)
+    server: 202.50.253.90
+    port: 19999
+    password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+    cipher: aes-256-gcm
     tls: false
-    skip-cert-verify: true
-    udp: true
-  - name: ð­ð°_HK_ä¸­å½é¦æ¸¯
-    type: vless
-    server: 103.101.0.73
+    skip-cert-verify: false
+  - type: ssr
+    name: ð³ð±_NL_è·å°_IPV4
+    server: 109.104.153.43
+    port: 33336
+    password: dongtaiwang.com
+    cipher: chacha20-ietf
+    obfs: tls1.2_ticket_auth
+    protocol: auth_chain_a
+  - type: trojan
+    name: v2go | ð«ð· FR | TROJAN | 409_IPV4
+    server: 104.18.8.83
     port: 443
-    uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-    network: ws
-    servername: shuma.ccwu.cc
+    password: humanity
     tls: true
-    client-fingerprint: chrome
+    servername: www.calmlunch.com
+    sni: www.calmlunch.com
+    skip-cert-verify: false
+    network: ws
     ws-opts:
-      path: /
+      path: /assignment
       headers:
-        Host: shuma.ccwu.cc
-    skip-cert-verify: true
-    udp: true
-  - name: ð²ð©_MD_æ©å°å¤ç¦
-    type: vless
-    server: 185.153.198.86
+        Host: www.calmlunch.com
+  - type: trojan
+    name: ð«ð·_FR_æ³å½_IPV4
+    server: 172.67.231.254
     port: 443
-    uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-    network: ws
-    servername: shuma.ccwu.cc
+    password: humanity
     tls: true
-    client-fingerprint: chrome
-    ws-opts:
-      path: /
-      headers:
-        Host: shuma.ccwu.cc
+    servername: www.calmlunch.com
+    sni: www.calmlunch.com
     skip-cert-verify: true
-    udp: true
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+  - type: trojan
+    name: ðºð¸_US_ç¾å½_IPV4
+    server: 172.66.0.172
+    port: 443
+    password: humanity
+    tls: true
+    servername: www.cordweave.com
+    sni: www.cordweave.com
+    skip-cert-verify: true
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: /assignment
+  - type: trojan
+    name: ð°ð·_KR_é©å½_IPV4
+    server: 3.34.91.121
+    port: 12308
+    password: 3637190e-4ce3-41cd-9425-f5676345b38c
+    tls: true
+    servername: kr02.ulifeai.com
+    sni: kr02.ulifeai.com
+    skip-cert-verify: true
+  - type: trojan
+    name: ðºð¸_US_ç¾å½_IPV4 (2)
+    server: jp1.8b1c7c70-ecf1-6891-9fa7-68a86662f902.cheathub.net
+    port: 443
+    password: 6cddea99-9b18-4d42-8638-131bd9f5374f
+    tls: true
+    servername: 8b1c7c70-ecf1-6891-9fa7-68a86662f902.cheathub.net
+    sni: 8b1c7c70-ecf1-6891-9fa7-68a86662f902.cheathub.net
+    skip-cert-verify: true
+  - type: vless
+    name: ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4
+    server: edge.bookmai.com
+    port: 443
+    uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
+    flow: xtls-rprx-vision
+    tls: true
+    servername: mother-earth.fyi
+    sni: mother-earth.fyi
+    skip-cert-verify: false
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  - type: vless
+    name: ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4 (2)
+    server: 9.247.23.209
+    port: 443
+    uuid: b9bfa54d-bc44-4592-a6d6-89a9665d286f
+    flow: xtls-rprx-vision
+    tls: true
+    servername: mother-earth.fyi
+    sni: mother-earth.fyi
+    skip-cert-verify: false
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+  - type: ssr
+    name: ð­ð°_HK_é¦æ¸¯->ðºð¸_US_ç¾å½_IPV4
+    server: api.meituan88.com
+    port: 27561
+    password: di15PV
+    cipher: rc4-md5
+    obfs: plain
+    protocol: auth_aes128_md5
+    protocol-param: 218522:0hfCJk
+    obfs-param: 6f5218522.douyin.com
+  - type: trojan
+    name: ð©ðª_DE_å¾·å½_IPV4
+    server: 45.80.111.7
+    port: 443
+    password: humanity
+    tls: true
+    servername: www.calmlunch.com
+    sni: www.calmlunch.com
+    skip-cert-verify: false
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: /assignment
 proxy-groups:
   - name: ð èç¹éæ©
     type: select
     proxies:
       - â»ï¸ èªå¨éæ©
       - DIRECT
-      - ð¦ð²_AM_äºç¾å°¼äº
-      - ð¹ð¼_TW_ä¸­å½å°æ¹¾
-      - ðªð¸_ES_è¥¿ç­ç
-      - ðºð¸_US_ç¾å½
-      - ðºð¸_US_ç¾å½_1
-      - ð©ðª_DE_å¾·å½
-      - ð©ðª_DE_å¾·å½_1
-      - ð©ðª_DE_å¾·å½_2
-      - ðºð¸_US_ç¾å½_2
-      - ðºð¸_US_ç¾å½->ð«ð®_FI_è¬å°
-      - ð©ðª_DE_å¾·å½_3
-      - ðµð±_PL_æ³¢å°
-      - ðºð¸_US_ç¾å½_3
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯->ð¸ð¬_SG_æ°å å¡
-      - ð¦ðº_AU_æ¾³å¤§å©äº->ð«ð®_FI_è¬å°
-      - ð¯ðµ_JP_æ¥æ¬
-      - ð¹ð·_TR_åè³å¶->ð³ð±_NL_è·å°
-      - ðºð¸_US_ç¾å½_4
-      - ð¨ð³_CN_ä¸­å½
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯
-      - ð²ð©_MD_æ©å°å¤ç¦
+      - ð®ð¹_IT_æå¤§å©_IPV4
+      - ð®ð¹_IT_æå¤§å©_IPV4 (2)
+      - ð®ð¹_IT_æå¤§å©_IPV4 (3)
+      - ð³ð±_NL_è·å°_IPV4
+      - v2go | ð«ð· FR | TROJAN | 409_IPV4
+      - ð«ð·_FR_æ³å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4
+      - ð°ð·_KR_é©å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4 (2)
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4 (2)
+      - ð­ð°_HK_é¦æ¸¯->ðºð¸_US_ç¾å½_IPV4
+      - ð©ðª_DE_å¾·å½_IPV4
   - name: â»ï¸ èªå¨éæ©
     type: url-test
     proxies:
-      - ð¦ð²_AM_äºç¾å°¼äº
-      - ð¹ð¼_TW_ä¸­å½å°æ¹¾
-      - ðªð¸_ES_è¥¿ç­ç
-      - ðºð¸_US_ç¾å½
-      - ðºð¸_US_ç¾å½_1
-      - ð©ðª_DE_å¾·å½
-      - ð©ðª_DE_å¾·å½_1
-      - ð©ðª_DE_å¾·å½_2
-      - ðºð¸_US_ç¾å½_2
-      - ðºð¸_US_ç¾å½->ð«ð®_FI_è¬å°
-      - ð©ðª_DE_å¾·å½_3
-      - ðµð±_PL_æ³¢å°
-      - ðºð¸_US_ç¾å½_3
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯->ð¸ð¬_SG_æ°å å¡
-      - ð¦ðº_AU_æ¾³å¤§å©äº->ð«ð®_FI_è¬å°
-      - ð¯ðµ_JP_æ¥æ¬
-      - ð¹ð·_TR_åè³å¶->ð³ð±_NL_è·å°
-      - ðºð¸_US_ç¾å½_4
-      - ð¨ð³_CN_ä¸­å½
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯
-      - ð²ð©_MD_æ©å°å¤ç¦
+      - ð®ð¹_IT_æå¤§å©_IPV4
+      - ð®ð¹_IT_æå¤§å©_IPV4 (2)
+      - ð®ð¹_IT_æå¤§å©_IPV4 (3)
+      - ð³ð±_NL_è·å°_IPV4
+      - v2go | ð«ð· FR | TROJAN | 409_IPV4
+      - ð«ð·_FR_æ³å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4
+      - ð°ð·_KR_é©å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4 (2)
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4 (2)
+      - ð­ð°_HK_é¦æ¸¯->ðºð¸_US_ç¾å½_IPV4
+      - ð©ðª_DE_å¾·å½_IPV4
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -363,105 +214,73 @@ proxy-groups:
       - ð èç¹éæ©
       - â»ï¸ èªå¨éæ©
       - ð¯ å¨çç´è¿
-      - ð¦ð²_AM_äºç¾å°¼äº
-      - ð¹ð¼_TW_ä¸­å½å°æ¹¾
-      - ðªð¸_ES_è¥¿ç­ç
-      - ðºð¸_US_ç¾å½
-      - ðºð¸_US_ç¾å½_1
-      - ð©ðª_DE_å¾·å½
-      - ð©ðª_DE_å¾·å½_1
-      - ð©ðª_DE_å¾·å½_2
-      - ðºð¸_US_ç¾å½_2
-      - ðºð¸_US_ç¾å½->ð«ð®_FI_è¬å°
-      - ð©ðª_DE_å¾·å½_3
-      - ðµð±_PL_æ³¢å°
-      - ðºð¸_US_ç¾å½_3
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯->ð¸ð¬_SG_æ°å å¡
-      - ð¦ðº_AU_æ¾³å¤§å©äº->ð«ð®_FI_è¬å°
-      - ð¯ðµ_JP_æ¥æ¬
-      - ð¹ð·_TR_åè³å¶->ð³ð±_NL_è·å°
-      - ðºð¸_US_ç¾å½_4
-      - ð¨ð³_CN_ä¸­å½
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯
-      - ð²ð©_MD_æ©å°å¤ç¦
+      - ð®ð¹_IT_æå¤§å©_IPV4
+      - ð®ð¹_IT_æå¤§å©_IPV4 (2)
+      - ð®ð¹_IT_æå¤§å©_IPV4 (3)
+      - ð³ð±_NL_è·å°_IPV4
+      - v2go | ð«ð· FR | TROJAN | 409_IPV4
+      - ð«ð·_FR_æ³å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4
+      - ð°ð·_KR_é©å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4 (2)
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4 (2)
+      - ð­ð°_HK_é¦æ¸¯->ðºð¸_US_ç¾å½_IPV4
+      - ð©ðª_DE_å¾·å½_IPV4
   - name: ð² çµæ¥ä¿¡æ¯
     type: select
     proxies:
       - ð èç¹éæ©
       - ð¯ å¨çç´è¿
-      - ð¦ð²_AM_äºç¾å°¼äº
-      - ð¹ð¼_TW_ä¸­å½å°æ¹¾
-      - ðªð¸_ES_è¥¿ç­ç
-      - ðºð¸_US_ç¾å½
-      - ðºð¸_US_ç¾å½_1
-      - ð©ðª_DE_å¾·å½
-      - ð©ðª_DE_å¾·å½_1
-      - ð©ðª_DE_å¾·å½_2
-      - ðºð¸_US_ç¾å½_2
-      - ðºð¸_US_ç¾å½->ð«ð®_FI_è¬å°
-      - ð©ðª_DE_å¾·å½_3
-      - ðµð±_PL_æ³¢å°
-      - ðºð¸_US_ç¾å½_3
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯->ð¸ð¬_SG_æ°å å¡
-      - ð¦ðº_AU_æ¾³å¤§å©äº->ð«ð®_FI_è¬å°
-      - ð¯ðµ_JP_æ¥æ¬
-      - ð¹ð·_TR_åè³å¶->ð³ð±_NL_è·å°
-      - ðºð¸_US_ç¾å½_4
-      - ð¨ð³_CN_ä¸­å½
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯
-      - ð²ð©_MD_æ©å°å¤ç¦
+      - ð®ð¹_IT_æå¤§å©_IPV4
+      - ð®ð¹_IT_æå¤§å©_IPV4 (2)
+      - ð®ð¹_IT_æå¤§å©_IPV4 (3)
+      - ð³ð±_NL_è·å°_IPV4
+      - v2go | ð«ð· FR | TROJAN | 409_IPV4
+      - ð«ð·_FR_æ³å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4
+      - ð°ð·_KR_é©å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4 (2)
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4 (2)
+      - ð­ð°_HK_é¦æ¸¯->ðºð¸_US_ç¾å½_IPV4
+      - ð©ðª_DE_å¾·å½_IPV4
   - name: âï¸ å¾®è½¯æå¡
     type: select
     proxies:
       - ð¯ å¨çç´è¿
       - ð èç¹éæ©
-      - ð¦ð²_AM_äºç¾å°¼äº
-      - ð¹ð¼_TW_ä¸­å½å°æ¹¾
-      - ðªð¸_ES_è¥¿ç­ç
-      - ðºð¸_US_ç¾å½
-      - ðºð¸_US_ç¾å½_1
-      - ð©ðª_DE_å¾·å½
-      - ð©ðª_DE_å¾·å½_1
-      - ð©ðª_DE_å¾·å½_2
-      - ðºð¸_US_ç¾å½_2
-      - ðºð¸_US_ç¾å½->ð«ð®_FI_è¬å°
-      - ð©ðª_DE_å¾·å½_3
-      - ðµð±_PL_æ³¢å°
-      - ðºð¸_US_ç¾å½_3
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯->ð¸ð¬_SG_æ°å å¡
-      - ð¦ðº_AU_æ¾³å¤§å©äº->ð«ð®_FI_è¬å°
-      - ð¯ðµ_JP_æ¥æ¬
-      - ð¹ð·_TR_åè³å¶->ð³ð±_NL_è·å°
-      - ðºð¸_US_ç¾å½_4
-      - ð¨ð³_CN_ä¸­å½
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯
-      - ð²ð©_MD_æ©å°å¤ç¦
+      - ð®ð¹_IT_æå¤§å©_IPV4
+      - ð®ð¹_IT_æå¤§å©_IPV4 (2)
+      - ð®ð¹_IT_æå¤§å©_IPV4 (3)
+      - ð³ð±_NL_è·å°_IPV4
+      - v2go | ð«ð· FR | TROJAN | 409_IPV4
+      - ð«ð·_FR_æ³å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4
+      - ð°ð·_KR_é©å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4 (2)
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4 (2)
+      - ð­ð°_HK_é¦æ¸¯->ðºð¸_US_ç¾å½_IPV4
+      - ð©ðª_DE_å¾·å½_IPV4
   - name: ð è¹ææå¡
     type: select
     proxies:
       - ð èç¹éæ©
       - ð¯ å¨çç´è¿
-      - ð¦ð²_AM_äºç¾å°¼äº
-      - ð¹ð¼_TW_ä¸­å½å°æ¹¾
-      - ðªð¸_ES_è¥¿ç­ç
-      - ðºð¸_US_ç¾å½
-      - ðºð¸_US_ç¾å½_1
-      - ð©ðª_DE_å¾·å½
-      - ð©ðª_DE_å¾·å½_1
-      - ð©ðª_DE_å¾·å½_2
-      - ðºð¸_US_ç¾å½_2
-      - ðºð¸_US_ç¾å½->ð«ð®_FI_è¬å°
-      - ð©ðª_DE_å¾·å½_3
-      - ðµð±_PL_æ³¢å°
-      - ðºð¸_US_ç¾å½_3
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯->ð¸ð¬_SG_æ°å å¡
-      - ð¦ðº_AU_æ¾³å¤§å©äº->ð«ð®_FI_è¬å°
-      - ð¯ðµ_JP_æ¥æ¬
-      - ð¹ð·_TR_åè³å¶->ð³ð±_NL_è·å°
-      - ðºð¸_US_ç¾å½_4
-      - ð¨ð³_CN_ä¸­å½
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯
-      - ð²ð©_MD_æ©å°å¤ç¦
+      - ð®ð¹_IT_æå¤§å©_IPV4
+      - ð®ð¹_IT_æå¤§å©_IPV4 (2)
+      - ð®ð¹_IT_æå¤§å©_IPV4 (3)
+      - ð³ð±_NL_è·å°_IPV4
+      - v2go | ð«ð· FR | TROJAN | 409_IPV4
+      - ð«ð·_FR_æ³å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4
+      - ð°ð·_KR_é©å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4 (2)
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4 (2)
+      - ð­ð°_HK_é¦æ¸¯->ðºð¸_US_ç¾å½_IPV4
+      - ð©ðª_DE_å¾·å½_IPV4
   - name: ð¯ å¨çç´è¿
     type: select
     proxies:
@@ -484,24 +303,16 @@ proxy-groups:
       - ð èç¹éæ©
       - ð¯ å¨çç´è¿
       - â»ï¸ èªå¨éæ©
-      - ð¦ð²_AM_äºç¾å°¼äº
-      - ð¹ð¼_TW_ä¸­å½å°æ¹¾
-      - ðªð¸_ES_è¥¿ç­ç
-      - ðºð¸_US_ç¾å½
-      - ðºð¸_US_ç¾å½_1
-      - ð©ðª_DE_å¾·å½
-      - ð©ðª_DE_å¾·å½_1
-      - ð©ðª_DE_å¾·å½_2
-      - ðºð¸_US_ç¾å½_2
-      - ðºð¸_US_ç¾å½->ð«ð®_FI_è¬å°
-      - ð©ðª_DE_å¾·å½_3
-      - ðµð±_PL_æ³¢å°
-      - ðºð¸_US_ç¾å½_3
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯->ð¸ð¬_SG_æ°å å¡
-      - ð¦ðº_AU_æ¾³å¤§å©äº->ð«ð®_FI_è¬å°
-      - ð¯ðµ_JP_æ¥æ¬
-      - ð¹ð·_TR_åè³å¶->ð³ð±_NL_è·å°
-      - ðºð¸_US_ç¾å½_4
-      - ð¨ð³_CN_ä¸­å½
-      - ð­ð°_HK_ä¸­å½é¦æ¸¯
-      - ð²ð©_MD_æ©å°å¤ç¦
+      - ð®ð¹_IT_æå¤§å©_IPV4
+      - ð®ð¹_IT_æå¤§å©_IPV4 (2)
+      - ð®ð¹_IT_æå¤§å©_IPV4 (3)
+      - ð³ð±_NL_è·å°_IPV4
+      - v2go | ð«ð· FR | TROJAN | 409_IPV4
+      - ð«ð·_FR_æ³å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4
+      - ð°ð·_KR_é©å½_IPV4
+      - ðºð¸_US_ç¾å½_IPV4 (2)
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4
+      - ð©ðª_DE_å¾·å½->ð«ð·_FR_æ³å½_IPV4 (2)
+      - ð­ð°_HK_é¦æ¸¯->ðºð¸_US_ç¾å½_IPV4
+      - ð©ðª_DE_å¾·å½_IPV4
